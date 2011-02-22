@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:modulestudio="http://modulestudio.de/modulestudio" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation">
+  <notation:Diagram xmi:id="_ProcENMhEd-NTeA-isXwqA" type="Module" name="SelfRelationTest.mostdiagram" measurementUnit="Pixel">
+    <children xmi:type="notation:Shape" xmi:id="_P67cUNMhEd-NTeA-isXwqA" type="2001" fontName="monospaced" fontHeight="12" lineColor="4210752">
+      <children xmi:type="notation:DecorationNode" xmi:id="_P6-foNMhEd-NTeA-isXwqA" type="5001"/>
+      <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_P67cUdMhEd-NTeA-isXwqA" diagramLink="_XLya0NMhEd-NTeA-isXwqA" hint="Model"/>
+      <element xmi:type="modulestudio:Models" href="SelfRelationTest.mostapp#_PqvrQNMhEd-NTeA-isXwqA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_P67cUtMhEd-NTeA-isXwqA" x="30" y="130"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_P6-fodMhEd-NTeA-isXwqA" type="2002" fontName="monospaced" fontHeight="12" lineColor="4210752">
+      <children xmi:type="notation:DecorationNode" xmi:id="_P6_GstMhEd-NTeA-isXwqA" type="5002"/>
+      <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_P6_GsNMhEd-NTeA-isXwqA" diagramLink="_ULst8NMhEd-NTeA-isXwqA" hint="Controller"/>
+      <element xmi:type="modulestudio:Controllers" href="SelfRelationTest.mostapp#_PqvrQdMhEd-NTeA-isXwqA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_P6_GsdMhEd-NTeA-isXwqA" x="74" y="30"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_P6_Gs9MhEd-NTeA-isXwqA" type="2003" fontName="monospaced" fontHeight="12" lineColor="4210752">
+      <children xmi:type="notation:DecorationNode" xmi:id="_P6_twdMhEd-NTeA-isXwqA" type="5003"/>
+      <element xmi:type="modulestudio:Views" href="SelfRelationTest.mostapp#_PqvrQtMhEd-NTeA-isXwqA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_P6_twNMhEd-NTeA-isXwqA" x="154" y="130"/>
+    </children>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_ProcEdMhEd-NTeA-isXwqA"/>
+    <element xmi:type="modulestudio:Application" href="SelfRelationTest.mostapp#_PqvEMdMhEd-NTeA-isXwqA"/>
+  </notation:Diagram>
+  <notation:Diagram xmi:id="_ULst8NMhEd-NTeA-isXwqA" type="Controller" measurementUnit="Pixel">
+    <children xmi:type="notation:Shape" xmi:id="_UtOGoNMhEd-NTeA-isXwqA" type="2201" fontColor="4210752" fontName="Lucida Grande" fontHeight="12" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_UtOtsNMhEd-NTeA-isXwqA" type="5210"/>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_UtP70NMhEd-NTeA-isXwqA" type="7201">
+        <children xmi:type="notation:Shape" xmi:id="_Voxv8NMhEd-NTeA-isXwqA" type="3201" fontColor="4210752" fontName="Lucida Grande" fontHeight="12" lineColor="0">
+          <children xmi:type="notation:DecorationNode" xmi:id="_VoyXANMhEd-NTeA-isXwqA" type="5201"/>
+          <element xmi:type="modulestudio:MainAction" href="SelfRelationTest.mostapp#_VotegNMhEd-NTeA-isXwqA"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Voxv8dMhEd-NTeA-isXwqA" x="12" y="15"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_V0vIUNMhEd-NTeA-isXwqA" type="3202" fontColor="4210752" fontName="Lucida Grande" fontHeight="12" lineColor="0">
+          <children xmi:type="notation:DecorationNode" xmi:id="_V0vvYNMhEd-NTeA-isXwqA" type="5202"/>
+          <element xmi:type="modulestudio:ViewAction" href="SelfRelationTest.mostapp#_V0sFANMhEd-NTeA-isXwqA"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_V0vIUdMhEd-NTeA-isXwqA" x="97" y="20"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_WMvYoNMhEd-NTeA-isXwqA" type="3203" fontColor="4210752" fontName="Lucida Grande" fontHeight="12" lineColor="0">
+          <children xmi:type="notation:DecorationNode" xmi:id="_WMv_sNMhEd-NTeA-isXwqA" type="5203"/>
+          <element xmi:type="modulestudio:DisplayAction" href="SelfRelationTest.mostapp#_WMs8YNMhEd-NTeA-isXwqA"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WMvYodMhEd-NTeA-isXwqA" x="186" y="22"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_Wg1ZUNMhEd-NTeA-isXwqA" type="3204" fontColor="4210752" fontName="Lucida Grande" fontHeight="12" lineColor="0">
+          <children xmi:type="notation:DecorationNode" xmi:id="_Wg2AYNMhEd-NTeA-isXwqA" type="5204"/>
+          <element xmi:type="modulestudio:EditAction" href="SelfRelationTest.mostapp#_WgyWANMhEd-NTeA-isXwqA"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Wg1ZUdMhEd-NTeA-isXwqA" x="314" y="25"/>
+        </children>
+      </children>
+      <element xmi:type="modulestudio:AdminController" href="SelfRelationTest.mostapp#_UqlpYNMhEd-NTeA-isXwqA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UtOGodMhEd-NTeA-isXwqA" x="47" y="73" width="530" height="288"/>
+    </children>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_ULst8dMhEd-NTeA-isXwqA"/>
+    <element xmi:type="modulestudio:Controllers" href="SelfRelationTest.mostapp#_PqvrQdMhEd-NTeA-isXwqA"/>
+  </notation:Diagram>
+  <notation:Diagram xmi:id="_XLya0NMhEd-NTeA-isXwqA" type="Model" measurementUnit="Pixel">
+    <children xmi:type="notation:Shape" xmi:id="_XzFrYNMhEd-NTeA-isXwqA" type="2101" fontColor="4210752" fontName="Lucida Grande" fontHeight="12" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_XzGScNMhEd-NTeA-isXwqA" type="5102"/>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_XzHgkNMhEd-NTeA-isXwqA" type="7101">
+        <children xmi:type="notation:Node" xmi:id="_ZljukNMhEd-NTeA-isXwqA" type="3105">
+          <element xmi:type="modulestudio:StringField" href="SelfRelationTest.mostapp#_Zlh5YNMhEd-NTeA-isXwqA"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_ZljukdMhEd-NTeA-isXwqA"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_ba-YENMhEd-NTeA-isXwqA" type="3106">
+          <element xmi:type="modulestudio:TextField" href="SelfRelationTest.mostapp#_ba8i4NMhEd-NTeA-isXwqA"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_ba-YEdMhEd-NTeA-isXwqA"/>
+        </children>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_XzHgkdMhEd-NTeA-isXwqA"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_XzHgktMhEd-NTeA-isXwqA"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_XzIHoNMhEd-NTeA-isXwqA" type="7102"/>
+      <element xmi:type="modulestudio:Entity" href="SelfRelationTest.mostapp#_XzDPINMhEd-NTeA-isXwqA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XzFrYdMhEd-NTeA-isXwqA" x="76" y="73"/>
+    </children>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_XLya0dMhEd-NTeA-isXwqA"/>
+    <element xmi:type="modulestudio:Models" href="SelfRelationTest.mostapp#_PqvrQNMhEd-NTeA-isXwqA"/>
+    <edges xmi:type="notation:Connector" xmi:id="_dl9B4NMhEd-NTeA-isXwqA" type="4101" source="_XzFrYNMhEd-NTeA-isXwqA" target="_XzFrYNMhEd-NTeA-isXwqA" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_dl9o8NMhEd-NTeA-isXwqA" type="6101">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_dl9o8dMhEd-NTeA-isXwqA" x="-13" y="-26"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_dl9B4dMhEd-NTeA-isXwqA" fontColor="4210752" fontName="Lucida Grande" fontHeight="12"/>
+      <element xmi:type="modulestudio:OneToOneRelationship" href="SelfRelationTest.mostapp#_dl5-kNMhEd-NTeA-isXwqA"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_dl9B4tMhEd-NTeA-isXwqA" points="[17, 16, -9, 77]$[50, 47, 24, 108]$[74, 78, 48, 139]$[-33, 78, -59, 139]$[-7, 16, -33, 77]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_dmhpoNMhEd-NTeA-isXwqA" id="(0.862876254180602,0.8181818181818182)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_dmhpodMhEd-NTeA-isXwqA" id="(0.9498327759197325,0.125)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_h9VR0NMhEd-NTeA-isXwqA" type="4102" source="_XzFrYNMhEd-NTeA-isXwqA" target="_XzFrYNMhEd-NTeA-isXwqA" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_h9Wf8NMhEd-NTeA-isXwqA" type="6102">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_h9Wf8dMhEd-NTeA-isXwqA" x="14" y="-33"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_h9VR0dMhEd-NTeA-isXwqA" fontColor="4210752" fontName="Lucida Grande" fontHeight="12"/>
+      <element xmi:type="modulestudio:OneToManyRelationship" href="SelfRelationTest.mostapp#_h9SOgNMhEd-NTeA-isXwqA"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_h9VR0tMhEd-NTeA-isXwqA" points="[21, 66, 25, 25]$[56, 169, 60, 128]$[32, 169, 36, 128]$[3, 66, 7, 25]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_h9r3INMhEd-NTeA-isXwqA" id="(0.12040133779264214,0.25)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_h9r3IdMhEd-NTeA-isXwqA" id="(0.10702341137123746,0.7159090909090909)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_ponigNMhEd-NTeA-isXwqA" type="4103" source="_XzFrYNMhEd-NTeA-isXwqA" target="_XzFrYNMhEd-NTeA-isXwqA" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_poowoNMhEd-NTeA-isXwqA" type="6103">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_poowodMhEd-NTeA-isXwqA" x="45" y="25"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_pooJkNMhEd-NTeA-isXwqA" fontColor="4210752" fontName="Lucida Grande" fontHeight="12"/>
+      <element xmi:type="modulestudio:ManyToManyRelationship" href="SelfRelationTest.mostapp#_polGQNMhEd-NTeA-isXwqA"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_pooJkdMhEd-NTeA-isXwqA" points="[0, 0, -91, -15]$[185, -37, 94, -52]$[269, -1, 178, -16]$[305, 15, 214, 0]$[104, 15, 13, 0]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_powscNMhEd-NTeA-isXwqA" id="(0.6521739130434783,0.0)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_powscdMhEd-NTeA-isXwqA" id="(0.9565217391304348,0.17045454545454544)"/>
+    </edges>
+  </notation:Diagram>
+</xmi:XMI>

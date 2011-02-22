@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modulestudio:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:modulestudio="http://modulestudio.de/modulestudio" xmi:id="_-n11MZZqEd-Cr6we_ykR9w" name="AutoCocktails" author="Axel Guckelsberger" email="info@guite.de" url="http://modulestudio.de" prefix="auco" modelPath="/Users/GuiteMedia/AutoCocktails.mostapp">
+  <models xmi:type="modulestudio:Models" xmi:id="_-n2cQJZqEd-Cr6we_ykR9w" name="Model">
+    <variables xmi:type="modulestudio:Variables" xmi:id="_wkahQJZrEd-Cr6we_ykR9w" name="Variables">
+      <vars xmi:type="modulestudio:FilePathVar" xmi:id="_4g6dwJZrEd-Cr6we_ykR9w" name="cocktailImagePath" value="your/relative/path" writable="true"/>
+    </variables>
+    <relations xmi:type="modulestudio:OneToManyRelationship" xmi:id="_R_NnoJZtEd-Cr6we_ykR9w" target="_5LeoQJZsEd-Cr6we_ykR9w" source="_BOB-4JZsEd-Cr6we_ykR9w" sourceAlias="cocktail" targetAlias="ingredients"/>
+    <relations xmi:type="modulestudio:OneToOneRelationship" xmi:id="_WYxo4JZtEd-Cr6we_ykR9w" target="_5LeoQJZsEd-Cr6we_ykR9w" source="_Oe27wJZsEd-Cr6we_ykR9w" sourceAlias="ingredient" targetAlias="cocktails"/>
+    <relations xmi:type="modulestudio:OneToOneRelationship" xmi:id="_Zyv1YJZtEd-Cr6we_ykR9w" target="__sWUQJZsEd-Cr6we_ykR9w" source="_Oe27wJZsEd-Cr6we_ykR9w" sourceAlias="ingredient" targetAlias="users"/>
+    <entities xmi:type="modulestudio:Entity" xmi:id="_BOB-4JZsEd-Cr6we_ykR9w" name="cocktail" nameMultiple="cocktails" outgoing="_R_NnoJZtEd-Cr6we_ykR9w" leading="true">
+      <fields xmi:type="modulestudio:StringField" xmi:id="_EM2gcJZsEd-Cr6we_ykR9w" name="name" defaultValue="" leading="true"/>
+      <fields xmi:type="modulestudio:StringField" xmi:id="_GtkwwJZsEd-Cr6we_ykR9w" name="country" defaultValue=""/>
+      <fields xmi:type="modulestudio:TextField" xmi:id="_IsEdwJZsEd-Cr6we_ykR9w" name="recipe" defaultValue="" length="3000"/>
+      <fields xmi:type="modulestudio:IntegerField" xmi:id="_KglIUJZsEd-Cr6we_ykR9w" name="rating" defaultValue="0" length="2"/>
+    </entities>
+    <entities xmi:type="modulestudio:Entity" xmi:id="_Oe27wJZsEd-Cr6we_ykR9w" name="ingredient" nameMultiple="ingredients" outgoing="_WYxo4JZtEd-Cr6we_ykR9w _Zyv1YJZtEd-Cr6we_ykR9w">
+      <fields xmi:type="modulestudio:StringField" xmi:id="_RQA0wJZsEd-Cr6we_ykR9w" name="name" defaultValue="" leading="true"/>
+      <fields xmi:type="modulestudio:IntegerField" xmi:id="_VD_csJZsEd-Cr6we_ykR9w" name="category" defaultValue=""/>
+      <fields xmi:type="modulestudio:IntegerField" xmi:id="_W8nyQJZsEd-Cr6we_ykR9w" name="unit" defaultValue="0"/>
+    </entities>
+    <entities xmi:type="modulestudio:Entity" xmi:id="_5LeoQJZsEd-Cr6we_ykR9w" name="cocktailIngredient" nameMultiple="cocktailIngredients" incoming="_R_NnoJZtEd-Cr6we_ykR9w _WYxo4JZtEd-Cr6we_ykR9w">
+      <fields xmi:type="modulestudio:IntegerField" xmi:id="_7_-wMJZsEd-Cr6we_ykR9w" name="amount" defaultValue="0" leading="true"/>
+    </entities>
+    <entities xmi:type="modulestudio:Entity" xmi:id="__sWUQJZsEd-Cr6we_ykR9w" name="userIngredient" nameMultiple="userIngredients" incoming="_Zyv1YJZtEd-Cr6we_ykR9w">
+      <fields xmi:type="modulestudio:IntegerField" xmi:id="_CJDnQJZtEd-Cr6we_ykR9w" name="existingAmount" defaultValue="0" leading="true"/>
+      <fields xmi:type="modulestudio:IntegerField" xmi:id="_FV59wJZtEd-Cr6we_ykR9w" name="minimumAmountNormal" defaultValue="0"/>
+      <fields xmi:type="modulestudio:IntegerField" xmi:id="_HUZqwJZtEd-Cr6we_ykR9w" name="minimumAmountParty" defaultValue="0"/>
+    </entities>
+  </models>
+  <controllers xmi:type="modulestudio:Controllers" xmi:id="_-n2cQZZqEd-Cr6we_ykR9w" name="Controller" modelContext="_-n2cQJZqEd-Cr6we_ykR9w" processViews="_-n2cQpZqEd-Cr6we_ykR9w">
+    <controllers xmi:type="modulestudio:AdminController" xmi:id="_H9Bb4JZrEd-Cr6we_ykR9w" name="Admin">
+      <actions xmi:type="modulestudio:MainAction" xmi:id="_IYBV0JZrEd-Cr6we_ykR9w" name="Main"/>
+      <actions xmi:type="modulestudio:ViewAction" xmi:id="_ItTCQJZrEd-Cr6we_ykR9w" name="View"/>
+      <actions xmi:type="modulestudio:EditAction" xmi:id="_JHsfQJZrEd-Cr6we_ykR9w" name="Edit"/>
+    </controllers>
+    <controllers xmi:type="modulestudio:UserController" xmi:id="_KkKdQJZrEd-Cr6we_ykR9w" name="User">
+      <actions xmi:type="modulestudio:MainAction" xmi:id="_K9zFQJZrEd-Cr6we_ykR9w" name="Main"/>
+      <actions xmi:type="modulestudio:ViewAction" xmi:id="_LT_-wJZrEd-Cr6we_ykR9w" name="View"/>
+    </controllers>
+  </controllers>
+  <views xmi:type="modulestudio:Views" xmi:id="_-n2cQpZqEd-Cr6we_ykR9w" name="View" controller="_-n2cQZZqEd-Cr6we_ykR9w"/>
+</modulestudio:Application>

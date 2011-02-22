@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modulestudio:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:modulestudio="http://modulestudio.de/modulestudio" xmi:id="_HhNCcJfzEd-AUbx4tgitVg" name="AutoRecipes" author="Axel Guckelsberger" email="info@modulestudio.de" url="http://modulestudio.de" prefix="aurec" modelPath="/Users/GuiteMedia/AutoRecipes.mostapp">
+  <models xmi:type="modulestudio:Models" xmi:id="_HhNCcZfzEd-AUbx4tgitVg" name="Model">
+    <relations xmi:type="modulestudio:OneToManyRelationship" xmi:id="_r9fNwZf9Ed-5YM_ljg4dHA" target="_v6Z60JfzEd-AUbx4tgitVg" source="_bU9g0JfzEd-AUbx4tgitVg" sourceAlias="recipe" targetAlias="ingredients"/>
+    <relations xmi:type="modulestudio:OneToManyRelationship" xmi:id="_vt158Jf9Ed-5YM_ljg4dHA" target="_7vv7sJf0Ed-AUbx4tgitVg" source="_v6Z60JfzEd-AUbx4tgitVg" sourceAlias="ingredient" targetAlias="actions"/>
+    <relations xmi:type="modulestudio:OneToManyRelationship" xmi:id="_zZ5U8Jf9Ed-5YM_ljg4dHA" target="_v6Z60JfzEd-AUbx4tgitVg" source="_qEyyUJfzEd-AUbx4tgitVg" sourceAlias="ingredient" targetAlias="recipes"/>
+    <relations xmi:type="modulestudio:OneToManyRelationship" xmi:id="_AxY6gJf-Ed-5YM_ljg4dHA" target="_qAg50Jf0Ed-AUbx4tgitVg" source="_KSQYUJf0Ed-AUbx4tgitVg" sourceAlias="menue" targetAlias="recipeTypes"/>
+    <relations xmi:type="modulestudio:OneToManyRelationship" xmi:id="_JIH78Jf-Ed-5YM_ljg4dHA" target="_7vv7sJf0Ed-AUbx4tgitVg" source="_bU9g0JfzEd-AUbx4tgitVg" sourceAlias="recipe" targetAlias="actions"/>
+    <relations xmi:type="modulestudio:OneToManyRelationship" xmi:id="_QZ-Y8Jf-Ed-5YM_ljg4dHA" target="_DgSf0Jf1Ed-AUbx4tgitVg" source="_bU9g0JfzEd-AUbx4tgitVg" sourceAlias="recipe" targetAlias="menues"/>
+    <relations xmi:type="modulestudio:OneToManyRelationship" xmi:id="_bUSxcJf-Ed-5YM_ljg4dHA" target="_DgSf0Jf1Ed-AUbx4tgitVg" source="_KSQYUJf0Ed-AUbx4tgitVg" sourceAlias="menue" targetAlias="recipes"/>
+    <relations xmi:type="modulestudio:OneToOneRelationship" xmi:id="_YigpcJ2oEd-Kb4K-RqBN4w" target="_qAg50Jf0Ed-AUbx4tgitVg" source="_bU9g0JfzEd-AUbx4tgitVg" sourceAlias="recipe" targetAlias="recipeType"/>
+    <relations xmi:type="modulestudio:OneToOneRelationship" xmi:id="_asZHEJ2oEd-Kb4K-RqBN4w" target="_TR0UUJf0Ed-AUbx4tgitVg" source="_qEyyUJfzEd-AUbx4tgitVg" sourceAlias="ingredient" targetAlias="ingredientType"/>
+    <relations xmi:type="modulestudio:OneToOneRelationship" xmi:id="_hZlX0J2oEd-Kb4K-RqBN4w" target="_xvND0Jf0Ed-AUbx4tgitVg" source="_7vv7sJf0Ed-AUbx4tgitVg" sourceAlias="recipeAction" targetAlias="action"/>
+    <entities xmi:type="modulestudio:Entity" xmi:id="_bU9g0JfzEd-AUbx4tgitVg" name="recipe" nameMultiple="recipes" outgoing="_r9fNwZf9Ed-5YM_ljg4dHA _JIH78Jf-Ed-5YM_ljg4dHA _QZ-Y8Jf-Ed-5YM_ljg4dHA _YigpcJ2oEd-Kb4K-RqBN4w" leading="true">
+      <fields xmi:type="modulestudio:StringField" xmi:id="_eySjUJfzEd-AUbx4tgitVg" name="title" defaultValue="" leading="true" length="200"/>
+      <fields xmi:type="modulestudio:TextField" xmi:id="_i4rJ4JfzEd-AUbx4tgitVg" name="description" defaultValue="" length="3000"/>
+      <fields xmi:type="modulestudio:DateField" xmi:id="_kyH-0JfzEd-AUbx4tgitVg" name="date" defaultValue=""/>
+    </entities>
+    <entities xmi:type="modulestudio:Entity" xmi:id="_qEyyUJfzEd-AUbx4tgitVg" name="ingredient" nameMultiple="ingredients" outgoing="_zZ5U8Jf9Ed-5YM_ljg4dHA _asZHEJ2oEd-Kb4K-RqBN4w">
+      <fields xmi:type="modulestudio:StringField" xmi:id="_sC6E0JfzEd-AUbx4tgitVg" name="name" defaultValue="" leading="true" length="200"/>
+    </entities>
+    <entities xmi:type="modulestudio:Entity" xmi:id="_v6Z60JfzEd-AUbx4tgitVg" name="recipeIngredient" nameMultiple="recipeIngredients" incoming="_r9fNwZf9Ed-5YM_ljg4dHA _zZ5U8Jf9Ed-5YM_ljg4dHA" outgoing="_vt158Jf9Ed-5YM_ljg4dHA">
+      <fields xmi:type="modulestudio:StringField" xmi:id="_x-Fp0JfzEd-AUbx4tgitVg" name="amount" defaultValue="" leading="true"/>
+    </entities>
+    <entities xmi:type="modulestudio:Entity" xmi:id="_KSQYUJf0Ed-AUbx4tgitVg" name="menue" nameMultiple="menues" outgoing="_AxY6gJf-Ed-5YM_ljg4dHA _bUSxcJf-Ed-5YM_ljg4dHA">
+      <fields xmi:type="modulestudio:StringField" xmi:id="_MzT_0Jf0Ed-AUbx4tgitVg" name="title" defaultValue="" leading="true"/>
+      <fields xmi:type="modulestudio:IntegerField" xmi:id="_PdOBUJf0Ed-AUbx4tgitVg" name="persons" defaultValue="4"/>
+    </entities>
+    <entities xmi:type="modulestudio:Entity" xmi:id="_TR0UUJf0Ed-AUbx4tgitVg" name="ingredientType" nameMultiple="ingredientTypes" incoming="_asZHEJ2oEd-Kb4K-RqBN4w">
+      <fields xmi:type="modulestudio:StringField" xmi:id="_VtE10Jf0Ed-AUbx4tgitVg" name="title" defaultValue="" leading="true"/>
+    </entities>
+    <entities xmi:type="modulestudio:Entity" xmi:id="_qAg50Jf0Ed-AUbx4tgitVg" name="recipeType" nameMultiple="recipeTypes" incoming="_AxY6gJf-Ed-5YM_ljg4dHA _YigpcJ2oEd-Kb4K-RqBN4w">
+      <fields xmi:type="modulestudio:StringField" xmi:id="_ukfbUJf0Ed-AUbx4tgitVg" name="title" defaultValue="" leading="true"/>
+    </entities>
+    <entities xmi:type="modulestudio:Entity" xmi:id="_xvND0Jf0Ed-AUbx4tgitVg" name="action" nameMultiple="actions" incoming="_hZlX0J2oEd-Kb4K-RqBN4w">
+      <fields xmi:type="modulestudio:StringField" xmi:id="_0h9fUJf0Ed-AUbx4tgitVg" name="title" defaultValue="" leading="true"/>
+      <fields xmi:type="modulestudio:IntegerField" xmi:id="_B6NKYJ2pEd-Kb4K-RqBN4w" name="requiredTime" defaultValue="0" length="4"/>
+    </entities>
+    <entities xmi:type="modulestudio:Entity" xmi:id="_7vv7sJf0Ed-AUbx4tgitVg" name="recipeAction" nameMultiple="recipeActions" incoming="_vt158Jf9Ed-5YM_ljg4dHA _JIH78Jf-Ed-5YM_ljg4dHA" outgoing="_hZlX0J2oEd-Kb4K-RqBN4w">
+      <fields xmi:type="modulestudio:IntegerField" xmi:id="_-xl8EJf0Ed-AUbx4tgitVg" name="number" defaultValue="1" leading="true"/>
+    </entities>
+    <entities xmi:type="modulestudio:Entity" xmi:id="_DgSf0Jf1Ed-AUbx4tgitVg" name="menueRecipe" nameMultiple="menueRecipes" incoming="_QZ-Y8Jf-Ed-5YM_ljg4dHA _bUSxcJf-Ed-5YM_ljg4dHA">
+      <fields xmi:type="modulestudio:IntegerField" xmi:id="_lveeQZf7Ed-qHvqgTmy0Zw" name="number" defaultValue="1" leading="true"/>
+    </entities>
+  </models>
+  <controllers xmi:type="modulestudio:Controllers" xmi:id="_HhNCcpfzEd-AUbx4tgitVg" name="Controller" modelContext="_HhNCcZfzEd-AUbx4tgitVg" processViews="_HhNCc5fzEd-AUbx4tgitVg">
+    <controllers xmi:type="modulestudio:AdminController" xmi:id="_RwKw0JfzEd-AUbx4tgitVg" name="Admin">
+      <actions xmi:type="modulestudio:MainAction" xmi:id="_SNKO0JfzEd-AUbx4tgitVg" name="Main"/>
+      <actions xmi:type="modulestudio:ViewAction" xmi:id="_Sj5T0JfzEd-AUbx4tgitVg" name="View"/>
+      <actions xmi:type="modulestudio:DisplayAction" xmi:id="_S9OZ0JfzEd-AUbx4tgitVg" name="Display"/>
+      <actions xmi:type="modulestudio:EditAction" xmi:id="_TjwOUJfzEd-AUbx4tgitVg" name="Edit"/>
+      <actions xmi:type="modulestudio:CustomAction" xmi:id="_UlYDYJfzEd-AUbx4tgitVg" name="Report"/>
+    </controllers>
+  </controllers>
+  <views xmi:type="modulestudio:Views" xmi:id="_HhNCc5fzEd-AUbx4tgitVg" name="View" controller="_HhNCcpfzEd-AUbx4tgitVg"/>
+</modulestudio:Application>

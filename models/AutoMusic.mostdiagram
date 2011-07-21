@@ -63,6 +63,18 @@
       <element xmi:type="modulestudio:AdminController" href="AutoMusic.mostapp#_J4l38JfwEd-gXNVVen1FFg"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_J7OVMZfwEd-gXNVVen1FFg" x="48" y="108" width="349" height="145"/>
     </children>
+    <children xmi:type="notation:Shape" xmi:id="_KuOG4LO9EeCAgM7sSWFolQ" type="2204" fontColor="4210752" fontName="Lucida Grande" fontHeight="12" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_KuOt8LO9EeCAgM7sSWFolQ" type="5213"/>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_KuPVALO9EeCAgM7sSWFolQ" type="7204">
+        <children xmi:type="notation:Shape" xmi:id="_LLAJgLO9EeCAgM7sSWFolQ" type="3201" fontColor="4210752" fontName="Lucida Grande" fontHeight="12" lineColor="0">
+          <children xmi:type="notation:DecorationNode" xmi:id="_LLBXoLO9EeCAgM7sSWFolQ" type="5201"/>
+          <element xmi:type="modulestudio:MainAction" href="AutoMusic.mostapp#_LK6C4LO9EeCAgM7sSWFolQ"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LLAJgbO9EeCAgM7sSWFolQ" x="12" y="3"/>
+        </children>
+      </children>
+      <element xmi:type="modulestudio:AjaxController" href="AutoMusic.mostapp#_KuAEcLO9EeCAgM7sSWFolQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KuOG4bO9EeCAgM7sSWFolQ" x="55" y="281" width="126" height="92"/>
+    </children>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_Iqr6YZfwEd-gXNVVen1FFg"/>
     <element xmi:type="modulestudio:Controllers" href="AutoMusic.mostapp#_95gPwpfvEd-gXNVVen1FFg"/>
   </notation:Diagram>
@@ -70,21 +82,21 @@
     <children xmi:type="notation:Shape" xmi:id="_Q3otsJfwEd-gXNVVen1FFg" type="2101" fontColor="4210752" fontName="Lucida Grande" fontHeight="12" lineColor="0">
       <children xmi:type="notation:DecorationNode" xmi:id="_Q3pUwJfwEd-gXNVVen1FFg" type="5102"/>
       <children xmi:type="notation:BasicCompartment" xmi:id="_Q3qi4JfwEd-gXNVVen1FFg" type="7101">
-        <children xmi:type="notation:Node" xmi:id="_UwufIJfwEd-gXNVVen1FFg" type="3105">
-          <element xmi:type="modulestudio:StringField" href="AutoMusic.mostapp#_UwtRAJfwEd-gXNVVen1FFg"/>
-          <layoutConstraint xmi:type="notation:Location" xmi:id="_UwufIZfwEd-gXNVVen1FFg"/>
-        </children>
-        <children xmi:type="notation:Node" xmi:id="_XH5x4JfwEd-gXNVVen1FFg" type="3105">
-          <element xmi:type="modulestudio:StringField" href="AutoMusic.mostapp#_XH5K0JfwEd-gXNVVen1FFg"/>
-          <layoutConstraint xmi:type="notation:Location" xmi:id="_XH5x4ZfwEd-gXNVVen1FFg"/>
-        </children>
-        <children xmi:type="notation:Node" xmi:id="_bR9-kJfwEd-gXNVVen1FFg" type="3117">
-          <element xmi:type="modulestudio:DateField" href="AutoMusic.mostapp#_bR7iUJfwEd-gXNVVen1FFg"/>
-          <layoutConstraint xmi:type="notation:Location" xmi:id="_bR9-kZfwEd-gXNVVen1FFg"/>
-        </children>
         <children xmi:type="notation:Node" xmi:id="_eOFxcJfwEd-gXNVVen1FFg" type="3101">
           <element xmi:type="modulestudio:BooleanField" href="AutoMusic.mostapp#_eOFKYJfwEd-gXNVVen1FFg"/>
           <layoutConstraint xmi:type="notation:Location" xmi:id="_eOFxcZfwEd-gXNVVen1FFg"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_NFanwLO9EeCAgM7sSWFolQ" type="3104">
+          <element xmi:type="modulestudio:StringField" href="AutoMusic.mostapp#_UwtRAJfwEd-gXNVVen1FFg"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_NFanwbO9EeCAgM7sSWFolQ"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_NFanwrO9EeCAgM7sSWFolQ" type="3104">
+          <element xmi:type="modulestudio:StringField" href="AutoMusic.mostapp#_XH5K0JfwEd-gXNVVen1FFg"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_NFanw7O9EeCAgM7sSWFolQ"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_NFbO0LO9EeCAgM7sSWFolQ" type="3113">
+          <element xmi:type="modulestudio:DateField" href="AutoMusic.mostapp#_bR7iUJfwEd-gXNVVen1FFg"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_NFbO0bO9EeCAgM7sSWFolQ"/>
         </children>
         <styles xmi:type="notation:SortingStyle" xmi:id="_Q3qi4ZfwEd-gXNVVen1FFg"/>
         <styles xmi:type="notation:FilteringStyle" xmi:id="_Q3qi4pfwEd-gXNVVen1FFg"/>
@@ -96,10 +108,6 @@
     <children xmi:type="notation:Shape" xmi:id="_iZpL4JfwEd-gXNVVen1FFg" type="2101" fontColor="4210752" fontName="Lucida Grande" fontHeight="12" lineColor="0">
       <children xmi:type="notation:DecorationNode" xmi:id="_iZpy8JfwEd-gXNVVen1FFg" type="5102"/>
       <children xmi:type="notation:BasicCompartment" xmi:id="_iZpy8ZfwEd-gXNVVen1FFg" type="7101">
-        <children xmi:type="notation:Node" xmi:id="_lJp1YJfwEd-gXNVVen1FFg" type="3105">
-          <element xmi:type="modulestudio:StringField" href="AutoMusic.mostapp#_lJpOUJfwEd-gXNVVen1FFg"/>
-          <layoutConstraint xmi:type="notation:Location" xmi:id="_lJp1YZfwEd-gXNVVen1FFg"/>
-        </children>
         <styles xmi:type="notation:SortingStyle" xmi:id="_iZpy8pfwEd-gXNVVen1FFg"/>
         <styles xmi:type="notation:FilteringStyle" xmi:id="_iZpy85fwEd-gXNVVen1FFg"/>
       </children>
@@ -110,13 +118,13 @@
     <children xmi:type="notation:Shape" xmi:id="_ouU2AJfwEd-gXNVVen1FFg" type="2101" fontColor="4210752" fontName="Lucida Grande" fontHeight="12" lineColor="0">
       <children xmi:type="notation:DecorationNode" xmi:id="_ouU2ApfwEd-gXNVVen1FFg" type="5102"/>
       <children xmi:type="notation:BasicCompartment" xmi:id="_ouU2A5fwEd-gXNVVen1FFg" type="7101">
-        <children xmi:type="notation:Node" xmi:id="_rn2n4JfwEd-gXNVVen1FFg" type="3105">
+        <children xmi:type="notation:Node" xmi:id="_NF3TsLO9EeCAgM7sSWFolQ" type="3104">
           <element xmi:type="modulestudio:StringField" href="AutoMusic.mostapp#_rn2A0JfwEd-gXNVVen1FFg"/>
-          <layoutConstraint xmi:type="notation:Location" xmi:id="_rn2n4ZfwEd-gXNVVen1FFg"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_NF3TsbO9EeCAgM7sSWFolQ"/>
         </children>
-        <children xmi:type="notation:Node" xmi:id="_u5W04JfwEd-gXNVVen1FFg" type="3105">
+        <children xmi:type="notation:Node" xmi:id="_NF36wLO9EeCAgM7sSWFolQ" type="3104">
           <element xmi:type="modulestudio:StringField" href="AutoMusic.mostapp#_u5WN0JfwEd-gXNVVen1FFg"/>
-          <layoutConstraint xmi:type="notation:Location" xmi:id="_u5W04ZfwEd-gXNVVen1FFg"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_NF36wbO9EeCAgM7sSWFolQ"/>
         </children>
         <styles xmi:type="notation:SortingStyle" xmi:id="_ouU2BJfwEd-gXNVVen1FFg"/>
         <styles xmi:type="notation:FilteringStyle" xmi:id="_ouU2BZfwEd-gXNVVen1FFg"/>

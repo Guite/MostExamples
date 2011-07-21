@@ -8,12 +8,12 @@
       <vars xmi:type="modulestudio:FilePathVar" xmi:id="_LHT2cJTSEd-fHM6rI5HHsA" name="introImageFilePath" value="test.jpg"/>
       <vars xmi:type="modulestudio:ListVar" xmi:id="_YEVtkJTSEd-fHM6rI5HHsA" name="singleList" value="no">
         <items xmi:type="modulestudio:ListVarItem" xmi:id="_dD4JsJTSEd-fHM6rI5HHsA" name="yes"/>
-        <items xmi:type="modulestudio:ListVarItem" xmi:id="_d7KXAJTSEd-fHM6rI5HHsA" name="no" isDefault="true"/>
+        <items xmi:type="modulestudio:ListVarItem" xmi:id="_d7KXAJTSEd-fHM6rI5HHsA" name="no" default="true"/>
       </vars>
       <vars xmi:type="modulestudio:ListVar" xmi:id="_hQKj8JTSEd-fHM6rI5HHsA" name="multiList" value="one, three" multiple="true">
         <items xmi:type="modulestudio:ListVarItem" xmi:id="_kZDAcJTSEd-fHM6rI5HHsA" name="one"/>
-        <items xmi:type="modulestudio:ListVarItem" xmi:id="_lXuPMJTSEd-fHM6rI5HHsA" name="two" isDefault="true"/>
-        <items xmi:type="modulestudio:ListVarItem" xmi:id="_l_bIYJTSEd-fHM6rI5HHsA" name="three" isDefault="true"/>
+        <items xmi:type="modulestudio:ListVarItem" xmi:id="_lXuPMJTSEd-fHM6rI5HHsA" name="two" default="true"/>
+        <items xmi:type="modulestudio:ListVarItem" xmi:id="_l_bIYJTSEd-fHM6rI5HHsA" name="three" default="true"/>
       </vars>
     </variables>
     <relations xmi:type="modulestudio:OneToOneRelationship" xmi:id="_JSjpYJTUEd-g4vb_ew91mg" target="_f577YJTTEd-g4vb_ew91mg" source="_3zaR8JTTEd-g4vb_ew91mg" sourceAlias="menu" targetAlias="cake"/>
@@ -31,45 +31,40 @@
     </entities>
     <entities xmi:type="modulestudio:Entity" xmi:id="_f577YJTTEd-g4vb_ew91mg" name="cake" nameMultiple="cakes" incoming="_JSjpYJTUEd-g4vb_ew91mg" outgoing="_94ZaQJ2GEd-jY_IsyBsNeg">
       <fields xmi:type="modulestudio:StringField" xmi:id="_h6jIQJTTEd-g4vb_ew91mg" name="name" defaultValue="" leading="true"/>
-      <fields xmi:type="modulestudio:BooleanField" xmi:id="_khQEwJTTEd-g4vb_ew91mg" name="hasChocolate" alias="hasChocolateOnboard" defaultValue="true"/>
-      <fields xmi:type="modulestudio:TimestampField" xmi:id="_pyyP0JTTEd-g4vb_ew91mg" name="cakeTimestamp" defaultValue="" mandatory="false"/>
+      <fields xmi:type="modulestudio:BooleanField" xmi:id="_khQEwJTTEd-g4vb_ew91mg" name="hasChocolate" defaultValue="true"/>
+      <fields xmi:type="modulestudio:DatetimeField" xmi:id="_pyyP0JTTEd-g4vb_ew91mg" name="cakeDatetime" defaultValue="" mandatory="false"/>
       <fields xmi:type="modulestudio:TextField" xmi:id="_wCBl0JwREd-Vz6E6YLq7ow" name="recipeText" defaultValue="Enter your recipe instruction here"/>
     </entities>
     <entities xmi:type="modulestudio:Entity" xmi:id="_3zaR8JTTEd-g4vb_ew91mg" name="menu" nameMultiple="menus" outgoing="_JSjpYJTUEd-g4vb_ew91mg _Z7LogJTUEd-g4vb_ew91mg">
       <fields xmi:type="modulestudio:StringField" xmi:id="_7NS-4JTTEd-g4vb_ew91mg" name="title" defaultValue="" leading="true"/>
-      <fields xmi:type="modulestudio:DateField" xmi:id="_-AgGUJTTEd-g4vb_ew91mg" name="date" defaultValue=""/>
+      <fields xmi:type="modulestudio:DateField" xmi:id="_-AgGUJTTEd-g4vb_ew91mg" name="publishDate" defaultValue=""/>
       <fields xmi:type="modulestudio:DecimalField" xmi:id="_AceZgJTUEd-g4vb_ew91mg" name="price" defaultValue="0.00"/>
       <fields xmi:type="modulestudio:FloatField" xmi:id="_CYASEJTUEd-g4vb_ew91mg" name="amount" defaultValue="0.00"/>
     </entities>
-    <entities xmi:type="modulestudio:Entity" xmi:id="_hEOkYZqeEd-WTPChdfKq6w" name="test" nameMultiple="tests" incoming="_Vs45ELXDEd-T6-Zno05wXA" versionable="true" timestampable="true" sluggable="true" sluggableFieldName="mySlugField" sluggableFieldAlias="mySluggableField" sluggableFields="intTest, stringTest" sluggableCanUpdate="true" i18nFields="stringTest, clobTest" nestedSetRootField="" searchable="true" searchableFields="stringTest, stringTestColour" softDelete="true">
+    <entities xmi:type="modulestudio:Entity" xmi:id="_hEOkYZqeEd-WTPChdfKq6w" name="test" nameMultiple="tests" incoming="_Vs45ELXDEd-T6-Zno05wXA">
       <fields xmi:type="modulestudio:BooleanField" xmi:id="_iogakJqeEd-WTPChdfKq6w" name="boolTest" defaultValue="true"/>
       <fields xmi:type="modulestudio:IntegerField" xmi:id="_l_yfcJqeEd-WTPChdfKq6w" name="intTest" defaultValue="0"/>
-      <fields xmi:type="modulestudio:IntegerField" xmi:id="_RtRzEJqfEd-WTPChdfKq6w" name="intTestUnique" alias="" defaultValue="0" mandatory="false" unique="true" length="4" minValue="-5" maxValue="50"/>
+      <fields xmi:type="modulestudio:IntegerField" xmi:id="_RtRzEJqfEd-WTPChdfKq6w" name="intTestUnique" defaultValue="0" mandatory="false" unique="true" length="4" minValue="-5" maxValue="50"/>
       <fields xmi:type="modulestudio:IntegerField" xmi:id="_Jl0jwJqfEd-WTPChdfKq6w" name="intTestWithRange" defaultValue="5" minValue="3" maxValue="10"/>
-      <fields xmi:type="modulestudio:IntegerField" xmi:id="_Xy8w0JqfEd-WTPChdfKq6w" name="intTestCreditCard" defaultValue="0" mandatory="false" length="16" creditCard="true"/>
-      <fields xmi:type="modulestudio:IntegerField" xmi:id="_bYjlkJqfEd-WTPChdfKq6w" name="intTestUnsigned" defaultValue="10" notnull="true" unsigned="true"/>
       <fields xmi:type="modulestudio:FloatField" xmi:id="_nuuGcJqeEd-WTPChdfKq6w" name="floatTest" defaultValue="0.00"/>
       <fields xmi:type="modulestudio:DecimalField" xmi:id="_wJcQAJqeEd-WTPChdfKq6w" name="decimalTest" defaultValue="0.000" scale="3"/>
       <fields xmi:type="modulestudio:StringField" xmi:id="_xxhoIJqeEd-WTPChdfKq6w" name="stringTest" defaultValue="This is a default value" leading="true"/>
-      <fields xmi:type="modulestudio:StringField" xmi:id="_tB920ZqgEd-tq_Hr15WCOg" name="stringTestColour" alias="myColour" defaultValue="#000000" nospace="true" length="7" htmlcolor="true"/>
-      <fields xmi:type="modulestudio:StringField" xmi:id="_wYtJIJqgEd-tq_Hr15WCOg" name="stringTestIpAddress" defaultValue="" mandatory="false" length="15" ipaddress="true"/>
-      <fields xmi:type="modulestudio:StringField" xmi:id="_0B7SkJqgEd-tq_Hr15WCOg" name="stringTestCountry" alias="myCountry" defaultValue="DE" fixed="true" length="2" country="true"/>
+      <fields xmi:type="modulestudio:StringField" xmi:id="_tB920ZqgEd-tq_Hr15WCOg" name="stringTestColour" defaultValue="#000000" nospace="true" length="7" htmlcolour="true"/>
+      <fields xmi:type="modulestudio:StringField" xmi:id="_0B7SkJqgEd-tq_Hr15WCOg" name="stringTestCountry" defaultValue="DE" fixed="true" nospace="true" country="true" length="5"/>
       <fields xmi:type="modulestudio:TextField" xmi:id="_Yjhb4ZrQEd-Rxpyt0TyUqg" name="textTest" defaultValue="" mandatory="false"/>
       <fields xmi:type="modulestudio:EmailField" xmi:id="_3A0-kJqeEd-WTPChdfKq6w" name="emailTest" defaultValue="test@example.com" nospace="true"/>
       <fields xmi:type="modulestudio:UrlField" xmi:id="_41638JqeEd-WTPChdfKq6w" name="urlTest" defaultValue="http://www.example.com"/>
       <fields xmi:type="modulestudio:UploadField" xmi:id="_6ww0AJqeEd-WTPChdfKq6w" name="uploadTest" mandatory="false"/>
       <fields xmi:type="modulestudio:UserField" xmi:id="_8xeukJqeEd-WTPChdfKq6w" name="userTest"/>
-      <fields xmi:type="modulestudio:ArrayField" xmi:id="_-c5ukJqeEd-WTPChdfKq6w" name="arrayTest" defaultValue="" mandatory="false" length="800"/>
-      <fields xmi:type="modulestudio:EnumField" xmi:id="__iF1AJqeEd-WTPChdfKq6w" name="enumTest" defaultValue="" mandatory="false" length="300"/>
+      <fields xmi:type="modulestudio:ArrayField" xmi:id="_-c5ukJqeEd-WTPChdfKq6w" name="arrayTest" defaultValue="" mandatory="false"/>
       <fields xmi:type="modulestudio:ObjectField" xmi:id="_BEs3QJqfEd-WTPChdfKq6w" name="objectTest" mandatory="false"/>
-      <fields xmi:type="modulestudio:BlobField" xmi:id="_COw2oJqfEd-WTPChdfKq6w" name="blobTest" defaultValue="" mandatory="false"/>
-      <fields xmi:type="modulestudio:ClobField" xmi:id="_DAB7gJqfEd-WTPChdfKq6w" name="clobTest" defaultValue="" mandatory="false"/>
-      <fields xmi:type="modulestudio:TimestampField" xmi:id="_EMLlkJqfEd-WTPChdfKq6w" name="timestampTest" defaultValue=""/>
-      <fields xmi:type="modulestudio:TimestampField" xmi:id="__R1gkJqgEd-tq_Hr15WCOg" name="timestampTestPast" defaultValue="" mandatory="false" past="true"/>
-      <fields xmi:type="modulestudio:TimestampField" xmi:id="_CH1dUJqhEd-tq_Hr15WCOg" name="timestampTestFuture" defaultValue="" mandatory="false" future="true"/>
+      <fields xmi:type="modulestudio:DatetimeField" xmi:id="_EMLlkJqfEd-WTPChdfKq6w" name="datetimeTest" defaultValue=""/>
+      <fields xmi:type="modulestudio:DatetimeField" xmi:id="__R1gkJqgEd-tq_Hr15WCOg" name="datetimeTestPast" defaultValue="" mandatory="false" past="true"/>
+      <fields xmi:type="modulestudio:DatetimeField" xmi:id="_CH1dUJqhEd-tq_Hr15WCOg" name="datetimeTestFuture" defaultValue="" mandatory="false" future="true"/>
       <fields xmi:type="modulestudio:DateField" xmi:id="_FaZsMJqfEd-WTPChdfKq6w" name="dateTest" defaultValue=""/>
       <fields xmi:type="modulestudio:TimeField" xmi:id="_GTFAoJqfEd-WTPChdfKq6w" name="timeTest" defaultValue=""/>
-      <fields xmi:type="modulestudio:GzipField" xmi:id="_IInl8JqfEd-WTPChdfKq6w" name="gzipTest" alias="myPackedField" defaultValue="" mandatory="false"/>
+      <fields xmi:type="modulestudio:StringField" xmi:id="_VZQwcLPBEeCUrdX8oekD5w" name="myLanguage" defaultValue="de" mandatory="false" nospace="true" language="true" length="5"/>
+      <fields xmi:type="modulestudio:StringField" xmi:id="_ZAtYQLPBEeCUrdX8oekD5w" name="myPassword" defaultValue="" mandatory="false" nospace="true" minLength="5" length="20" password="true"/>
       <indexes xmi:type="modulestudio:EntityIndex" xmi:id="_VlGuUJqhEd-tq_Hr15WCOg" name="myIndex">
         <items xmi:type="modulestudio:EntityIndexItem" xmi:id="_Xm5m8JqhEd-tq_Hr15WCOg" name="intTest"/>
         <items xmi:type="modulestudio:EntityIndexItem" xmi:id="_YulAsJqhEd-tq_Hr15WCOg" name="emailTest"/>
@@ -79,22 +74,22 @@
       </indexes>
     </entities>
     <entities xmi:type="modulestudio:Entity" xmi:id="_n8nRIJqhEd-tq_Hr15WCOg" name="myUser" nameMultiple="myUsers" incoming="_7JRTQJqhEd-tq_Hr15WCOg _4NELYJqiEd-CGZcE5rgdSw" outgoing="_4NELYJqiEd-CGZcE5rgdSw">
-      <fields xmi:type="modulestudio:UserField" xmi:id="_poqjQJqhEd-tq_Hr15WCOg" name="user" alias="myUser" leading="true" unique="true"/>
+      <fields xmi:type="modulestudio:UserField" xmi:id="_poqjQJqhEd-tq_Hr15WCOg" name="myUser" leading="true" unique="true"/>
       <fields xmi:type="modulestudio:TextField" xmi:id="_2DLP8JwREd-Vz6E6YLq7ow" name="description" defaultValue="" mandatory="false"/>
       <fields xmi:type="modulestudio:UploadField" xmi:id="_wAj5cJqhEd-tq_Hr15WCOg" name="profileImage" mandatory="false"/>
       <fields xmi:type="modulestudio:StringField" xmi:id="_L2YHcJwbEd-w3vZ9fSnfkA" name="columnType" defaultValue=""/>
-      <fields xmi:type="modulestudio:IntegerField" xmi:id="_Pef5wMLgEd-dVcLCHDefhQ" name="knownId" defaultValue="0" unsigned="true"/>
+      <fields xmi:type="modulestudio:IntegerField" xmi:id="_Pef5wMLgEd-dVcLCHDefhQ" name="knownId" defaultValue="0"/>
     </entities>
     <entities xmi:type="modulestudio:Entity" xmi:id="_x7euAJqhEd-tq_Hr15WCOg" name="mySpecialUser" nameMultiple="mySpecialUsers" outgoing="_7JRTQJqhEd-tq_Hr15WCOg">
       <fields xmi:type="modulestudio:EmailField" xmi:id="_4UxyYJqhEd-tq_Hr15WCOg" name="specialEmail" defaultValue="" leading="true"/>
-      <fields xmi:type="modulestudio:ArrayField" xmi:id="_1YTaMJqhEd-tq_Hr15WCOg" name="specialSettings" defaultValue="" length="20000"/>
+      <fields xmi:type="modulestudio:ArrayField" xmi:id="_1YTaMJqhEd-tq_Hr15WCOg" name="specialSettings" defaultValue=""/>
     </entities>
     <entities xmi:type="modulestudio:Entity" xmi:id="_B_aEoJqiEd-tq_Hr15WCOg" name="ingredient" nameMultiple="ingredients" incoming="_94ZaQJ2GEd-jY_IsyBsNeg">
       <fields xmi:type="modulestudio:StringField" xmi:id="_DQWvIJqiEd-tq_Hr15WCOg" name="name" defaultValue="" leading="true"/>
     </entities>
     <entities xmi:type="modulestudio:Entity" xmi:id="_y3IvoJ2vEd-HZtuvafHtHA" name="article" nameMultiple="articles" outgoing="_Vs45ELXDEd-T6-Zno05wXA">
       <fields xmi:type="modulestudio:StringField" xmi:id="_0rYUcJ2vEd-HZtuvafHtHA" name="title" defaultValue="" leading="true"/>
-      <fields xmi:type="modulestudio:IntegerField" xmi:id="_3jS8wJ2vEd-HZtuvafHtHA" name="checkthat" defaultValue="" length="16" creditCard="true"/>
+      <fields xmi:type="modulestudio:IntegerField" xmi:id="_3jS8wJ2vEd-HZtuvafHtHA" name="checkthat" defaultValue="" length="16"/>
       <fields xmi:type="modulestudio:TextField" xmi:id="_69BRoJ2vEd-HZtuvafHtHA" name="asdd" defaultValue=""/>
     </entities>
   </models>

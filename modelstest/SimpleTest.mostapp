@@ -6,7 +6,7 @@
     <relations xmi:type="modulestudio:ManyToManyRelationship" xmi:id="_FOzosMKKEd-s3tYSEIdf8w" target="_BKDZ0MKKEd-s3tYSEIdf8w" source="_7MsDgMKJEd-s3tYSEIdf8w" sourceAlias="orders" targetAlias="orderProducts" refClass="OrderProduct"/>
     <entities xmi:type="modulestudio:Entity" xmi:id="_p5s4wMKJEd-s3tYSEIdf8w" name="customer" documentation="This text is an example for documentation. It tells you something about the customers section." nameMultiple="customers" outgoing="_5ZJCQMKJEd-s3tYSEIdf8w __qQbAMKJEd-s3tYSEIdf8w" leading="true">
       <fields xmi:type="modulestudio:StringField" xmi:id="_r36R4MKJEd-s3tYSEIdf8w" name="name" defaultValue="" leading="true"/>
-      <fields xmi:type="modulestudio:UserField" xmi:id="_tr27wMKJEd-s3tYSEIdf8w" name="user"/>
+      <fields xmi:type="modulestudio:UserField" xmi:id="_tr27wMKJEd-s3tYSEIdf8w" name="customerUser"/>
       <fields xmi:type="modulestudio:UploadField" xmi:id="_usAxMMKJEd-s3tYSEIdf8w" name="photo" documentation="You can optionally upload a photo." mandatory="false"/>
       <fields xmi:type="modulestudio:DateField" xmi:id="_TyfdsMMQEd-e0qKtA0Gwcg" name="birthDay" defaultValue="" mandatory="false"/>
       <fields xmi:type="modulestudio:BooleanField" xmi:id="_CfZIwMMREd-e0qKtA0Gwcg" name="isSpecialSubscriber" defaultValue="false" mandatory="false"/>

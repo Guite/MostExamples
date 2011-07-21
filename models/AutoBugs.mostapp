@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <modulestudio:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:modulestudio="http://modulestudio.de/modulestudio" xmi:id="_9WJZQJZpEd-iX7WmsnB84w" name="AutoBugs" author="Axel Guckelsberger" email="info@modulestudio.de" url="http://modulestudio.de" prefix="bugs" modelPath="/Users/GuiteMedia/AutoBugs.mostapp">
-  <models xmi:type="modulestudio:Models" xmi:id="_9WJZQZZpEd-iX7WmsnB84w" name="Model">
-    <relations xmi:type="modulestudio:OneToManyRelationship" xmi:id="_yRTWUJZqEd-iX7WmsnB84w" target="_ghWiwJZqEd-iX7WmsnB84w" source="_W3lzMJZqEd-iX7WmsnB84w" sourceAlias="application" targetAlias="tickets"/>
+  <models xmi:type="modulestudio:Models" xmi:id="_9WJZQZZpEd-iX7WmsnB84w" name="Model" documentation="A simple bug and ticket management module.">
+    <relations xmi:type="modulestudio:OneToManyRelationship" xmi:id="_yRTWUJZqEd-iX7WmsnB84w" target="_ghWiwJZqEd-iX7WmsnB84w" source="_W3lzMJZqEd-iX7WmsnB84w" sourceAlias="application" targetAlias="tickets" cascade="REMOVE"/>
     <entities xmi:type="modulestudio:Entity" xmi:id="_W3lzMJZqEd-iX7WmsnB84w" name="application" nameMultiple="applications" outgoing="_yRTWUJZqEd-iX7WmsnB84w" leading="true">
       <fields xmi:type="modulestudio:StringField" xmi:id="_aKd5MJZqEd-iX7WmsnB84w" name="name" defaultValue="" leading="true"/>
       <fields xmi:type="modulestudio:BooleanField" xmi:id="_dVBwsJZqEd-iX7WmsnB84w" name="active" defaultValue="true"/>
     </entities>
     <entities xmi:type="modulestudio:Entity" xmi:id="_ghWiwJZqEd-iX7WmsnB84w" name="bugReport" nameMultiple="bugReports" incoming="_yRTWUJZqEd-iX7WmsnB84w">
       <fields xmi:type="modulestudio:StringField" xmi:id="_jAQ1MJZqEd-iX7WmsnB84w" name="title" defaultValue="" leading="true"/>
-      <fields xmi:type="modulestudio:TextField" xmi:id="_mGoJMJZqEd-iX7WmsnB84w" name="description" defaultValue="" length="3000"/>
-      <fields xmi:type="modulestudio:IntegerField" xmi:id="_n2jOsJZqEd-iX7WmsnB84w" name="priority" defaultValue="0" length="1"/>
+      <fields xmi:type="modulestudio:TextField" xmi:id="_mGoJMJZqEd-iX7WmsnB84w" name="description" defaultValue=""/>
+      <fields xmi:type="modulestudio:IntegerField" xmi:id="_n2jOsJZqEd-iX7WmsnB84w" name="priority" documentation="The priority of this ticket." defaultValue="0" length="1"/>
       <fields xmi:type="modulestudio:IntegerField" xmi:id="_qLoPsJZqEd-iX7WmsnB84w" name="status" defaultValue="0" length="1"/>
     </entities>
   </models>
@@ -19,7 +19,15 @@
       <actions xmi:type="modulestudio:ViewAction" xmi:id="_N5U3sJZqEd-iX7WmsnB84w" name="View"/>
       <actions xmi:type="modulestudio:DisplayAction" xmi:id="_OmMkwJZqEd-iX7WmsnB84w" name="Display"/>
       <actions xmi:type="modulestudio:EditAction" xmi:id="_PDfkwJZqEd-iX7WmsnB84w" name="Edit"/>
-      <actions xmi:type="modulestudio:DeleteAction" xmi:id="_PevWUJZqEd-iX7WmsnB84w" name="Delete"/>
+    </controllers>
+    <controllers xmi:type="modulestudio:AdminController" xmi:id="_2B-TkLO3EeCDJbzAMYiC2A" name="Admin">
+      <actions xmi:type="modulestudio:MainAction" xmi:id="_3OiNULO3EeCDJbzAMYiC2A" name="Main"/>
+      <actions xmi:type="modulestudio:ViewAction" xmi:id="_3tQJoLO3EeCDJbzAMYiC2A" name="View"/>
+      <actions xmi:type="modulestudio:DisplayAction" xmi:id="_4VU2QLO3EeCDJbzAMYiC2A" name="Display"/>
+      <actions xmi:type="modulestudio:EditAction" xmi:id="_43l10LO3EeCDJbzAMYiC2A" name="Edit"/>
+    </controllers>
+    <controllers xmi:type="modulestudio:AjaxController" xmi:id="_8F_rgLO3EeCDJbzAMYiC2A" name="Ajax">
+      <actions xmi:type="modulestudio:MainAction" xmi:id="_9wmzMLO3EeCDJbzAMYiC2A" name="Main"/>
     </controllers>
   </controllers>
   <views xmi:type="modulestudio:Views" xmi:id="_9WJZQ5ZpEd-iX7WmsnB84w" name="View" controller="_9WJZQpZpEd-iX7WmsnB84w"/>

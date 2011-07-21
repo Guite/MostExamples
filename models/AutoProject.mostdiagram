@@ -63,6 +63,18 @@
       <element xmi:type="modulestudio:AdminController" href="AutoProject.mostapp#_-g9mcJfxEd-AUbx4tgitVg"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-jq8MZfxEd-AUbx4tgitVg" x="60" y="84" width="325" height="169"/>
     </children>
+    <children xmi:type="notation:Shape" xmi:id="_X9NQsLO9EeCAgM7sSWFolQ" type="2204" fontColor="4210752" fontName="Lucida Grande" fontHeight="12" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_X9N3wLO9EeCAgM7sSWFolQ" type="5213"/>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_X9Oe0LO9EeCAgM7sSWFolQ" type="7204">
+        <children xmi:type="notation:Shape" xmi:id="_YV6EkLO9EeCAgM7sSWFolQ" type="3201" fontColor="4210752" fontName="Lucida Grande" fontHeight="12" lineColor="0">
+          <children xmi:type="notation:DecorationNode" xmi:id="_YV-9ELO9EeCAgM7sSWFolQ" type="5201"/>
+          <element xmi:type="modulestudio:MainAction" href="AutoProject.mostapp#_YV3oULO9EeCAgM7sSWFolQ"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YV6EkbO9EeCAgM7sSWFolQ" x="8"/>
+        </children>
+      </children>
+      <element xmi:type="modulestudio:AjaxController" href="AutoProject.mostapp#_X9IYMLO9EeCAgM7sSWFolQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_X9NQsbO9EeCAgM7sSWFolQ" x="63" y="287"/>
+    </children>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_9KfiwZfxEd-AUbx4tgitVg"/>
     <element xmi:type="modulestudio:Controllers" href="AutoProject.mostapp#_qcwRQZfxEd-AUbx4tgitVg"/>
   </notation:Diagram>
@@ -70,10 +82,6 @@
     <children xmi:type="notation:Shape" xmi:id="_Fd9NwJfyEd-AUbx4tgitVg" type="2101" fontColor="4210752" fontName="Lucida Grande" fontHeight="12" lineColor="0">
       <children xmi:type="notation:DecorationNode" xmi:id="_Fd900JfyEd-AUbx4tgitVg" type="5102"/>
       <children xmi:type="notation:BasicCompartment" xmi:id="_Fd_C8JfyEd-AUbx4tgitVg" type="7101">
-        <children xmi:type="notation:Node" xmi:id="_IngYoJfyEd-AUbx4tgitVg" type="3105">
-          <element xmi:type="modulestudio:StringField" href="AutoProject.mostapp#_InfKgJfyEd-AUbx4tgitVg"/>
-          <layoutConstraint xmi:type="notation:Location" xmi:id="_IngYoZfyEd-AUbx4tgitVg"/>
-        </children>
         <children xmi:type="notation:Node" xmi:id="_SxC0cJfyEd-AUbx4tgitVg" type="3117">
           <element xmi:type="modulestudio:DateField" href="AutoProject.mostapp#_SxCNYJfyEd-AUbx4tgitVg"/>
           <layoutConstraint xmi:type="notation:Location" xmi:id="_SxC0cZfyEd-AUbx4tgitVg"/>
@@ -96,14 +104,6 @@
     <children xmi:type="notation:Shape" xmi:id="_Z45A4JfyEd-AUbx4tgitVg" type="2101" fontColor="4210752" fontName="Lucida Grande" fontHeight="12" lineColor="0">
       <children xmi:type="notation:DecorationNode" xmi:id="_Z45A4pfyEd-AUbx4tgitVg" type="5102"/>
       <children xmi:type="notation:BasicCompartment" xmi:id="_Z45n8JfyEd-AUbx4tgitVg" type="7101">
-        <children xmi:type="notation:Node" xmi:id="_cjBr4JfyEd-AUbx4tgitVg" type="3105">
-          <element xmi:type="modulestudio:StringField" href="AutoProject.mostapp#_cjBE0JfyEd-AUbx4tgitVg"/>
-          <layoutConstraint xmi:type="notation:Location" xmi:id="_cjBr4ZfyEd-AUbx4tgitVg"/>
-        </children>
-        <children xmi:type="notation:Node" xmi:id="_N11EUJ2oEd-Kb4K-RqBN4w" type="3110">
-          <element xmi:type="modulestudio:UserField" href="AutoProject.mostapp#_N1z2MJ2oEd-Kb4K-RqBN4w"/>
-          <layoutConstraint xmi:type="notation:Location" xmi:id="_N11EUZ2oEd-Kb4K-RqBN4w"/>
-        </children>
         <children xmi:type="notation:Node" xmi:id="_huhgYJfyEd-AUbx4tgitVg" type="3101">
           <element xmi:type="modulestudio:BooleanField" href="AutoProject.mostapp#_hug5UJfyEd-AUbx4tgitVg"/>
           <layoutConstraint xmi:type="notation:Location" xmi:id="_huhgYZfyEd-AUbx4tgitVg"/>
@@ -113,40 +113,36 @@
       </children>
       <children xmi:type="notation:BasicCompartment" xmi:id="_Z45n85fyEd-AUbx4tgitVg" type="7102"/>
       <element xmi:type="modulestudio:Entity" href="AutoProject.mostapp#_Z44Z0JfyEd-AUbx4tgitVg"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Z45A4ZfyEd-AUbx4tgitVg" x="60" y="240"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Z45A4ZfyEd-AUbx4tgitVg" x="504" y="24"/>
     </children>
     <children xmi:type="notation:Shape" xmi:id="_mdzS8JfyEd-AUbx4tgitVg" type="2101" fontColor="4210752" fontName="Lucida Grande" fontHeight="12" lineColor="0">
       <children xmi:type="notation:DecorationNode" xmi:id="_mdz6AJfyEd-AUbx4tgitVg" type="5102"/>
       <children xmi:type="notation:BasicCompartment" xmi:id="_mdz6AZfyEd-AUbx4tgitVg" type="7101">
-        <children xmi:type="notation:Node" xmi:id="_ofy_4JfyEd-AUbx4tgitVg" type="3105">
-          <element xmi:type="modulestudio:StringField" href="AutoProject.mostapp#_ofyY0JfyEd-AUbx4tgitVg"/>
-          <layoutConstraint xmi:type="notation:Location" xmi:id="_ofy_4ZfyEd-AUbx4tgitVg"/>
-        </children>
         <styles xmi:type="notation:SortingStyle" xmi:id="_mdz6ApfyEd-AUbx4tgitVg"/>
         <styles xmi:type="notation:FilteringStyle" xmi:id="_mdz6A5fyEd-AUbx4tgitVg"/>
       </children>
       <children xmi:type="notation:BasicCompartment" xmi:id="_mdz6BJfyEd-AUbx4tgitVg" type="7102"/>
       <element xmi:type="modulestudio:Entity" href="AutoProject.mostapp#_mdyE0JfyEd-AUbx4tgitVg"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mdzS8ZfyEd-AUbx4tgitVg" x="60" y="420"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mdzS8ZfyEd-AUbx4tgitVg" x="504" y="228"/>
     </children>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_EcV_wZfyEd-AUbx4tgitVg"/>
     <element xmi:type="modulestudio:Models" href="AutoProject.mostapp#_qcwRQJfxEd-AUbx4tgitVg"/>
     <edges xmi:type="notation:Connector" xmi:id="_wmQJoJfyEd-AUbx4tgitVg" type="4102" source="_Fd9NwJfyEd-AUbx4tgitVg" target="_Z45A4JfyEd-AUbx4tgitVg" routing="Rectilinear" lineColor="0">
       <children xmi:type="notation:DecorationNode" xmi:id="_wmQwsJfyEd-AUbx4tgitVg" type="6102">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_wmQwsZfyEd-AUbx4tgitVg" y="-106"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_wmQwsZfyEd-AUbx4tgitVg" x="-6" y="21"/>
       </children>
       <styles xmi:type="notation:FontStyle" xmi:id="_wmQJoZfyEd-AUbx4tgitVg" fontColor="4210752" fontName="Lucida Grande" fontHeight="12"/>
       <element xmi:type="modulestudio:OneToManyRelationship" href="AutoProject.mostapp#_wmLRIJfyEd-AUbx4tgitVg"/>
-      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_wmQJopfyEd-AUbx4tgitVg" points="[-101, 0, -60, -135]$[-101, 79, -60, -56]"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_wmQJopfyEd-AUbx4tgitVg" points="[75, -161, -328, -32]$[283, -161, -120, -32]"/>
       <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_wmZTkJfyEd-AUbx4tgitVg" id="(0.6883720930232559,1.0)"/>
     </edges>
     <edges xmi:type="notation:Connector" xmi:id="_KhAdkJ2oEd-Kb4K-RqBN4w" type="4101" source="_Z45A4JfyEd-AUbx4tgitVg" target="_mdzS8JfyEd-AUbx4tgitVg" routing="Rectilinear" lineColor="0">
       <children xmi:type="notation:DecorationNode" xmi:id="_KhBEoJ2oEd-Kb4K-RqBN4w" type="6101">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_KhBEoZ2oEd-Kb4K-RqBN4w" x="-5" y="-108"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_KhBEoZ2oEd-Kb4K-RqBN4w" x="-5" y="-96"/>
       </children>
       <styles xmi:type="notation:FontStyle" xmi:id="_KhAdkZ2oEd-Kb4K-RqBN4w" fontColor="4210752" fontName="Lucida Grande" fontHeight="12"/>
       <element xmi:type="modulestudio:OneToOneRelationship" href="AutoProject.mostapp#_Kg_PcJ2oEd-Kb4K-RqBN4w"/>
-      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_KhAdkp2oEd-Kb4K-RqBN4w" points="[-24, 0, -21, -83]$[-24, 68, -21, -15]"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_KhAdkp2oEd-Kb4K-RqBN4w" points="[-48, 0, -45, -107]$[-48, 92, -45, -15]"/>
       <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_KhC50J2oEd-Kb4K-RqBN4w" id="(0.35,1.0)"/>
       <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_KhC50Z2oEd-Kb4K-RqBN4w" id="(0.35064935064935066,0.234375)"/>
     </edges>

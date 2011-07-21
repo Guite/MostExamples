@@ -10,11 +10,11 @@
       <fields xmi:type="modulestudio:BooleanField" xmi:id="_J-1bQJZuEd-Cr6we_ykR9w" name="active" defaultValue="true"/>
     </entities>
     <entities xmi:type="modulestudio:Entity" xmi:id="_NRe3wJZuEd-Cr6we_ykR9w" name="order" nameMultiple="orders" incoming="_CWCBYJZvEd-Cr6we_ykR9w" outgoing="_IEKo4JZvEd-Cr6we_ykR9w">
-      <fields xmi:type="modulestudio:DateField" xmi:id="_P9H-oJZuEd-Cr6we_ykR9w" name="date" defaultValue="" leading="true"/>
+      <fields xmi:type="modulestudio:DateField" xmi:id="_P9H-oJZuEd-Cr6we_ykR9w" name="orderDate" defaultValue="" leading="true"/>
     </entities>
-    <entities xmi:type="modulestudio:Entity" xmi:id="_UZHBwJZuEd-Cr6we_ykR9w" name="contact" nameMultiple="contacts" incoming="_7ieC4JZuEd-Cr6we_ykR9w">
-      <fields xmi:type="modulestudio:StringField" xmi:id="_WgchsJZuEd-Cr6we_ykR9w" name="firstName" defaultValue=""/>
-      <fields xmi:type="modulestudio:StringField" xmi:id="_YYiEsJZuEd-Cr6we_ykR9w" name="lastName" defaultValue="" leading="true"/>
+    <entities xmi:type="modulestudio:Entity" xmi:id="_UZHBwJZuEd-Cr6we_ykR9w" name="contact" nameMultiple="contacts" incoming="_7ieC4JZuEd-Cr6we_ykR9w" slugUnique="false">
+      <fields xmi:type="modulestudio:StringField" xmi:id="_WgchsJZuEd-Cr6we_ykR9w" name="firstName" defaultValue="" sluggablePosition="1"/>
+      <fields xmi:type="modulestudio:StringField" xmi:id="_YYiEsJZuEd-Cr6we_ykR9w" name="lastName" defaultValue="" leading="true" sluggablePosition="2"/>
       <fields xmi:type="modulestudio:IntegerField" xmi:id="_bSnQMJZuEd-Cr6we_ykR9w" name="age" defaultValue="" length="2"/>
       <fields xmi:type="modulestudio:StringField" xmi:id="_duQMMJZuEd-Cr6we_ykR9w" name="phone" defaultValue="" mandatory="false"/>
     </entities>
@@ -28,6 +28,9 @@
       <actions xmi:type="modulestudio:ViewAction" xmi:id="_51gAMJZtEd-Cr6we_ykR9w" name="View"/>
       <actions xmi:type="modulestudio:DisplayAction" xmi:id="_6RR9QJZtEd-Cr6we_ykR9w" name="Display"/>
       <actions xmi:type="modulestudio:EditAction" xmi:id="_6tDTQJZtEd-Cr6we_ykR9w" name="Edit"/>
+    </controllers>
+    <controllers xmi:type="modulestudio:AjaxController" xmi:id="_pAY3ILO4EeCDJbzAMYiC2A" name="Ajax">
+      <actions xmi:type="modulestudio:MainAction" xmi:id="_qAwH8LO4EeCDJbzAMYiC2A" name="Main"/>
     </controllers>
   </controllers>
   <views xmi:type="modulestudio:Views" xmi:id="_tfuWU5ZtEd-Cr6we_ykR9w" name="View" controller="_tfuWUpZtEd-Cr6we_ykR9w"/>

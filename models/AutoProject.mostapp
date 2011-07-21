@@ -11,7 +11,7 @@
     </entities>
     <entities xmi:type="modulestudio:Entity" xmi:id="_Z44Z0JfyEd-AUbx4tgitVg" name="task" nameMultiple="tasks" incoming="_wmLRIJfyEd-AUbx4tgitVg" outgoing="_Kg_PcJ2oEd-Kb4K-RqBN4w">
       <fields xmi:type="modulestudio:StringField" xmi:id="_cjBE0JfyEd-AUbx4tgitVg" name="title" defaultValue="" leading="true" length="200"/>
-      <fields xmi:type="modulestudio:UserField" xmi:id="_N1z2MJ2oEd-Kb4K-RqBN4w" name="user"/>
+      <fields xmi:type="modulestudio:UserField" xmi:id="_N1z2MJ2oEd-Kb4K-RqBN4w" name="owner"/>
       <fields xmi:type="modulestudio:BooleanField" xmi:id="_hug5UJfyEd-AUbx4tgitVg" name="isFinished" defaultValue="0"/>
     </entities>
     <entities xmi:type="modulestudio:Entity" xmi:id="_mdyE0JfyEd-AUbx4tgitVg" name="taskType" nameMultiple="taskTypes" incoming="_Kg_PcJ2oEd-Kb4K-RqBN4w">
@@ -24,6 +24,9 @@
       <actions xmi:type="modulestudio:ViewAction" xmi:id="__S7O4JfxEd-AUbx4tgitVg" name="View"/>
       <actions xmi:type="modulestudio:DisplayAction" xmi:id="__wTHYJfxEd-AUbx4tgitVg" name="Display"/>
       <actions xmi:type="modulestudio:EditAction" xmi:id="_AW50YJfyEd-AUbx4tgitVg" name="Edit"/>
+    </controllers>
+    <controllers xmi:type="modulestudio:AjaxController" xmi:id="_X9IYMLO9EeCAgM7sSWFolQ" name="Ajax">
+      <actions xmi:type="modulestudio:MainAction" xmi:id="_YV3oULO9EeCAgM7sSWFolQ" name="Main"/>
     </controllers>
   </controllers>
   <views xmi:type="modulestudio:Views" xmi:id="_qcwRQpfxEd-AUbx4tgitVg" name="View" controller="_qcwRQZfxEd-AUbx4tgitVg"/>

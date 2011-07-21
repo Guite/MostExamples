@@ -5,7 +5,7 @@
       <vars xmi:type="modulestudio:IntVar" xmi:id="_SZL0kJZyEd-H1-ReVngLWA" name="pageSize" value="15"/>
       <vars xmi:type="modulestudio:ListVar" xmi:id="_WH468JZyEd-H1-ReVngLWA" name="defaultCat">
         <items xmi:type="modulestudio:ListVarItem" xmi:id="_ZWou4JZyEd-H1-ReVngLWA" name="cat1"/>
-        <items xmi:type="modulestudio:ListVarItem" xmi:id="_bdWjwJZyEd-H1-ReVngLWA" name="cat1" isDefault="true"/>
+        <items xmi:type="modulestudio:ListVarItem" xmi:id="_bdWjwJZyEd-H1-ReVngLWA" name="cat1"/>
       </vars>
     </variables>
     <relations xmi:type="modulestudio:OneToManyRelationship" xmi:id="_TnunIZZ5Ed-crO6q7IGfEA" target="_rJH8QJZ2Ed-Ykd7Rp0pJEA" source="_u7QG4JZyEd-H1-ReVngLWA" sourceAlias="provider" targetAlias="products"/>
@@ -18,8 +18,8 @@
     <relations xmi:type="modulestudio:OneToOneRelationship" xmi:id="_RuIy0JZ6Ed-crO6q7IGfEA" target="_35ASwJZ3Ed-Ykd7Rp0pJEA" source="__laaQJZ2Ed-Ykd7Rp0pJEA" sourceAlias="acceptance" targetAlias="contract"/>
     <relations xmi:type="modulestudio:OneToOneRelationship" xmi:id="_z-UwQJ2mEd-Kb4K-RqBN4w" target="_5NsDMJZ2Ed-Ykd7Rp0pJEA" source="__laaQJZ2Ed-Ykd7Rp0pJEA" sourceAlias="acceptance" targetAlias="bidding"/>
     <relations xmi:type="modulestudio:OneToOneRelationship" xmi:id="_60GVQJ2mEd-Kb4K-RqBN4w" target="_ymyyQJZ3Ed-Ykd7Rp0pJEA" source="__laaQJZ2Ed-Ykd7Rp0pJEA" sourceAlias="acceptance" targetAlias="customer"/>
-    <relations xmi:type="modulestudio:InheritanceRelationship" xmi:id="_Aj9bEJ2nEd-Kb4K-RqBN4w" target="_oM-ewJZ3Ed-Ykd7Rp0pJEA" source="_ymyyQJZ3Ed-Ykd7Rp0pJEA" strategy="SIMPLE" columnAggregationField="TestCustomColumn"/>
-    <relations xmi:type="modulestudio:InheritanceRelationship" xmi:id="_DG88QJ2nEd-Kb4K-RqBN4w" target="_iwKQwJZ3Ed-Ykd7Rp0pJEA" source="_oM-ewJZ3Ed-Ykd7Rp0pJEA" strategy="SIMPLE"/>
+    <relations xmi:type="modulestudio:InheritanceRelationship" xmi:id="_Aj9bEJ2nEd-Kb4K-RqBN4w" target="_oM-ewJZ3Ed-Ykd7Rp0pJEA" source="_ymyyQJZ3Ed-Ykd7Rp0pJEA"/>
+    <relations xmi:type="modulestudio:InheritanceRelationship" xmi:id="_DG88QJ2nEd-Kb4K-RqBN4w" target="_iwKQwJZ3Ed-Ykd7Rp0pJEA" source="_oM-ewJZ3Ed-Ykd7Rp0pJEA"/>
     <entities xmi:type="modulestudio:Entity" xmi:id="_u7QG4JZyEd-H1-ReVngLWA" name="provider" nameMultiple="providers" outgoing="_TnunIZZ5Ed-crO6q7IGfEA _c7USYJZ5Ed-crO6q7IGfEA" leading="true">
       <fields xmi:type="modulestudio:StringField" xmi:id="_xz5H8JZyEd-H1-ReVngLWA" name="firstName" defaultValue=""/>
       <fields xmi:type="modulestudio:StringField" xmi:id="_zxrDQJZyEd-H1-ReVngLWA" name="lastName" defaultValue="" leading="true"/>
@@ -46,7 +46,7 @@
       <fields xmi:type="modulestudio:DateField" xmi:id="_BuqlwJZ3Ed-Ykd7Rp0pJEA" name="acceptDate" defaultValue="" leading="true"/>
     </entities>
     <entities xmi:type="modulestudio:Entity" xmi:id="_iwKQwJZ3Ed-Ykd7Rp0pJEA" name="interestedBuyer" nameMultiple="interestedBuyers" incoming="_DG88QJ2nEd-Kb4K-RqBN4w" outgoing="_nUEO4JZ5Ed-crO6q7IGfEA">
-      <fields xmi:type="modulestudio:UserField" xmi:id="_JjdssJ2nEd-Kb4K-RqBN4w" name="user" leading="true"/>
+      <fields xmi:type="modulestudio:UserField" xmi:id="_JjdssJ2nEd-Kb4K-RqBN4w" name="buyer" leading="true"/>
     </entities>
     <entities xmi:type="modulestudio:Entity" xmi:id="_oM-ewJZ3Ed-Ykd7Rp0pJEA" name="bidder" nameMultiple="bidders" incoming="_Aj9bEJ2nEd-Kb4K-RqBN4w" outgoing="_ONdhYJZ6Ed-crO6q7IGfEA _DG88QJ2nEd-Kb4K-RqBN4w">
       <fields xmi:type="modulestudio:StringField" xmi:id="_qh5HsJZ3Ed-Ykd7Rp0pJEA" name="firstName" defaultValue="" mandatory="false"/>
@@ -60,7 +60,7 @@
       <fields xmi:type="modulestudio:StringField" xmi:id="_6nU6MJZ3Ed-Ykd7Rp0pJEA" name="payMethod" defaultValue="credit card" leading="true" length="20"/>
     </entities>
     <entities xmi:type="modulestudio:Entity" xmi:id="_-7rEQJZ3Ed-Ykd7Rp0pJEA" name="productView" nameMultiple="productView" incoming="_nUEO4JZ5Ed-crO6q7IGfEA _pSoNUJZ5Ed-crO6q7IGfEA">
-      <fields xmi:type="modulestudio:TimestampField" xmi:id="_Bz7DwJZ4Ed-Ykd7Rp0pJEA" name="viewTime" defaultValue="" leading="true"/>
+      <fields xmi:type="modulestudio:DatetimeField" xmi:id="_Bz7DwJZ4Ed-Ykd7Rp0pJEA" name="viewTime" defaultValue="" leading="true"/>
     </entities>
   </models>
   <controllers xmi:type="modulestudio:Controllers" xmi:id="_M-jCwZZwEd-H1-ReVngLWA" name="Controller" modelContext="_M-jCwJZwEd-H1-ReVngLWA" processViews="_M-jCwpZwEd-H1-ReVngLWA">

@@ -1,27 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <modulestudio:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:modulestudio="http://modulestudio.de/modulestudio" xmi:id="_J_RaoLCmEeC7tKyxe97-zQ" name="RecipeManager" documentation="Comprehensive recipe and menu management." author="Axel Guckelsberger" email="info@guite.de" url="http://modulestudio.de" prefix="recman" modelPath="/home/axel/RecipeManager.mostapp">
   <models xmi:type="modulestudio:Models" xmi:id="_J_akkLCmEeC7tKyxe97-zQ" name="Model">
-    <variables xmi:type="modulestudio:Variables" xmi:id="_6G_ocLCnEeC7tKyxe97-zQ" name="Variables">
+    <variables xmi:type="modulestudio:Variables" xmi:id="_6G_ocLCnEeC7tKyxe97-zQ" name="General" documentation="All basic settings for the recipe manager.">
       <vars xmi:type="modulestudio:IntVar" xmi:id="_9lS7ULCnEeC7tKyxe97-zQ" name="pageSize" value="20"/>
       <vars xmi:type="modulestudio:BoolVar" xmi:id="__zyMILCnEeC7tKyxe97-zQ" name="useDrinkExtensions" value="false"/>
       <vars xmi:type="modulestudio:BoolVar" xmi:id="_C5PhMLCoEeC7tKyxe97-zQ" name="useRatings" value="true"/>
-      <vars xmi:type="modulestudio:ListVar" xmi:id="_HdzRgLCoEeC7tKyxe97-zQ" name="supportedReportFormats" multiple="true">
-        <items xmi:type="modulestudio:ListVarItem" xmi:id="_M_xFQLCoEeC7tKyxe97-zQ" name="html" default="true"/>
-        <items xmi:type="modulestudio:ListVarItem" xmi:id="_OezPELCoEeC7tKyxe97-zQ" name="pdf" default="true"/>
-        <items xmi:type="modulestudio:ListVarItem" xmi:id="_Pi8zsLCoEeC7tKyxe97-zQ" name="xml"/>
-      </vars>
       <vars xmi:type="modulestudio:ListVar" xmi:id="_QxMvgLCoEeC7tKyxe97-zQ" name="menuCompositionMode">
         <items xmi:type="modulestudio:ListVarItem" xmi:id="_SpvlgLCoEeC7tKyxe97-zQ" name="manual"/>
         <items xmi:type="modulestudio:ListVarItem" xmi:id="_Tlwh0LCoEeC7tKyxe97-zQ" name="automatic"/>
         <items xmi:type="modulestudio:ListVarItem" xmi:id="_U4acgLCoEeC7tKyxe97-zQ" name="both" default="true"/>
       </vars>
-      <vars xmi:type="modulestudio:TextVar" xmi:id="_WsXGYLCoEeC7tKyxe97-zQ" name="reportHeader" value=""/>
-      <vars xmi:type="modulestudio:TextVar" xmi:id="_Yq-IILCoEeC7tKyxe97-zQ" name="reportFooter" value=""/>
       <vars xmi:type="modulestudio:TextVar" xmi:id="_aJt-ELCoEeC7tKyxe97-zQ" name="defaultMenuSubTitle" value="Default subtitle" maxLength="60"/>
+    </variables>
+    <variables xmi:type="modulestudio:Variables" xmi:id="_5QkWUbOSEeCU3LzQJz5_lw" name="FilePathes" documentation="Here you can adjust different file pathes." sortOrder="3">
       <vars xmi:type="modulestudio:FilePathVar" xmi:id="_eeXDELCoEeC7tKyxe97-zQ" name="importPath" value=""/>
       <vars xmi:type="modulestudio:FilePathVar" xmi:id="_ga3MALCoEeC7tKyxe97-zQ" name="resourcePath" value="" withinDocRoot="false"/>
       <vars xmi:type="modulestudio:FilePathVar" xmi:id="_im0tQLCoEeC7tKyxe97-zQ" name="pdfStoragePath" value="" writable="true"/>
       <vars xmi:type="modulestudio:FilePathVar" xmi:id="_kwFf0LCoEeC7tKyxe97-zQ" name="menuStoragePath" value="" withinDocRoot="false" writable="true"/>
+    </variables>
+    <variables xmi:type="modulestudio:Variables" xmi:id="_GvfZkLOTEeCU3LzQJz5_lw" name="Reporting" documentation="Here you can manage reporting-related settings." sortOrder="2">
+      <vars xmi:type="modulestudio:ListVar" xmi:id="_HdzRgLCoEeC7tKyxe97-zQ" name="supportedReportFormats" multiple="true">
+        <items xmi:type="modulestudio:ListVarItem" xmi:id="_M_xFQLCoEeC7tKyxe97-zQ" name="html" default="true"/>
+        <items xmi:type="modulestudio:ListVarItem" xmi:id="_OezPELCoEeC7tKyxe97-zQ" name="pdf" default="true"/>
+        <items xmi:type="modulestudio:ListVarItem" xmi:id="_Pi8zsLCoEeC7tKyxe97-zQ" name="xml"/>
+      </vars>
+      <vars xmi:type="modulestudio:TextVar" xmi:id="_WsXGYLCoEeC7tKyxe97-zQ" name="reportHeader" value=""/>
+      <vars xmi:type="modulestudio:TextVar" xmi:id="_Yq-IILCoEeC7tKyxe97-zQ" name="reportFooter" value=""/>
     </variables>
     <relations xmi:type="modulestudio:ManyToOneRelationship" xmi:id="_RduSwLCyEeCsTIsWLyhdtw" target="_Bo0zcLCuEeC2hIfQ2W4Mog" source="_m8sSkLCuEeC2hIfQ2W4Mog" sourceAlias="userIngredients" targetAlias="ingredient"/>
     <relations xmi:type="modulestudio:OneToManyRelationship" xmi:id="_vJexALCyEeCsTIsWLyhdtw" target="_99PvALCsEeC2hIfQ2W4Mog" source="_uRPwMLCsEeC2hIfQ2W4Mog" bidirectional="true" sourceAlias="menu" targetAlias="positions" cascade="PERSIST_REMOVE" orderBy="sortValue"/>

@@ -50,10 +50,10 @@
     <relations xmi:type="modulestudio:InheritanceRelationship" xmi:id="_LwrBoLC4EeCPvMh0RUBHHw" target="_yPJF8LCoEeC7tKyxe97-zQ" source="_jazyILCsEeC2hIfQ2W4Mog" strategy="JOINED"/>
     <entities xmi:type="modulestudio:Entity" xmi:id="_yPJF8LCoEeC7tKyxe97-zQ" name="recipe" nameMultiple="recipes" incoming="_eB1eILCzEeCQuu8K_dBPkw _LwrBoLC4EeCPvMh0RUBHHw" outgoing="_UI1jQLC0EeCQuu8K_dBPkw _0D-qMLC0EeCQuu8K_dBPkw _QE2egLC2EeCPvMh0RUBHHw _nDGtgLC3EeCPvMh0RUBHHw" leading="true" lockType="PAGELOCK_OPTIMISTIC" loggable="true" categorisable="true" metaData="true">
       <fields xmi:type="modulestudio:StringField" xmi:id="_4gGtsLCoEeC7tKyxe97-zQ" name="title" defaultValue="" leading="true" unique="true" sluggablePosition="1"/>
-      <fields xmi:type="modulestudio:TextField" xmi:id="_BCWbkLCpEeC7tKyxe97-zQ" name="description" defaultValue="" mandatory="false" versioned="true" minLength="50"/>
+      <fields xmi:type="modulestudio:TextField" xmi:id="_BCWbkLCpEeC7tKyxe97-zQ" name="description" defaultValue="" mandatory="false" minLength="50"/>
       <fields xmi:type="modulestudio:IntegerField" xmi:id="_I2TgELCpEeC7tKyxe97-zQ" name="amountOfPortions" defaultValue="4" length="3" minValue="1" maxValue="50"/>
       <fields xmi:type="modulestudio:IntegerField" xmi:id="_Q_hp8LCpEeC7tKyxe97-zQ" name="author" defaultValue="0" length="4"/>
-      <fields xmi:type="modulestudio:TextField" xmi:id="_VvNFILCpEeC7tKyxe97-zQ" name="parties" defaultValue="" mandatory="false" versioned="true"/>
+      <fields xmi:type="modulestudio:TextField" xmi:id="_VvNFILCpEeC7tKyxe97-zQ" name="parties" defaultValue="" mandatory="false"/>
       <fields xmi:type="modulestudio:StringField" xmi:id="_YeANsLCpEeC7tKyxe97-zQ" name="country" defaultValue="" sluggablePosition="2" nospace="true" country="true" length="2"/>
       <fields xmi:type="modulestudio:IntegerField" xmi:id="_KlIj8bCqEeCFI8ilaHnyHg" name="difficulty" defaultValue="0" length="1"/>
       <fields xmi:type="modulestudio:UploadField" xmi:id="_NBMWsLCqEeCFI8ilaHnyHg" name="downloadFile" mandatory="false" allowedExtensions="gif, jpeg, jpg, png, pdf"/>

@@ -55,9 +55,26 @@
           <element xmi:type="modulestudio:StringField" href="RecipeManager.mostapp#_YeANsLCpEeC7tKyxe97-zQ"/>
           <layoutConstraint xmi:type="notation:Location" xmi:id="_ysZQEz05EeGJp8ipgWNEEg"/>
         </children>
-        <children xmi:type="notation:Node" xmi:id="_ysZQFD05EeGJp8ipgWNEEg" type="3102">
-          <element xmi:type="modulestudio:IntegerField" href="RecipeManager.mostapp#_KlIj8bCqEeCFI8ilaHnyHg"/>
-          <layoutConstraint xmi:type="notation:Location" xmi:id="_ysZQFT05EeGJp8ipgWNEEg"/>
+        <children xmi:type="notation:Shape" xmi:id="_s0shQD1XEeGGpffk6c4NNw" type="3109" fontColor="4210752" fontName="Lucida Grande" fontHeight="12" lineColor="0">
+          <children xmi:type="notation:DecorationNode" xmi:id="_s0tIUD1XEeGGpffk6c4NNw" type="5201"/>
+          <children xmi:type="notation:DecorationNode" xmi:id="_s0tvYD1XEeGGpffk6c4NNw" type="7102">
+            <children xmi:type="notation:Node" xmi:id="_waT9ED1XEeGGpffk6c4NNw" type="3110">
+              <element xmi:type="modulestudio:ListFieldItem" href="RecipeManager.mostapp#_waProD1XEeGGpffk6c4NNw"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_waT9ET1XEeGGpffk6c4NNw"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_y2GDAD1XEeGGpffk6c4NNw" type="3110">
+              <element xmi:type="modulestudio:ListFieldItem" href="RecipeManager.mostapp#_y2DmwD1XEeGGpffk6c4NNw"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_y2GDAT1XEeGGpffk6c4NNw"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_zkRXoD1XEeGGpffk6c4NNw" type="3110">
+              <element xmi:type="modulestudio:ListFieldItem" href="RecipeManager.mostapp#_zkPicD1XEeGGpffk6c4NNw"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_zkRXoT1XEeGGpffk6c4NNw"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_s0tvYT1XEeGGpffk6c4NNw"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_s0tvYj1XEeGGpffk6c4NNw"/>
+          </children>
+          <element xmi:type="modulestudio:ListField" href="RecipeManager.mostapp#_s0nBsD1XEeGGpffk6c4NNw"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_s0shQT1XEeGGpffk6c4NNw"/>
         </children>
         <children xmi:type="notation:Node" xmi:id="_ysZ3ID05EeGJp8ipgWNEEg" type="3108">
           <element xmi:type="modulestudio:UploadField" href="RecipeManager.mostapp#_NBMWsLCqEeCFI8ilaHnyHg"/>

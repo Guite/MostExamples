@@ -46,7 +46,6 @@
     </entities>
     <entities xmi:type="modulestudio:Entity" xmi:id="_Bo0zcLCuEeC2hIfQ2W4Mog" name="ingredient" nameMultiple="ingredients" incoming="_RduSwLCyEeCsTIsWLyhdtw _okgWMLC0EeCQuu8K_dBPkw" outgoing="_7ESrQLC0EeCQuu8K_dBPkw _LNCGgD35EeGNycoQ3Shxiw">
       <fields xmi:type="modulestudio:StringField" xmi:id="_DPwVALCuEeC2hIfQ2W4Mog" name="name" defaultValue="" leading="true" sluggablePosition="1"/>
-      <fields xmi:type="modulestudio:StringField" xmi:id="_b6yXID1SEeG3evVNdnDcYw" name="latinName" defaultValue="" mandatory="false"/>
       <fields xmi:type="modulestudio:TextField" xmi:id="_EsYEALCuEeC2hIfQ2W4Mog" name="description" defaultValue="" mandatory="false" nullable="true"/>
       <fields xmi:type="modulestudio:UploadField" xmi:id="_dBUt8D09EeGJp8ipgWNEEg" name="previewImage" mandatory="false"/>
       <fields xmi:type="modulestudio:UploadField" xmi:id="_fvPFsD09EeGJp8ipgWNEEg" name="detailImage" mandatory="false"/>

@@ -17,7 +17,8 @@
     <relations xmi:type="modulestudio:ManyToManyRelationship" xmi:id="_LNCGgD35EeGNycoQ3Shxiw" target="_or8NMLCvEeC2hIfQ2W4Mog" source="_Bo0zcLCuEeC2hIfQ2W4Mog" sourceAlias="ingredients" targetAlias="units" editType="ACTIVE_EDIT_PASSIVE_NONE" refClass="IngredientUnit"/>
     <relations xmi:type="modulestudio:ManyToManyRelationship" xmi:id="_dr51kD35EeGNycoQ3Shxiw" target="_or8NMLCvEeC2hIfQ2W4Mog" source="_F2FMILCwEeC2hIfQ2W4Mog" sourceAlias="recipeIngredients" targetAlias="units" refClass="RecipeIngredientUnit"/>
     <relations xmi:type="modulestudio:ManyToManyRelationship" xmi:id="_jIYFUD35EeGNycoQ3Shxiw" target="_or8NMLCvEeC2hIfQ2W4Mog" source="_OyVVcLCwEeC2hIfQ2W4Mog" sourceAlias="recipeSteps" targetAlias="units" refClass="RecipeStepIngredientUnit"/>
-    <entities xmi:type="modulestudio:Entity" xmi:id="_yPJF8LCoEeC7tKyxe97-zQ" name="recipe" nameMultiple="recipes" incoming="_eB1eILCzEeCQuu8K_dBPkw _UI1jQLC0EeCQuu8K_dBPkw" outgoing="_0D-qMLC0EeCQuu8K_dBPkw _QE2egLC2EeCPvMh0RUBHHw" leading="true">
+    <relations xmi:type="modulestudio:ManyToOneRelationship" xmi:id="_a2tMUEImEeG_oMvQrK7Jiw" target="_Bo0zcLCuEeC2hIfQ2W4Mog" source="_yPJF8LCoEeC7tKyxe97-zQ" sourceAlias="recipes" targetAlias="producedIngredient"/>
+    <entities xmi:type="modulestudio:Entity" xmi:id="_yPJF8LCoEeC7tKyxe97-zQ" name="recipe" nameMultiple="recipes" incoming="_eB1eILCzEeCQuu8K_dBPkw _UI1jQLC0EeCQuu8K_dBPkw" outgoing="_0D-qMLC0EeCQuu8K_dBPkw _QE2egLC2EeCPvMh0RUBHHw _a2tMUEImEeG_oMvQrK7Jiw" leading="true">
       <fields xmi:type="modulestudio:StringField" xmi:id="_4gGtsLCoEeC7tKyxe97-zQ" name="title" defaultValue="" leading="true" unique="true" sluggablePosition="1"/>
       <fields xmi:type="modulestudio:TextField" xmi:id="_BCWbkLCpEeC7tKyxe97-zQ" name="description" defaultValue="" mandatory="false" minLength="50"/>
       <fields xmi:type="modulestudio:IntegerField" xmi:id="_I2TgELCpEeC7tKyxe97-zQ" name="amountOfPortions" defaultValue="4" length="3" minValue="1" maxValue="50"/>
@@ -44,9 +45,13 @@
       <fields xmi:type="modulestudio:DateField" xmi:id="_C2t_YLCtEeC2hIfQ2W4Mog" name="targetDate" defaultValue="" future="true"/>
       <fields xmi:type="modulestudio:TimeField" xmi:id="_GbNZ0LCtEeC2hIfQ2W4Mog" name="expectedTime" defaultValue="" mandatory="false"/>
     </entities>
-    <entities xmi:type="modulestudio:Entity" xmi:id="_Bo0zcLCuEeC2hIfQ2W4Mog" name="ingredient" nameMultiple="ingredients" incoming="_RduSwLCyEeCsTIsWLyhdtw _okgWMLC0EeCQuu8K_dBPkw" outgoing="_7ESrQLC0EeCQuu8K_dBPkw _LNCGgD35EeGNycoQ3Shxiw">
+    <entities xmi:type="modulestudio:Entity" xmi:id="_Bo0zcLCuEeC2hIfQ2W4Mog" name="ingredient" nameMultiple="ingredients" incoming="_RduSwLCyEeCsTIsWLyhdtw _okgWMLC0EeCQuu8K_dBPkw _a2tMUEImEeG_oMvQrK7Jiw" outgoing="_7ESrQLC0EeCQuu8K_dBPkw _LNCGgD35EeGNycoQ3Shxiw" tree="NESTED">
       <fields xmi:type="modulestudio:StringField" xmi:id="_DPwVALCuEeC2hIfQ2W4Mog" name="name" defaultValue="" leading="true" sluggablePosition="1"/>
+      <fields xmi:type="modulestudio:StringField" xmi:id="_v6dIYEIlEeG_oMvQrK7Jiw" name="originalName" defaultValue="" mandatory="false"/>
       <fields xmi:type="modulestudio:TextField" xmi:id="_EsYEALCuEeC2hIfQ2W4Mog" name="description" defaultValue="" mandatory="false" nullable="true"/>
+      <fields xmi:type="modulestudio:StringField" xmi:id="_1sAQQEIlEeG_oMvQrK7Jiw" name="aliasName1" defaultValue="" mandatory="false"/>
+      <fields xmi:type="modulestudio:StringField" xmi:id="_4CgNkEIlEeG_oMvQrK7Jiw" name="aliasName2" defaultValue="" mandatory="false"/>
+      <fields xmi:type="modulestudio:StringField" xmi:id="_6NRcAEIlEeG_oMvQrK7Jiw" name="aliasName3" defaultValue="" mandatory="false"/>
       <fields xmi:type="modulestudio:UploadField" xmi:id="_dBUt8D09EeGJp8ipgWNEEg" name="previewImage" mandatory="false"/>
       <fields xmi:type="modulestudio:UploadField" xmi:id="_fvPFsD09EeGJp8ipgWNEEg" name="detailImage" mandatory="false"/>
       <fields xmi:type="modulestudio:ListField" xmi:id="_ttoGoD1SEeG3evVNdnDcYw" name="saison" mandatory="false" multiple="true" useChecks="true">

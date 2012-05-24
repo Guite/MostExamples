@@ -65,7 +65,7 @@
       <fields xmi:type="modulestudio:TextField" xmi:id="_tgQQwLCvEeC2hIfQ2W4Mog" name="description" defaultValue="" mandatory="false" length="500"/>
     </entities>
     <entities xmi:type="modulestudio:Entity" xmi:id="_F2FMILCwEeC2hIfQ2W4Mog" name="recipeIngredient" nameMultiple="recipeIngredients" incoming="_0D-qMLC0EeCQuu8K_dBPkw _7ESrQLC0EeCQuu8K_dBPkw" outgoing="_dr51kD35EeGNycoQ3Shxiw">
-      <fields xmi:type="modulestudio:DecimalField" xmi:id="_HeIIALCwEeC2hIfQ2W4Mog" name="amount" defaultValue="0.00" leading="true"/>
+      <fields xmi:type="modulestudio:StringField" xmi:id="_isIvkKXTEeGDo6umoPs6Hw" name="amount" defaultValue="" length="20"/>
     </entities>
   </models>
   <controllers xmi:type="modulestudio:Controllers" xmi:id="_J_akkbCmEeC7tKyxe97-zQ" name="Controller" modelContext="_J_akkLCmEeC7tKyxe97-zQ" processViews="_J_akkrCmEeC7tKyxe97-zQ">

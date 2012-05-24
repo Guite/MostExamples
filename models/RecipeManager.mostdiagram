@@ -247,6 +247,10 @@
     <children xmi:type="notation:Shape" xmi:id="_ysIxYD05EeGJp8ipgWNEEg" type="2101" fontColor="4210752" fontName="Lucida Grande" fontHeight="12" lineColor="0">
       <children xmi:type="notation:DecorationNode" xmi:id="_ysIxYj05EeGJp8ipgWNEEg" type="5102"/>
       <children xmi:type="notation:BasicCompartment" xmi:id="_ysIxYz05EeGJp8ipgWNEEg" type="7101">
+        <children xmi:type="notation:Node" xmi:id="_isNoEKXTEeGDo6umoPs6Hw" type="3104">
+          <element xmi:type="modulestudio:StringField" href="RecipeManager.mostapp#_isIvkKXTEeGDo6umoPs6Hw"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_isNoEaXTEeGDo6umoPs6Hw"/>
+        </children>
         <styles xmi:type="notation:SortingStyle" xmi:id="_ysIxZD05EeGJp8ipgWNEEg"/>
         <styles xmi:type="notation:FilteringStyle" xmi:id="_ysIxZT05EeGJp8ipgWNEEg"/>
       </children>

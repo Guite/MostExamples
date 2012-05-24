@@ -55,7 +55,7 @@
       </fields>
     </entities>
     <entities xmi:type="modulestudio:Entity" xmi:id="_7jEgsLCuEeC2hIfQ2W4Mog" name="category" nameMultiple="categories" outgoing="_okgWMLC0EeCQuu8K_dBPkw _UI1jQLC0EeCQuu8K_dBPkw" tree="NESTED">
-      <fields xmi:type="modulestudio:StringField" xmi:id="_8oX74LCuEeC2hIfQ2W4Mog" name="name" defaultValue="" leading="true"/>
+      <fields xmi:type="modulestudio:StringField" xmi:id="_8oX74LCuEeC2hIfQ2W4Mog" name="name" defaultValue="" leading="true" sluggablePosition="1"/>
       <fields xmi:type="modulestudio:UploadField" xmi:id="_VPoTQD09EeGJp8ipgWNEEg" name="previewImage" mandatory="false"/>
       <fields xmi:type="modulestudio:UploadField" xmi:id="_i-l9oD09EeGJp8ipgWNEEg" name="detailImage" mandatory="false"/>
     </entities>

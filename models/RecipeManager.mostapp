@@ -6,7 +6,7 @@
     </variables>
     <relations xmi:type="modulestudio:ManyToManyRelationship" xmi:id="_UI1jQLC0EeCQuu8K_dBPkw" target="_yPJF8LCoEeC7tKyxe97-zQ" source="_7jEgsLCuEeC2hIfQ2W4Mog" bidirectional="true" sourceAlias="categories" targetAlias="recipes" editType="ACTIVE_NONE_PASSIVE_CHOOSE" refClass="RecipeCategoryRef"/>
     <relations xmi:type="modulestudio:ManyToManyRelationship" xmi:id="_okgWMLC0EeCQuu8K_dBPkw" target="_Bo0zcLCuEeC2hIfQ2W4Mog" source="_7jEgsLCuEeC2hIfQ2W4Mog" bidirectional="true" sourceAlias="categories" targetAlias="ingredients" editType="ACTIVE_NONE_PASSIVE_CHOOSE" refClass="IngredientCategoryRef"/>
-    <relations xmi:type="modulestudio:OneToManyRelationship" xmi:id="_0D-qMLC0EeCQuu8K_dBPkw" target="_F2FMILCwEeC2hIfQ2W4Mog" source="_yPJF8LCoEeC7tKyxe97-zQ" bidirectional="true" sourceAlias="recipe" targetAlias="ingredients" cascade="REMOVE"/>
+    <relations xmi:type="modulestudio:OneToManyRelationship" xmi:id="_0D-qMLC0EeCQuu8K_dBPkw" target="_F2FMILCwEeC2hIfQ2W4Mog" source="_yPJF8LCoEeC7tKyxe97-zQ" bidirectional="true" sourceAlias="recipe" targetAlias="ingredients" cascade="REMOVE" orderBy="sortValue ASC"/>
     <relations xmi:type="modulestudio:OneToManyRelationship" xmi:id="_7ESrQLC0EeCQuu8K_dBPkw" target="_F2FMILCwEeC2hIfQ2W4Mog" source="_Bo0zcLCuEeC2hIfQ2W4Mog" bidirectional="true" sourceAlias="ingredient" targetAlias="recipes" cascade="REMOVE"/>
     <relations xmi:type="modulestudio:ManyToManyRelationship" xmi:id="_LNCGgD35EeGNycoQ3Shxiw" target="_or8NMLCvEeC2hIfQ2W4Mog" source="_Bo0zcLCuEeC2hIfQ2W4Mog" sourceAlias="ingredients" targetAlias="units" editType="ACTIVE_EDIT_PASSIVE_NONE" refClass="IngredientUnit"/>
     <relations xmi:type="modulestudio:ManyToOneRelationship" xmi:id="_a2tMUEImEeG_oMvQrK7Jiw" target="_Bo0zcLCuEeC2hIfQ2W4Mog" source="_yPJF8LCoEeC7tKyxe97-zQ" sourceAlias="recipes" targetAlias="producedIngredient"/>
@@ -66,6 +66,7 @@
     </entities>
     <entities xmi:type="modulestudio:Entity" xmi:id="_F2FMILCwEeC2hIfQ2W4Mog" name="recipeIngredient" nameMultiple="recipeIngredients" incoming="_0D-qMLC0EeCQuu8K_dBPkw _7ESrQLC0EeCQuu8K_dBPkw" outgoing="_m1Zd8KmXEeG1D84mmJt6Jg">
       <fields xmi:type="modulestudio:StringField" xmi:id="_isIvkKXTEeGDo6umoPs6Hw" name="amount" defaultValue="" leading="true" length="20"/>
+      <fields xmi:type="modulestudio:IntegerField" xmi:id="_8szqkKmhEeG8K9S-DzKy5Q" name="sortValue" defaultValue="1"/>
     </entities>
   </models>
   <controllers xmi:type="modulestudio:Controllers" xmi:id="_J_akkbCmEeC7tKyxe97-zQ" name="Controller" modelContext="_J_akkLCmEeC7tKyxe97-zQ" processViews="_J_akkrCmEeC7tKyxe97-zQ">

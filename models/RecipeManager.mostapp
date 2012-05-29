@@ -13,7 +13,7 @@
     <relations xmi:type="modulestudio:ManyToOneRelationship" xmi:id="_m1Zd8KmXEeG1D84mmJt6Jg" target="_or8NMLCvEeC2hIfQ2W4Mog" source="_F2FMILCwEeC2hIfQ2W4Mog" sourceAlias="recipeIngredients" targetAlias="unit" editType="ACTIVE_EDIT_PASSIVE_NONE"/>
     <entities xmi:type="modulestudio:Entity" xmi:id="_yPJF8LCoEeC7tKyxe97-zQ" name="recipe" nameMultiple="recipes" incoming="_UI1jQLC0EeCQuu8K_dBPkw" outgoing="_0D-qMLC0EeCQuu8K_dBPkw _a2tMUEImEeG_oMvQrK7Jiw" leading="true">
       <fields xmi:type="modulestudio:StringField" xmi:id="_4gGtsLCoEeC7tKyxe97-zQ" name="title" defaultValue="" leading="true" unique="true" sluggablePosition="1"/>
-      <fields xmi:type="modulestudio:TextField" xmi:id="_BCWbkLCpEeC7tKyxe97-zQ" name="description" defaultValue="" mandatory="false" minLength="50"/>
+      <fields xmi:type="modulestudio:TextField" xmi:id="_BCWbkLCpEeC7tKyxe97-zQ" name="description" defaultValue="" mandatory="false"/>
       <fields xmi:type="modulestudio:IntegerField" xmi:id="_I2TgELCpEeC7tKyxe97-zQ" name="amountOfPortions" defaultValue="4" length="3" minValue="1" maxValue="50"/>
       <fields xmi:type="modulestudio:StringField" xmi:id="_YeANsLCpEeC7tKyxe97-zQ" name="country" defaultValue="" sluggablePosition="2" nospace="true" country="true" length="2"/>
       <fields xmi:type="modulestudio:ListField" xmi:id="_s0nBsD1XEeGGpffk6c4NNw" name="difficulty">

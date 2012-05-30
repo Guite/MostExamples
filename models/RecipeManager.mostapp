@@ -15,7 +15,6 @@
       <fields xmi:type="modulestudio:StringField" xmi:id="_4gGtsLCoEeC7tKyxe97-zQ" name="title" defaultValue="" leading="true" unique="true" sluggablePosition="1"/>
       <fields xmi:type="modulestudio:TextField" xmi:id="_BCWbkLCpEeC7tKyxe97-zQ" name="description" defaultValue="" mandatory="false"/>
       <fields xmi:type="modulestudio:IntegerField" xmi:id="_I2TgELCpEeC7tKyxe97-zQ" name="amountOfPortions" defaultValue="4" length="3" minValue="1" maxValue="50"/>
-      <fields xmi:type="modulestudio:StringField" xmi:id="_YeANsLCpEeC7tKyxe97-zQ" name="country" defaultValue="" sluggablePosition="2" nospace="true" country="true" length="2"/>
       <fields xmi:type="modulestudio:ListField" xmi:id="_s0nBsD1XEeGGpffk6c4NNw" name="difficulty">
         <items xmi:type="modulestudio:ListFieldItem" xmi:id="_waProD1XEeGGpffk6c4NNw" name="Easy" value="easy"/>
         <items xmi:type="modulestudio:ListFieldItem" xmi:id="_y2DmwD1XEeGGpffk6c4NNw" name="Medium" value="medium" default="true"/>

@@ -51,10 +51,6 @@
           <element xmi:type="modulestudio:IntegerField" href="RecipeManager.mostapp#_I2TgELCpEeC7tKyxe97-zQ"/>
           <layoutConstraint xmi:type="notation:Location" xmi:id="_ysYpAz05EeGJp8ipgWNEEg"/>
         </children>
-        <children xmi:type="notation:Node" xmi:id="_ysZQEj05EeGJp8ipgWNEEg" type="3104">
-          <element xmi:type="modulestudio:StringField" href="RecipeManager.mostapp#_YeANsLCpEeC7tKyxe97-zQ"/>
-          <layoutConstraint xmi:type="notation:Location" xmi:id="_ysZQEz05EeGJp8ipgWNEEg"/>
-        </children>
         <children xmi:type="notation:Shape" xmi:id="_s0shQD1XEeGGpffk6c4NNw" type="3109" fontColor="4210752" fontName="Lucida Grande" fontHeight="12" lineColor="0">
           <children xmi:type="notation:DecorationNode" xmi:id="_s0tIUD1XEeGGpffk6c4NNw" type="5201"/>
           <children xmi:type="notation:DecorationNode" xmi:id="_s0tvYD1XEeGGpffk6c4NNw" type="7102">

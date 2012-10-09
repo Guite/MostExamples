@@ -88,10 +88,6 @@
           <element xmi:type="modulestudio:UploadField" href="RecipeManager.mostapp#_pJbvQD09EeGJp8ipgWNEEg"/>
           <layoutConstraint xmi:type="notation:Location" xmi:id="_pJeLgT09EeGJp8ipgWNEEg"/>
         </children>
-        <children xmi:type="notation:Node" xmi:id="_qM2UED09EeGJp8ipgWNEEg" type="3108">
-          <element xmi:type="modulestudio:UploadField" href="RecipeManager.mostapp#_qMz30D09EeGJp8ipgWNEEg"/>
-          <layoutConstraint xmi:type="notation:Location" xmi:id="_qM2UET09EeGJp8ipgWNEEg"/>
-        </children>
         <styles xmi:type="notation:SortingStyle" xmi:id="_ysCqwj05EeGJp8ipgWNEEg"/>
         <styles xmi:type="notation:FilteringStyle" xmi:id="_ysCqwz05EeGJp8ipgWNEEg"/>
       </children>
@@ -139,10 +135,6 @@
         <children xmi:type="notation:Node" xmi:id="_dBXKMD09EeGJp8ipgWNEEg" type="3108">
           <element xmi:type="modulestudio:UploadField" href="RecipeManager.mostapp#_dBUt8D09EeGJp8ipgWNEEg"/>
           <layoutConstraint xmi:type="notation:Location" xmi:id="_dBXKMT09EeGJp8ipgWNEEg"/>
-        </children>
-        <children xmi:type="notation:Node" xmi:id="_fvPswD09EeGJp8ipgWNEEg" type="3108">
-          <element xmi:type="modulestudio:UploadField" href="RecipeManager.mostapp#_fvPFsD09EeGJp8ipgWNEEg"/>
-          <layoutConstraint xmi:type="notation:Location" xmi:id="_fvPswT09EeGJp8ipgWNEEg"/>
         </children>
         <children xmi:type="notation:Shape" xmi:id="_ttrxAD1SEeG3evVNdnDcYw" type="3109" fontColor="4210752" fontName="Lucida Grande" fontHeight="12" lineColor="0">
           <children xmi:type="notation:DecorationNode" xmi:id="_tts_ID1SEeG3evVNdnDcYw" type="5201"/>

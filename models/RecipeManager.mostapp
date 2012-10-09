@@ -23,8 +23,7 @@
       <fields xmi:type="modulestudio:IntegerField" xmi:id="_fVQogKUREeGCebCcxeToWQ" name="duration" documentation="The duration in minutes." defaultValue="0"/>
       <fields xmi:type="modulestudio:TextField" xmi:id="_cFv_kKUREeGCebCcxeToWQ" name="instructions" defaultValue=""/>
       <fields xmi:type="modulestudio:UploadField" xmi:id="_NBMWsLCqEeCFI8ilaHnyHg" name="downloadFile" mandatory="false" allowedExtensions="gif, jpeg, jpg, png, pdf"/>
-      <fields xmi:type="modulestudio:UploadField" xmi:id="_pJbvQD09EeGJp8ipgWNEEg" name="previewImage" mandatory="false"/>
-      <fields xmi:type="modulestudio:UploadField" xmi:id="_qMz30D09EeGJp8ipgWNEEg" name="detailImage" mandatory="false"/>
+      <fields xmi:type="modulestudio:UploadField" xmi:id="_pJbvQD09EeGJp8ipgWNEEg" name="image" mandatory="false"/>
       <indexes xmi:type="modulestudio:EntityIndex" xmi:id="_M9cCoLCrEeCw78ZdTJB3Kw" name="difficultyIndex">
         <items xmi:type="modulestudio:EntityIndexItem" xmi:id="_T2jPgLCrEeCw78ZdTJB3Kw" name="difficulty"/>
       </indexes>
@@ -36,8 +35,7 @@
       <fields xmi:type="modulestudio:StringField" xmi:id="_1sAQQEIlEeG_oMvQrK7Jiw" name="aliasName1" defaultValue="" mandatory="false"/>
       <fields xmi:type="modulestudio:StringField" xmi:id="_4CgNkEIlEeG_oMvQrK7Jiw" name="aliasName2" defaultValue="" mandatory="false"/>
       <fields xmi:type="modulestudio:StringField" xmi:id="_6NRcAEIlEeG_oMvQrK7Jiw" name="aliasName3" defaultValue="" mandatory="false"/>
-      <fields xmi:type="modulestudio:UploadField" xmi:id="_dBUt8D09EeGJp8ipgWNEEg" name="previewImage" mandatory="false"/>
-      <fields xmi:type="modulestudio:UploadField" xmi:id="_fvPFsD09EeGJp8ipgWNEEg" name="detailImage" mandatory="false"/>
+      <fields xmi:type="modulestudio:UploadField" xmi:id="_dBUt8D09EeGJp8ipgWNEEg" name="image" mandatory="false"/>
       <fields xmi:type="modulestudio:ListField" xmi:id="_ttoGoD1SEeG3evVNdnDcYw" name="saison" mandatory="false" multiple="true" useChecks="true">
         <items xmi:type="modulestudio:ListFieldItem" xmi:id="_xkJsQD1SEeG3evVNdnDcYw" name="January" value="january" image=""/>
         <items xmi:type="modulestudio:ListFieldItem" xmi:id="_4VLUID1SEeG3evVNdnDcYw" name="February" value="february"/>

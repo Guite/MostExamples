@@ -207,10 +207,6 @@
           <element xmi:type="modulestudio:StringField" href="RecipeManager.mostapp#_8oX74LCuEeC2hIfQ2W4Mog"/>
           <layoutConstraint xmi:type="notation:Location" xmi:id="_yumPgT05EeGJp8ipgWNEEg"/>
         </children>
-        <children xmi:type="notation:Node" xmi:id="_VPqvgD09EeGJp8ipgWNEEg" type="3108">
-          <element xmi:type="modulestudio:UploadField" href="RecipeManager.mostapp#_VPoTQD09EeGJp8ipgWNEEg"/>
-          <layoutConstraint xmi:type="notation:Location" xmi:id="_VPqvgT09EeGJp8ipgWNEEg"/>
-        </children>
         <children xmi:type="notation:Node" xmi:id="_i-ny0D09EeGJp8ipgWNEEg" type="3108">
           <element xmi:type="modulestudio:UploadField" href="RecipeManager.mostapp#_i-l9oD09EeGJp8ipgWNEEg"/>
           <layoutConstraint xmi:type="notation:Location" xmi:id="_i-ny0T09EeGJp8ipgWNEEg"/>

@@ -53,8 +53,7 @@
     </entities>
     <entities xmi:type="modulestudio:Entity" xmi:id="_7jEgsLCuEeC2hIfQ2W4Mog" name="category" nameMultiple="categories" outgoing="_okgWMLC0EeCQuu8K_dBPkw _UI1jQLC0EeCQuu8K_dBPkw" tree="NESTED">
       <fields xmi:type="modulestudio:StringField" xmi:id="_8oX74LCuEeC2hIfQ2W4Mog" name="name" defaultValue="" leading="true" sluggablePosition="1"/>
-      <fields xmi:type="modulestudio:UploadField" xmi:id="_VPoTQD09EeGJp8ipgWNEEg" name="previewImage" mandatory="false"/>
-      <fields xmi:type="modulestudio:UploadField" xmi:id="_i-l9oD09EeGJp8ipgWNEEg" name="detailImage" mandatory="false"/>
+      <fields xmi:type="modulestudio:UploadField" xmi:id="_i-l9oD09EeGJp8ipgWNEEg" name="image" mandatory="false"/>
     </entities>
     <entities xmi:type="modulestudio:Entity" xmi:id="_or8NMLCvEeC2hIfQ2W4Mog" name="unit" nameMultiple="units" incoming="_LNCGgD35EeGNycoQ3Shxiw _m1Zd8KmXEeG1D84mmJt6Jg">
       <fields xmi:type="modulestudio:StringField" xmi:id="_qLRR8LCvEeC2hIfQ2W4Mog" name="name" defaultValue="" leading="true" unique="true"/>

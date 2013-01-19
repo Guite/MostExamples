@@ -1,22 +1,60 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<modulestudio:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:modulestudio="http://modulestudio.de/modulestudio" xmi:id="_ILi4cZ5gEd-VF9wVsm0ImQ" name="AutoMixtapes" author="Axel Guckelsberger" email="info@guite.de" url="https://guite.de" prefix="aumixt" modelPath="/home/axel/AutoMixtapes.mostapp">
-  <models xmi:type="modulestudio:Models" xmi:id="_ILjfgJ5gEd-VF9wVsm0ImQ" name="Model">
-    <entities xmi:type="modulestudio:Entity" xmi:id="_apuD8J5gEd-VF9wVsm0ImQ" name="mixtape" nameMultiple="mixtapes" leading="true">
-      <fields xmi:type="modulestudio:StringField" xmi:id="_-GZX8J5gEd-VF9wVsm0ImQ" name="name" defaultValue="" leading="true"/>
-      <fields xmi:type="modulestudio:TextField" xmi:id="_AnxvkJ5hEd-VF9wVsm0ImQ" name="description" defaultValue="" mandatory="false"/>
-      <fields xmi:type="modulestudio:DateField" xmi:id="_DulvgJ5hEd-VF9wVsm0ImQ" name="releaseDate" defaultValue=""/>
-      <fields xmi:type="modulestudio:UploadField" xmi:id="_FZiOYJ5hEd-VF9wVsm0ImQ" name="soundFile"/>
-      <fields xmi:type="modulestudio:UploadField" xmi:id="_Gre-cJ5hEd-VF9wVsm0ImQ" name="graphicFile"/>
-      <fields xmi:type="modulestudio:IntegerField" xmi:id="_IWP3IJ5hEd-VF9wVsm0ImQ" name="views" defaultValue="0"/>
-    </entities>
-  </models>
-  <controllers xmi:type="modulestudio:Controllers" xmi:id="_ILjfgZ5gEd-VF9wVsm0ImQ" name="Controller" modelContext="_ILjfgJ5gEd-VF9wVsm0ImQ" processViews="_ILjfgp5gEd-VF9wVsm0ImQ">
-    <controllers xmi:type="modulestudio:AdminController" xmi:id="_UmRTwJ5gEd-VF9wVsm0ImQ" name="Admin">
-      <actions xmi:type="modulestudio:MainAction" xmi:id="_WR_1wJ5gEd-VF9wVsm0ImQ" name="Main"/>
-      <actions xmi:type="modulestudio:ViewAction" xmi:id="_WmMkIJ5gEd-VF9wVsm0ImQ" name="View"/>
-      <actions xmi:type="modulestudio:DisplayAction" xmi:id="_W2hfIJ5gEd-VF9wVsm0ImQ" name="Display"/>
-      <actions xmi:type="modulestudio:EditAction" xmi:id="_XsT3oJ5gEd-VF9wVsm0ImQ" name="Edit"/>
-    </controllers>
-  </controllers>
-  <views xmi:type="modulestudio:Views" xmi:id="_ILjfgp5gEd-VF9wVsm0ImQ" name="View" controller="_ILjfgZ5gEd-VF9wVsm0ImQ"/>
-</modulestudio:Application>
+application AutoMixtapes {
+	vendor Guite
+	author "Axel Guckelsberger"
+	email "info@guite.de"
+	url "https://guite.de"
+	prefix aumixt
+	modelPath ""
+	modelLayer {
+		modelContainer Model {
+			entities {
+				entity mixtape leading {
+					nameMultiple mixtapes
+					fields {
+						string name leading {
+							defaultValue ""
+						},
+						text description {
+							defaultValue ""
+							mandatory false
+						},
+						date releaseDate {
+							defaultValue ""
+						},
+						upload soundFile,
+						upload graphicFile,
+						integer ^views {
+							defaultValue "0"
+						}
+					}
+				}
+			}
+		}
+	}
+	controllerLayer {
+		controllerContainer Controller {
+			modelContext ( "AutoMixtapes.Model" )
+			processViews "AutoMixtapes.View"
+			controllers {
+				adminController Admin {
+					actions {
+						mainAction Main,
+						viewAction View,
+						displayAction Display,
+						editAction Edit
+					}
+				},
+				ajaxController Ajax {
+					actions {
+						mainAction Main
+					}
+				}
+			}
+		}
+	}
+	viewLayer {
+		viewContainer View {
+			controller "AutoMixtapes.Controller"
+		}
+	}
+}

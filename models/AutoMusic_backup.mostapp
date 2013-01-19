@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modulestudio:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:modulestudio="http://modulestudio.de/modulestudio" xmi:id="_95gPwJfvEd-gXNVVen1FFg" name="AutoMusic" author="Axel Guckelsberger" email="info@modulestudio.de" url="http://modulestudio.de" prefix="music" modelPath="/Users/GuiteMedia/AutoMusic.mostapp">
+  <models xmi:type="modulestudio:Models" xmi:id="_95gPwZfvEd-gXNVVen1FFg" name="Model">
+    <relations xmi:type="modulestudio:OneToManyRelationship" xmi:id="_QVz9kJfxEd-gXNVVen1FFg" target="_iZok0JfwEd-gXNVVen1FFg" source="_Q3m4gJfwEd-gXNVVen1FFg" sourceAlias="artist" targetAlias="releases"/>
+    <relations xmi:type="modulestudio:OneToManyRelationship" xmi:id="_T7qp8JfxEd-gXNVVen1FFg" target="_ybjwUJfwEd-gXNVVen1FFg" source="_ouTA0JfwEd-gXNVVen1FFg" sourceAlias="song" targetAlias="releases"/>
+    <relations xmi:type="modulestudio:OneToManyRelationship" xmi:id="_Xnk7AJfxEd-gXNVVen1FFg" target="_ybjwUJfwEd-gXNVVen1FFg" source="_iZok0JfwEd-gXNVVen1FFg" sourceAlias="release" targetAlias="songs"/>
+    <entities xmi:type="modulestudio:Entity" xmi:id="_Q3m4gJfwEd-gXNVVen1FFg" name="artist" nameMultiple="artists" outgoing="_QVz9kJfxEd-gXNVVen1FFg" leading="true">
+      <fields xmi:type="modulestudio:StringField" xmi:id="_UwtRAJfwEd-gXNVVen1FFg" name="firstName" defaultValue="" length="200"/>
+      <fields xmi:type="modulestudio:StringField" xmi:id="_XH5K0JfwEd-gXNVVen1FFg" name="lastName" defaultValue="" leading="true" length="200"/>
+      <fields xmi:type="modulestudio:BooleanField" xmi:id="_eOFKYJfwEd-gXNVVen1FFg" name="isActive" defaultValue="1"/>
+      <fields xmi:type="modulestudio:DateField" xmi:id="_bR7iUJfwEd-gXNVVen1FFg" name="birthday" defaultValue=""/>
+    </entities>
+    <entities xmi:type="modulestudio:Entity" xmi:id="_iZok0JfwEd-gXNVVen1FFg" name="release" nameMultiple="releases" incoming="_QVz9kJfxEd-gXNVVen1FFg" outgoing="_Xnk7AJfxEd-gXNVVen1FFg">
+      <fields xmi:type="modulestudio:StringField" xmi:id="_lJpOUJfwEd-gXNVVen1FFg" name="title" defaultValue="" leading="true" length="200"/>
+    </entities>
+    <entities xmi:type="modulestudio:Entity" xmi:id="_ouTA0JfwEd-gXNVVen1FFg" name="song" nameMultiple="songs" outgoing="_T7qp8JfxEd-gXNVVen1FFg">
+      <fields xmi:type="modulestudio:StringField" xmi:id="_rn2A0JfwEd-gXNVVen1FFg" name="title" defaultValue="" leading="true" length="250"/>
+      <fields xmi:type="modulestudio:StringField" xmi:id="_u5WN0JfwEd-gXNVVen1FFg" name="length" defaultValue="0:00" length="10"/>
+    </entities>
+    <entities xmi:type="modulestudio:Entity" xmi:id="_ybjwUJfwEd-gXNVVen1FFg" name="releaseTrack" nameMultiple="releaseTracks" incoming="_T7qp8JfxEd-gXNVVen1FFg _Xnk7AJfxEd-gXNVVen1FFg">
+      <fields xmi:type="modulestudio:IntegerField" xmi:id="_1B5gcJfwEd-gXNVVen1FFg" name="songIndex" defaultValue="" leading="true"/>
+    </entities>
+  </models>
+  <controllers xmi:type="modulestudio:Controllers" xmi:id="_95gPwpfvEd-gXNVVen1FFg" name="Controller" modelContext="_95gPwZfvEd-gXNVVen1FFg" processViews="_95gPw5fvEd-gXNVVen1FFg">
+    <controllers xmi:type="modulestudio:AdminController" xmi:id="_J4l38JfwEd-gXNVVen1FFg" name="Admin">
+      <actions xmi:type="modulestudio:MainAction" xmi:id="_KuTX8JfwEd-gXNVVen1FFg" name="Main"/>
+      <actions xmi:type="modulestudio:ViewAction" xmi:id="_LKSwYJfwEd-gXNVVen1FFg" name="View"/>
+      <actions xmi:type="modulestudio:DisplayAction" xmi:id="_LpktYJfwEd-gXNVVen1FFg" name="Display"/>
+      <actions xmi:type="modulestudio:EditAction" xmi:id="_MSix4JfwEd-gXNVVen1FFg" name="Edit"/>
+    </controllers>
+    <controllers xmi:type="modulestudio:AjaxController" xmi:id="_KuAEcLO9EeCAgM7sSWFolQ" name="Ajax">
+      <actions xmi:type="modulestudio:MainAction" xmi:id="_LK6C4LO9EeCAgM7sSWFolQ" name="Main"/>
+    </controllers>
+  </controllers>
+  <views xmi:type="modulestudio:Views" xmi:id="_95gPw5fvEd-gXNVVen1FFg" name="View" controller="_95gPwpfvEd-gXNVVen1FFg"/>
+</modulestudio:Application>

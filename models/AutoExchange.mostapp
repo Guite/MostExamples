@@ -1,88 +1,269 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<modulestudio:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:modulestudio="http://modulestudio.de/modulestudio" xmi:id="_M-ibsZZwEd-H1-ReVngLWA" name="AutoExchange" author="Axel Guckelsberger" email="info@guite.de" url="https://guite.de" prefix="auex" modelPath="/Users/GuiteMedia/AutoExchange.mostapp">
-  <models xmi:type="modulestudio:Models" xmi:id="_M-jCwJZwEd-H1-ReVngLWA" name="Model">
-    <variables xmi:type="modulestudio:Variables" xmi:id="_PDY9cJZyEd-H1-ReVngLWA" name="Variables">
-      <vars xmi:type="modulestudio:IntVar" xmi:id="_SZL0kJZyEd-H1-ReVngLWA" name="pageSize" value="15"/>
-      <vars xmi:type="modulestudio:ListVar" xmi:id="_WH468JZyEd-H1-ReVngLWA" name="defaultCat">
-        <items xmi:type="modulestudio:ListVarItem" xmi:id="_ZWou4JZyEd-H1-ReVngLWA" name="cat1"/>
-        <items xmi:type="modulestudio:ListVarItem" xmi:id="_bdWjwJZyEd-H1-ReVngLWA" name="cat1"/>
-      </vars>
-    </variables>
-    <relations xmi:type="modulestudio:OneToManyRelationship" xmi:id="_TnunIZZ5Ed-crO6q7IGfEA" target="_rJH8QJZ2Ed-Ykd7Rp0pJEA" source="_u7QG4JZyEd-H1-ReVngLWA" sourceAlias="provider" targetAlias="products"/>
-    <relations xmi:type="modulestudio:OneToOneRelationship" xmi:id="_XU-8AJZ5Ed-crO6q7IGfEA" target="_5NsDMJZ2Ed-Ykd7Rp0pJEA" source="_rJH8QJZ2Ed-Ykd7Rp0pJEA" sourceAlias="product" targetAlias="bidding"/>
-    <relations xmi:type="modulestudio:OneToOneRelationship" xmi:id="_c7USYJZ5Ed-crO6q7IGfEA" target="_35ASwJZ3Ed-Ykd7Rp0pJEA" source="_u7QG4JZyEd-H1-ReVngLWA" sourceAlias="provider" targetAlias="contracts"/>
-    <relations xmi:type="modulestudio:OneToOneRelationship" xmi:id="_gXSC8JZ5Ed-crO6q7IGfEA" target="_35ASwJZ3Ed-Ykd7Rp0pJEA" source="_ymyyQJZ3Ed-Ykd7Rp0pJEA" sourceAlias="customer" targetAlias="contract"/>
-    <relations xmi:type="modulestudio:OneToManyRelationship" xmi:id="_nUEO4JZ5Ed-crO6q7IGfEA" target="_-7rEQJZ3Ed-Ykd7Rp0pJEA" source="_iwKQwJZ3Ed-Ykd7Rp0pJEA" sourceAlias="buyer" targetAlias="views"/>
-    <relations xmi:type="modulestudio:OneToManyRelationship" xmi:id="_pSoNUJZ5Ed-crO6q7IGfEA" target="_-7rEQJZ3Ed-Ykd7Rp0pJEA" source="_rJH8QJZ2Ed-Ykd7Rp0pJEA" sourceAlias="product" targetAlias="views"/>
-    <relations xmi:type="modulestudio:OneToManyRelationship" xmi:id="_ONdhYJZ6Ed-crO6q7IGfEA" target="_5NsDMJZ2Ed-Ykd7Rp0pJEA" source="_oM-ewJZ3Ed-Ykd7Rp0pJEA" sourceAlias="bidder" targetAlias="biddings"/>
-    <relations xmi:type="modulestudio:OneToOneRelationship" xmi:id="_RuIy0JZ6Ed-crO6q7IGfEA" target="_35ASwJZ3Ed-Ykd7Rp0pJEA" source="__laaQJZ2Ed-Ykd7Rp0pJEA" sourceAlias="acceptance" targetAlias="contract"/>
-    <relations xmi:type="modulestudio:OneToOneRelationship" xmi:id="_z-UwQJ2mEd-Kb4K-RqBN4w" target="_5NsDMJZ2Ed-Ykd7Rp0pJEA" source="__laaQJZ2Ed-Ykd7Rp0pJEA" sourceAlias="acceptance" targetAlias="bidding"/>
-    <relations xmi:type="modulestudio:OneToOneRelationship" xmi:id="_60GVQJ2mEd-Kb4K-RqBN4w" target="_ymyyQJZ3Ed-Ykd7Rp0pJEA" source="__laaQJZ2Ed-Ykd7Rp0pJEA" sourceAlias="acceptance" targetAlias="customer"/>
-    <relations xmi:type="modulestudio:InheritanceRelationship" xmi:id="_Aj9bEJ2nEd-Kb4K-RqBN4w" target="_oM-ewJZ3Ed-Ykd7Rp0pJEA" source="_ymyyQJZ3Ed-Ykd7Rp0pJEA"/>
-    <relations xmi:type="modulestudio:InheritanceRelationship" xmi:id="_DG88QJ2nEd-Kb4K-RqBN4w" target="_iwKQwJZ3Ed-Ykd7Rp0pJEA" source="_oM-ewJZ3Ed-Ykd7Rp0pJEA"/>
-    <entities xmi:type="modulestudio:Entity" xmi:id="_u7QG4JZyEd-H1-ReVngLWA" name="provider" nameMultiple="providers" outgoing="_TnunIZZ5Ed-crO6q7IGfEA _c7USYJZ5Ed-crO6q7IGfEA" leading="true">
-      <fields xmi:type="modulestudio:StringField" xmi:id="_xz5H8JZyEd-H1-ReVngLWA" name="firstName" defaultValue=""/>
-      <fields xmi:type="modulestudio:StringField" xmi:id="_zxrDQJZyEd-H1-ReVngLWA" name="lastName" defaultValue="" leading="true"/>
-      <fields xmi:type="modulestudio:StringField" xmi:id="_3vCQsJZyEd-H1-ReVngLWA" name="street" defaultValue="" mandatory="false" length="150"/>
-      <fields xmi:type="modulestudio:StringField" xmi:id="_72B7QJZyEd-H1-ReVngLWA" name="houseNr" defaultValue="1" mandatory="false" length="10"/>
-      <fields xmi:type="modulestudio:StringField" xmi:id="__BlRQJZyEd-H1-ReVngLWA" name="zipCode" defaultValue="" length="10"/>
-      <fields xmi:type="modulestudio:StringField" xmi:id="_Bw0esJZzEd-H1-ReVngLWA" name="city" defaultValue="" length="150"/>
-      <indexes xmi:type="modulestudio:EntityIndex" xmi:id="_KQc9cJZzEd-H1-ReVngLWA" name="myIndex">
-        <items xmi:type="modulestudio:EntityIndexItem" xmi:id="_NQQ9gJZzEd-H1-ReVngLWA" name="firstName"/>
-        <items xmi:type="modulestudio:EntityIndexItem" xmi:id="_Ok1jwJZzEd-H1-ReVngLWA" name="lastName"/>
-        <items xmi:type="modulestudio:EntityIndexItem" xmi:id="_Q1y5wJZzEd-H1-ReVngLWA" name="zipCode"/>
-      </indexes>
-    </entities>
-    <entities xmi:type="modulestudio:Entity" xmi:id="_rJH8QJZ2Ed-Ykd7Rp0pJEA" name="product" nameMultiple="products" incoming="_TnunIZZ5Ed-crO6q7IGfEA" outgoing="_XU-8AJZ5Ed-crO6q7IGfEA _pSoNUJZ5Ed-crO6q7IGfEA">
-      <fields xmi:type="modulestudio:StringField" xmi:id="_t6qPwJZ2Ed-Ykd7Rp0pJEA" name="title" defaultValue="" leading="true" length="200"/>
-      <fields xmi:type="modulestudio:TextField" xmi:id="_xyYvQJZ2Ed-Ykd7Rp0pJEA" name="description" defaultValue=""/>
-      <fields xmi:type="modulestudio:DateField" xmi:id="_0EG6QJZ2Ed-Ykd7Rp0pJEA" name="startDate" defaultValue=""/>
-      <fields xmi:type="modulestudio:DateField" xmi:id="_1-e8QJZ2Ed-Ykd7Rp0pJEA" name="endDate" defaultValue=""/>
-    </entities>
-    <entities xmi:type="modulestudio:Entity" xmi:id="_5NsDMJZ2Ed-Ykd7Rp0pJEA" name="bidding" nameMultiple="biddings" incoming="_XU-8AJZ5Ed-crO6q7IGfEA _ONdhYJZ6Ed-crO6q7IGfEA _z-UwQJ2mEd-Kb4K-RqBN4w">
-      <fields xmi:type="modulestudio:FloatField" xmi:id="_8L6H0JZ2Ed-Ykd7Rp0pJEA" name="price" defaultValue="" leading="true"/>
-    </entities>
-    <entities xmi:type="modulestudio:Entity" xmi:id="__laaQJZ2Ed-Ykd7Rp0pJEA" name="acceptance" nameMultiple="acceptance" outgoing="_RuIy0JZ6Ed-crO6q7IGfEA _z-UwQJ2mEd-Kb4K-RqBN4w _60GVQJ2mEd-Kb4K-RqBN4w">
-      <fields xmi:type="modulestudio:DateField" xmi:id="_BuqlwJZ3Ed-Ykd7Rp0pJEA" name="acceptDate" defaultValue="" leading="true"/>
-    </entities>
-    <entities xmi:type="modulestudio:Entity" xmi:id="_iwKQwJZ3Ed-Ykd7Rp0pJEA" name="interestedBuyer" nameMultiple="interestedBuyers" incoming="_DG88QJ2nEd-Kb4K-RqBN4w" outgoing="_nUEO4JZ5Ed-crO6q7IGfEA">
-      <fields xmi:type="modulestudio:UserField" xmi:id="_JjdssJ2nEd-Kb4K-RqBN4w" name="buyer" leading="true"/>
-    </entities>
-    <entities xmi:type="modulestudio:Entity" xmi:id="_oM-ewJZ3Ed-Ykd7Rp0pJEA" name="bidder" nameMultiple="bidders" incoming="_Aj9bEJ2nEd-Kb4K-RqBN4w" outgoing="_ONdhYJZ6Ed-crO6q7IGfEA _DG88QJ2nEd-Kb4K-RqBN4w">
-      <fields xmi:type="modulestudio:StringField" xmi:id="_qh5HsJZ3Ed-Ykd7Rp0pJEA" name="firstName" defaultValue="" mandatory="false"/>
-      <fields xmi:type="modulestudio:StringField" xmi:id="_suuysJZ3Ed-Ykd7Rp0pJEA" name="lastName" defaultValue="" leading="true"/>
-      <fields xmi:type="modulestudio:BooleanField" xmi:id="_vYzMQJZ3Ed-Ykd7Rp0pJEA" name="isRegular" defaultValue="false"/>
-    </entities>
-    <entities xmi:type="modulestudio:Entity" xmi:id="_ymyyQJZ3Ed-Ykd7Rp0pJEA" name="customer" nameMultiple="customers" incoming="_60GVQJ2mEd-Kb4K-RqBN4w" outgoing="_gXSC8JZ5Ed-crO6q7IGfEA _Aj9bEJ2nEd-Kb4K-RqBN4w">
-      <fields xmi:type="modulestudio:IntegerField" xmi:id="_0y8gwJZ3Ed-Ykd7Rp0pJEA" name="customerNr" defaultValue="0" leading="true" unique="true"/>
-    </entities>
-    <entities xmi:type="modulestudio:Entity" xmi:id="_35ASwJZ3Ed-Ykd7Rp0pJEA" name="contract" nameMultiple="contracts" incoming="_c7USYJZ5Ed-crO6q7IGfEA _gXSC8JZ5Ed-crO6q7IGfEA _RuIy0JZ6Ed-crO6q7IGfEA">
-      <fields xmi:type="modulestudio:StringField" xmi:id="_6nU6MJZ3Ed-Ykd7Rp0pJEA" name="payMethod" defaultValue="credit card" leading="true" length="20"/>
-    </entities>
-    <entities xmi:type="modulestudio:Entity" xmi:id="_-7rEQJZ3Ed-Ykd7Rp0pJEA" name="productView" nameMultiple="productView" incoming="_nUEO4JZ5Ed-crO6q7IGfEA _pSoNUJZ5Ed-crO6q7IGfEA">
-      <fields xmi:type="modulestudio:DatetimeField" xmi:id="_Bz7DwJZ4Ed-Ykd7Rp0pJEA" name="viewTime" defaultValue="" leading="true"/>
-    </entities>
-  </models>
-  <controllers xmi:type="modulestudio:Controllers" xmi:id="_M-jCwZZwEd-H1-ReVngLWA" name="Controller" modelContext="_M-jCwJZwEd-H1-ReVngLWA" processViews="_M-jCwpZwEd-H1-ReVngLWA">
-    <controllers xmi:type="modulestudio:SearchController" xmi:id="_mD8Z4JZwEd-H1-ReVngLWA" name="Search">
-      <actions xmi:type="modulestudio:CustomAction" xmi:id="_o0oY0JZwEd-H1-ReVngLWA" name="test53"/>
-    </controllers>
-    <controllers xmi:type="modulestudio:AjaxController" xmi:id="_sZTZcJZwEd-H1-ReVngLWA" name="Ajax">
-      <actions xmi:type="modulestudio:CustomAction" xmi:id="_vcgrwJZwEd-H1-ReVngLWA" name="MyFunction"/>
-    </controllers>
-    <controllers xmi:type="modulestudio:AdminController" xmi:id="_bO8JwJZxEd-H1-ReVngLWA" name="Admin">
-      <actions xmi:type="modulestudio:MainAction" xmi:id="_blwHQJZxEd-H1-ReVngLWA" name="Main"/>
-      <actions xmi:type="modulestudio:ViewAction" xmi:id="_cCDowJZxEd-H1-ReVngLWA" name="View"/>
-      <actions xmi:type="modulestudio:DisplayAction" xmi:id="_cifcUJZxEd-H1-ReVngLWA" name="Display"/>
-      <actions xmi:type="modulestudio:EditAction" xmi:id="_c4_QwJZxEd-H1-ReVngLWA" name="Edit"/>
-    </controllers>
-    <controllers xmi:type="modulestudio:CustomController" xmi:id="_gz3x8JZxEd-H1-ReVngLWA" name="dsffdfsg">
-      <actions xmi:type="modulestudio:CustomAction" xmi:id="_iAShwJZxEd-H1-ReVngLWA" name="MyFunction"/>
-    </controllers>
-    <handlers xmi:type="modulestudio:CustomHandler" xmi:id="_02oVoJZxEd-H1-ReVngLWA" name="productHandler">
-      <events xmi:type="modulestudio:NormalEvent" xmi:id="_6rP_oJZxEd-H1-ReVngLWA" name="MyNameEvent"/>
-      <events xmi:type="modulestudio:StartEvent" xmi:id="_9qsMQJZxEd-H1-ReVngLWA" name="StartEvent"/>
-    </handlers>
-  </controllers>
-  <views xmi:type="modulestudio:Views" xmi:id="_M-jCwpZwEd-H1-ReVngLWA" name="View" controller="_M-jCwZZwEd-H1-ReVngLWA"/>
-</modulestudio:Application>
+application AutoExchange {
+	vendor Guite
+	author "Axel Guckelsberger"
+	email "info@guite.de"
+	url "https://guite.de"
+	prefix auex
+	modelPath ""
+	modelLayer {
+		modelContainer Model {
+			entities {
+				entity provider leading {
+					nameMultiple providers
+					outgoing ( "provider.products",
+					"provider.contracts" ) fields {
+						string firstName {
+							defaultValue ""
+							length 100
+						},
+						string lastName leading {
+							defaultValue ""
+							length 100
+						},
+						string street {
+							defaultValue ""
+							mandatory false
+							length 150
+						},
+						string houseNr {
+							defaultValue "1"
+							mandatory false
+							length 10
+						},
+						string zipCode {
+							defaultValue ""
+							length 10
+						},
+						string city {
+							defaultValue ""
+							length 150
+						}
+					}
+					indexes {
+						index myIndex {
+							items {
+								indexItem firstName,
+								indexItem lastName,
+								indexItem zipCode
+							}
+						}
+					}
+				},
+				entity product {
+					nameMultiple products
+					incoming ( "provider.products" ) outgoing ( "product.bidding",
+					"product.views" ) fields {
+						string title leading {
+							defaultValue ""
+							length 200
+						},
+						text description {
+							defaultValue ""
+						},
+						date ^startDate {
+							defaultValue ""
+						},
+						date ^endDate {
+							defaultValue ""
+						}
+					}
+				},
+				entity bidding {
+					nameMultiple biddings
+					incoming ( "product.bidding",
+					"bidder.biddings",
+					"acceptance.bidding" ) fields {
+						float price leading {
+							defaultValue ""
+						}
+					}
+				},
+				entity acceptance {
+					nameMultiple acceptance
+					outgoing ( "acceptance.contract",
+					"acceptance.bidding",
+					"acceptance.customer" ) fields {
+						date acceptDate leading {
+							defaultValue ""
+						}
+					}
+				},
+				entity interestedBuyer {
+					nameMultiple interestedBuyers
+					incoming ( "inheritance.1" ) outgoing ( "buyer.views" ) fields {
+						user buyer leading
+					}
+				},
+				entity bidder {
+					nameMultiple bidders
+					incoming ( "inheritance.0" ) outgoing ( "bidder.biddings",
+					"inheritance.1" ) fields {
+						string firstName {
+							defaultValue ""
+							mandatory false
+						},
+						string lastName leading {
+							defaultValue ""
+						},
+						boolean isRegular {
+							defaultValue ^false
+						}
+					}
+				},
+				entity customer {
+					nameMultiple customers
+					incoming ( "acceptance.customer" ) outgoing ( "customer.contract",
+					"inheritance.0" ) fields {
+						integer customerNr leading unique {
+							defaultValue "0"
+						}
+					}
+				},
+				entity contract {
+					nameMultiple contracts
+					incoming ( "provider.contracts",
+					"customer.contract",
+					"acceptance.contract" ) fields {
+						string payMethod leading {
+							defaultValue "credit card"
+							length 20
+						}
+					}
+				},
+				entity productView {
+					nameMultiple productView
+					incoming ( "buyer.views",
+					"product.views" ) fields {
+						datetime viewTime leading {
+							defaultValue ""
+						}
+					}
+				}
+			}
+			relations {
+				one2many {
+					source provider
+					sourceAlias provider
+					target product
+					targetAlias products
+				},
+				one2one {
+					source product
+					sourceAlias product
+					target bidding
+					targetAlias bidding
+				},
+				one2one {
+					source provider
+					sourceAlias provider
+					target contract
+					targetAlias contracts
+				},
+				one2one {
+					source customer
+					sourceAlias customer
+					target contract
+					targetAlias contract
+				},
+				one2many {
+					source interestedBuyer
+					sourceAlias buyer
+					target productView
+					targetAlias ^views
+				},
+				one2many {
+					source product
+					sourceAlias product
+					target productView
+					targetAlias ^views
+				},
+				one2many {
+					source bidder
+					sourceAlias bidder
+					target bidding
+					targetAlias biddings
+				},
+				one2one {
+					source acceptance
+					sourceAlias acceptance
+					target contract
+					targetAlias contract
+				},
+				one2one {
+					source acceptance
+					sourceAlias acceptance
+					target bidding
+					targetAlias bidding
+				},
+				one2one {
+					source acceptance
+					sourceAlias acceptance
+					target customer
+					targetAlias customer
+				},
+				inheritance {
+					source customer
+					target bidder
+				},
+				inheritance {
+					source bidder
+					target interestedBuyer
+				}
+			}
+			variables {
+				varContainer Variables {
+					vars {
+						intVar pageSize {
+							value "15"
+						},
+						listVar defaultCat {
+							items {
+								listVarItem cat1,
+								listVarItem cat1
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	controllerLayer {
+		controllerContainer Controller {
+			modelContext ( "AutoExchange.Model" )
+			processViews "AutoExchange.View"
+			controllers {
+				ajaxController Ajax {
+					actions {
+						customAction MyFunction
+					}
+				},
+				adminController Admin {
+					actions {
+						mainAction Main,
+						viewAction View,
+						displayAction Display,
+						editAction Edit
+					}
+				},
+				customController dsffdfsg {
+					actions {
+						customAction MyFunction
+					}
+				}
+			}
+			handlers {
+				customHandler productHandler {
+					events {
+						normalEvent MyNameEvent,
+						startEvent StartEvent
+					}
+				}
+			}
+		}
+	}
+	viewLayer {
+		viewContainer View {
+			controller "AutoExchange.Controller"
+		}
+	}
+}

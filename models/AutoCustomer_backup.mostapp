@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modulestudio:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:modulestudio="http://modulestudio.de/modulestudio" xmi:id="_tfuWUJZtEd-Cr6we_ykR9w" name="AutoCustomer" author="Axel Guckelsberger" email="info@guite.de" url="http://guite.de" prefix="aucu" modelPath="/Users/GuiteMedia/AutoCustomer.mostapp">
+  <models xmi:type="modulestudio:Models" xmi:id="_tfuWUZZtEd-Cr6we_ykR9w" name="Model">
+    <relations xmi:type="modulestudio:OneToOneRelationship" xmi:id="_7ieC4JZuEd-Cr6we_ykR9w" target="_UZHBwJZuEd-Cr6we_ykR9w" source="_CApcsJZuEd-Cr6we_ykR9w" sourceAlias="customer" targetAlias="contact"/>
+    <relations xmi:type="modulestudio:OneToManyRelationship" xmi:id="_CWCBYJZvEd-Cr6we_ykR9w" target="_NRe3wJZuEd-Cr6we_ykR9w" source="_CApcsJZuEd-Cr6we_ykR9w" sourceAlias="customer" targetAlias="orders"/>
+    <relations xmi:type="modulestudio:OneToManyRelationship" xmi:id="_IEKo4JZvEd-Cr6we_ykR9w" target="_jWJBwJZuEd-Cr6we_ykR9w" source="_NRe3wJZuEd-Cr6we_ykR9w" sourceAlias="order" targetAlias="positions"/>
+    <entities xmi:type="modulestudio:Entity" xmi:id="_CApcsJZuEd-Cr6we_ykR9w" name="customer" nameMultiple="customers" outgoing="_7ieC4JZuEd-Cr6we_ykR9w _CWCBYJZvEd-Cr6we_ykR9w" leading="true">
+      <fields xmi:type="modulestudio:StringField" xmi:id="_FWbFsJZuEd-Cr6we_ykR9w" name="company" defaultValue="" leading="true"/>
+      <fields xmi:type="modulestudio:StringField" xmi:id="_Hk8LsJZuEd-Cr6we_ykR9w" name="city" defaultValue=""/>
+      <fields xmi:type="modulestudio:BooleanField" xmi:id="_J-1bQJZuEd-Cr6we_ykR9w" name="active" defaultValue="true"/>
+    </entities>
+    <entities xmi:type="modulestudio:Entity" xmi:id="_NRe3wJZuEd-Cr6we_ykR9w" name="order" nameMultiple="orders" incoming="_CWCBYJZvEd-Cr6we_ykR9w" outgoing="_IEKo4JZvEd-Cr6we_ykR9w">
+      <fields xmi:type="modulestudio:DateField" xmi:id="_P9H-oJZuEd-Cr6we_ykR9w" name="orderDate" defaultValue="" leading="true"/>
+    </entities>
+    <entities xmi:type="modulestudio:Entity" xmi:id="_UZHBwJZuEd-Cr6we_ykR9w" name="contact" nameMultiple="contacts" incoming="_7ieC4JZuEd-Cr6we_ykR9w" slugUnique="false">
+      <fields xmi:type="modulestudio:StringField" xmi:id="_WgchsJZuEd-Cr6we_ykR9w" name="firstName" defaultValue="" sluggablePosition="1"/>
+      <fields xmi:type="modulestudio:StringField" xmi:id="_YYiEsJZuEd-Cr6we_ykR9w" name="lastName" defaultValue="" leading="true" sluggablePosition="2"/>
+      <fields xmi:type="modulestudio:IntegerField" xmi:id="_bSnQMJZuEd-Cr6we_ykR9w" name="age" defaultValue="" length="2"/>
+      <fields xmi:type="modulestudio:StringField" xmi:id="_duQMMJZuEd-Cr6we_ykR9w" name="phone" defaultValue="" mandatory="false"/>
+    </entities>
+    <entities xmi:type="modulestudio:Entity" xmi:id="_jWJBwJZuEd-Cr6we_ykR9w" name="orderPosition" nameMultiple="orderPositions" incoming="_IEKo4JZvEd-Cr6we_ykR9w">
+      <fields xmi:type="modulestudio:IntegerField" xmi:id="_lyAAMJZuEd-Cr6we_ykR9w" name="amount" defaultValue="1" leading="true"/>
+    </entities>
+  </models>
+  <controllers xmi:type="modulestudio:Controllers" xmi:id="_tfuWUpZtEd-Cr6we_ykR9w" name="Controller" modelContext="_tfuWUZZtEd-Cr6we_ykR9w" processViews="_tfuWU5ZtEd-Cr6we_ykR9w">
+    <controllers xmi:type="modulestudio:AdminController" xmi:id="_5CZIQJZtEd-Cr6we_ykR9w" name="Admin">
+      <actions xmi:type="modulestudio:MainAction" xmi:id="_5Y0EMJZtEd-Cr6we_ykR9w" name="Main"/>
+      <actions xmi:type="modulestudio:ViewAction" xmi:id="_51gAMJZtEd-Cr6we_ykR9w" name="View"/>
+      <actions xmi:type="modulestudio:DisplayAction" xmi:id="_6RR9QJZtEd-Cr6we_ykR9w" name="Display"/>
+      <actions xmi:type="modulestudio:EditAction" xmi:id="_6tDTQJZtEd-Cr6we_ykR9w" name="Edit"/>
+    </controllers>
+    <controllers xmi:type="modulestudio:AjaxController" xmi:id="_pAY3ILO4EeCDJbzAMYiC2A" name="Ajax">
+      <actions xmi:type="modulestudio:MainAction" xmi:id="_qAwH8LO4EeCDJbzAMYiC2A" name="Main"/>
+    </controllers>
+  </controllers>
+  <views xmi:type="modulestudio:Views" xmi:id="_tfuWU5ZtEd-Cr6we_ykR9w" name="View" controller="_tfuWUpZtEd-Cr6we_ykR9w"/>
+</modulestudio:Application>

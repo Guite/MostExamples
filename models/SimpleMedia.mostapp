@@ -1,37 +1,94 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<modulestudio:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:modulestudio="http://modulestudio.de/modulestudio" xmi:id="_6CazsRD0EeCXF58EtCb2zA" name="SimpleMedia" documentation="Simple file and media management." author="Axel Guckelsberger" email="info@guite.de" url="http://zikula.de" prefix="simmed" modelPath="/home/axel/SimpleMedia.mostapp">
-  <models xmi:type="modulestudio:Models" xmi:id="_6CbawBD0EeCXF58EtCb2zA" name="Model" numExampleRows="0">
-    <variables xmi:type="modulestudio:Variables" xmi:id="_tpfSsBD1EeCXF58EtCb2zA" name="ImageSettings">
-      <vars xmi:type="modulestudio:IntVar" xmi:id="_ufY_8BD1EeCXF58EtCb2zA" name="pageSize" value="20"/>
-      <vars xmi:type="modulestudio:TextVar" xmi:id="_isUAIPJlEeCT2pTUg7uikw" name="thumbDimensions" value=""/>
-      <vars xmi:type="modulestudio:IntVar" xmi:id="_OJBiQPJlEeCT2pTUg7uikw" name="defaultThumbNumber" value="1"/>
-      <vars xmi:type="modulestudio:BoolVar" xmi:id="_rkMcQPJkEeCT2pTUg7uikw" name="enableShrinking" value="false"/>
-      <vars xmi:type="modulestudio:TextVar" xmi:id="_lBiLEPJlEeCT2pTUg7uikw" name="shrinkDimensions" value=""/>
-      <vars xmi:type="modulestudio:BoolVar" xmi:id="_uJrQwPJkEeCT2pTUg7uikw" name="useThumbCropper" value="false"/>
-      <vars xmi:type="modulestudio:IntVar" xmi:id="_wcFYQPJkEeCT2pTUg7uikw" name="cropSizeMode" value="0"/>
-    </variables>
-    <entities xmi:type="modulestudio:Entity" xmi:id="_lqNhUCsHEeCM6fdBMShs7A" name="medium" nameMultiple="media" leading="true" categorisable="true" attributable="true" metaData="true">
-      <fields xmi:type="modulestudio:StringField" xmi:id="_1GGhcCpgEeCcvNODygdSZQ" name="title" defaultValue="" leading="true" sluggablePosition="1"/>
-      <fields xmi:type="modulestudio:UploadField" xmi:id="_MByFwPJhEeCT2pTUg7uikw" name="theFile" allowedExtensions="gif, jpeg, jpg, png, pdf, doc, xls, ppt, docx, xlsx, pptx, odt, ods, odp, arj, zip, rar, tar, tgz, gz, bz2, txt, rtf, swf, flv, mp3, mp4, avi, mpg, mpeg, mov"/>
-      <fields xmi:type="modulestudio:TextField" xmi:id="_swPpwypgEeCcvNODygdSZQ" name="description" defaultValue="" mandatory="false"/>
-    </entities>
-  </models>
-  <controllers xmi:type="modulestudio:Controllers" xmi:id="_6CbawRD0EeCXF58EtCb2zA" name="Controller" modelContext="_6CbawBD0EeCXF58EtCb2zA" processViews="_6CbawhD0EeCXF58EtCb2zA">
-    <controllers xmi:type="modulestudio:AdminController" xmi:id="_RKgwoBD1EeCXF58EtCb2zA" name="Admin">
-      <actions xmi:type="modulestudio:MainAction" xmi:id="_SXWXMBD1EeCXF58EtCb2zA" name="Main"/>
-      <actions xmi:type="modulestudio:ViewAction" xmi:id="_S0RjwBD1EeCXF58EtCb2zA" name="View"/>
-      <actions xmi:type="modulestudio:DisplayAction" xmi:id="_TOYF0BD1EeCXF58EtCb2zA" name="Display"/>
-      <actions xmi:type="modulestudio:EditAction" xmi:id="_TqSlwBD1EeCXF58EtCb2zA" name="Edit"/>
-      <actions xmi:type="modulestudio:CustomAction" xmi:id="_HH3CQCpXEeCcnbWjrYA5tA" name="Import"/>
-    </controllers>
-    <controllers xmi:type="modulestudio:UserController" xmi:id="_bjaeIBD1EeCXF58EtCb2zA" name="User">
-      <actions xmi:type="modulestudio:MainAction" xmi:id="_cVmwEBD1EeCXF58EtCb2zA" name="Main"/>
-      <actions xmi:type="modulestudio:ViewAction" xmi:id="_cveooBD1EeCXF58EtCb2zA" name="View"/>
-      <actions xmi:type="modulestudio:DisplayAction" xmi:id="_dWKOIBD1EeCXF58EtCb2zA" name="Display"/>
-    </controllers>
-    <controllers xmi:type="modulestudio:AjaxController" xmi:id="_h_8csBD1EeCXF58EtCb2zA" name="Ajax">
-      <actions xmi:type="modulestudio:MainAction" xmi:id="_i-oSgBD1EeCXF58EtCb2zA" name="Main"/>
-    </controllers>
-  </controllers>
-  <views xmi:type="modulestudio:Views" xmi:id="_6CbawhD0EeCXF58EtCb2zA" name="View" controller="_6CbawRD0EeCXF58EtCb2zA"/>
-</modulestudio:Application>
+application SimpleMedia {
+	documentation "Simple file and media management."
+	vendor Guite
+	author "Axel Guckelsberger"
+	email "info@guite.de"
+	url "http://zikula.de"
+	prefix simmed
+	modelPath ""
+	modelLayer {
+		modelContainer Model {
+			numExampleRows 0
+			entities {
+				entity medium leading categorisable attributable metaData {
+					nameMultiple media
+					fields {
+						string title leading {
+							defaultValue ""
+							sluggablePosition 1
+						},
+						upload theFile {
+							allowedExtensions
+							"gif, jpeg, jpg, png, pdf, doc, xls, ppt, docx, xlsx, pptx, odt, ods, odp, arj, zip, rar, tar, tgz, gz, bz2, txt, rtf, swf, flv, mp3, mp4, avi, mpg, mpeg, mov"
+						},
+						text description {
+							defaultValue ""
+							mandatory false
+						}
+					}
+				}
+			}
+			variables {
+				varContainer ImageSettings {
+					vars {
+						intVar pageSize {
+							value "20"
+						},
+						textVar thumbDimensions {
+							value ""
+						},
+						intVar defaultThumbNumber {
+							value "1"
+						},
+						boolVar enableShrinking {
+							value ^false
+						},
+						textVar shrinkDimensions {
+							value ""
+						},
+						boolVar useThumbCropper {
+							value ^false
+						},
+						intVar cropSizeMode {
+							value "0"
+						}
+					}
+				}
+			}
+		}
+	}
+	controllerLayer {
+		controllerContainer Controller {
+			modelContext ( "SimpleMedia.Model" )
+			processViews "SimpleMedia.View"
+			controllers {
+				adminController Admin {
+					actions {
+						mainAction Main,
+						viewAction View,
+						displayAction Display,
+						editAction Edit,
+						customAction Import
+					}
+				},
+				userController User {
+					actions {
+						mainAction Main,
+						viewAction View,
+						displayAction Display
+					}
+				},
+				ajaxController Ajax {
+					actions {
+						mainAction Main
+					}
+				}
+			}
+		}
+	}
+	viewLayer {
+		viewContainer View {
+			controller "SimpleMedia.Controller"
+		}
+	}
+}

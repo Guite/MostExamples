@@ -1,33 +1,94 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<modulestudio:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:modulestudio="http://modulestudio.de/modulestudio" xmi:id="_qcvqMZfxEd-AUbx4tgitVg" name="AutoProject" author="Axel Guckelsberger" email="info@modulestudio.de" url="http://modulestudio.de" prefix="auoro" modelPath="/Users/GuiteMedia/AutoProject.mostapp">
-  <models xmi:type="modulestudio:Models" xmi:id="_qcwRQJfxEd-AUbx4tgitVg" name="Model">
-    <relations xmi:type="modulestudio:OneToManyRelationship" xmi:id="_wmLRIJfyEd-AUbx4tgitVg" target="_Z44Z0JfyEd-AUbx4tgitVg" source="_Fd6xgJfyEd-AUbx4tgitVg" sourceAlias="project" targetAlias="tasks"/>
-    <relations xmi:type="modulestudio:OneToOneRelationship" xmi:id="_Kg_PcJ2oEd-Kb4K-RqBN4w" target="_mdyE0JfyEd-AUbx4tgitVg" source="_Z44Z0JfyEd-AUbx4tgitVg" sourceAlias="task" targetAlias="taskType"/>
-    <entities xmi:type="modulestudio:Entity" xmi:id="_Fd6xgJfyEd-AUbx4tgitVg" name="project" nameMultiple="projects" outgoing="_wmLRIJfyEd-AUbx4tgitVg" leading="true">
-      <fields xmi:type="modulestudio:StringField" xmi:id="_InfKgJfyEd-AUbx4tgitVg" name="title" defaultValue="" leading="true" length="200"/>
-      <fields xmi:type="modulestudio:DateField" xmi:id="_SxCNYJfyEd-AUbx4tgitVg" name="startDate" defaultValue=""/>
-      <fields xmi:type="modulestudio:DateField" xmi:id="_UzaU0JfyEd-AUbx4tgitVg" name="endDate" defaultValue=""/>
-      <fields xmi:type="modulestudio:BooleanField" xmi:id="_WpS4YJfyEd-AUbx4tgitVg" name="isActive" defaultValue="1"/>
-    </entities>
-    <entities xmi:type="modulestudio:Entity" xmi:id="_Z44Z0JfyEd-AUbx4tgitVg" name="task" nameMultiple="tasks" incoming="_wmLRIJfyEd-AUbx4tgitVg" outgoing="_Kg_PcJ2oEd-Kb4K-RqBN4w">
-      <fields xmi:type="modulestudio:StringField" xmi:id="_cjBE0JfyEd-AUbx4tgitVg" name="title" defaultValue="" leading="true" length="200"/>
-      <fields xmi:type="modulestudio:UserField" xmi:id="_N1z2MJ2oEd-Kb4K-RqBN4w" name="owner"/>
-      <fields xmi:type="modulestudio:BooleanField" xmi:id="_hug5UJfyEd-AUbx4tgitVg" name="isFinished" defaultValue="0"/>
-    </entities>
-    <entities xmi:type="modulestudio:Entity" xmi:id="_mdyE0JfyEd-AUbx4tgitVg" name="taskType" nameMultiple="taskTypes" incoming="_Kg_PcJ2oEd-Kb4K-RqBN4w">
-      <fields xmi:type="modulestudio:StringField" xmi:id="_ofyY0JfyEd-AUbx4tgitVg" name="title" defaultValue="" leading="true" length="200"/>
-    </entities>
-  </models>
-  <controllers xmi:type="modulestudio:Controllers" xmi:id="_qcwRQZfxEd-AUbx4tgitVg" name="Controller" modelContext="_qcwRQJfxEd-AUbx4tgitVg" processViews="_qcwRQpfxEd-AUbx4tgitVg">
-    <controllers xmi:type="modulestudio:AdminController" xmi:id="_-g9mcJfxEd-AUbx4tgitVg" name="Admin">
-      <actions xmi:type="modulestudio:MainAction" xmi:id="_-04A8JfxEd-AUbx4tgitVg" name="Main"/>
-      <actions xmi:type="modulestudio:ViewAction" xmi:id="__S7O4JfxEd-AUbx4tgitVg" name="View"/>
-      <actions xmi:type="modulestudio:DisplayAction" xmi:id="__wTHYJfxEd-AUbx4tgitVg" name="Display"/>
-      <actions xmi:type="modulestudio:EditAction" xmi:id="_AW50YJfyEd-AUbx4tgitVg" name="Edit"/>
-    </controllers>
-    <controllers xmi:type="modulestudio:AjaxController" xmi:id="_X9IYMLO9EeCAgM7sSWFolQ" name="Ajax">
-      <actions xmi:type="modulestudio:MainAction" xmi:id="_YV3oULO9EeCAgM7sSWFolQ" name="Main"/>
-    </controllers>
-  </controllers>
-  <views xmi:type="modulestudio:Views" xmi:id="_qcwRQpfxEd-AUbx4tgitVg" name="View" controller="_qcwRQZfxEd-AUbx4tgitVg"/>
-</modulestudio:Application>
+application AutoProject {
+	vendor Guite
+	author "Axel Guckelsberger"
+	email "info@modulestudio.de"
+	url "http://modulestudio.de"
+	prefix auoro
+	modelPath ""
+	modelLayer {
+		modelContainer Model {
+			entities {
+				entity project leading {
+					nameMultiple projects
+					outgoing ( "project.tasks" ) fields {
+						string title leading {
+							defaultValue ""
+							length 200
+						},
+						date ^startDate {
+							defaultValue ""
+						},
+						date ^endDate {
+							defaultValue ""
+						},
+						boolean isActive {
+							defaultValue "1"
+						}
+					}
+				},
+				entity task {
+					nameMultiple tasks
+					incoming ( "project.tasks" ) outgoing ( "task.taskType" ) fields {
+						string title leading {
+							defaultValue ""
+							length 200
+						},
+						user owner,
+						boolean isFinished {
+							defaultValue "0"
+						}
+					}
+				},
+				entity taskType {
+					nameMultiple taskTypes
+					incoming ( "task.taskType" ) fields {
+						string title leading {
+							defaultValue ""
+							length 200
+						}
+					}
+				}
+			}
+			relations {
+				one2many {
+					source project
+					sourceAlias project
+					target task
+					targetAlias tasks
+				},
+				one2one {
+					source task
+					sourceAlias task
+					target taskType
+					targetAlias taskType
+				}
+			}
+		}
+	}
+	controllerLayer {
+		controllerContainer Controller {
+			modelContext ( "AutoProject.Model" )
+			processViews "AutoProject.View"
+			controllers {
+				adminController Admin {
+					actions {
+						mainAction Main,
+						viewAction View,
+						displayAction Display,
+						editAction Edit
+					}
+				},
+				ajaxController Ajax {
+					actions {
+						mainAction Main
+					}
+				}
+			}
+		}
+	}
+	viewLayer {
+		viewContainer View {
+			controller "AutoProject.Controller"
+		}
+	}
+}

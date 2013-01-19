@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modulestudio:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:modulestudio="http://modulestudio.de/modulestudio" xmi:id="_PqvEMdMhEd-NTeA-isXwqA" name="SelfRelationTest" author="Axel Guckelsberger" email="info@guite.de" url="http://modulestudio.de" prefix="selfrel" modelPath="/home/axel/SelfRelationTest.mostapp">
+  <models xmi:type="modulestudio:Models" xmi:id="_PqvrQNMhEd-NTeA-isXwqA" name="Model">
+    <relations xmi:type="modulestudio:OneToOneRelationship" xmi:id="_dl5-kNMhEd-NTeA-isXwqA" target="_XzDPINMhEd-NTeA-isXwqA" source="_XzDPINMhEd-NTeA-isXwqA" sourceAlias="member" targetAlias="groupLeader" targetField="groupLeader"/>
+    <relations xmi:type="modulestudio:OneToManyRelationship" xmi:id="_h9SOgNMhEd-NTeA-isXwqA" target="_XzDPINMhEd-NTeA-isXwqA" source="_XzDPINMhEd-NTeA-isXwqA" sourceAlias="friend" targetAlias="friends" targetField="friendid"/>
+    <relations xmi:type="modulestudio:ManyToManyRelationship" xmi:id="_polGQNMhEd-NTeA-isXwqA" target="_XzDPINMhEd-NTeA-isXwqA" source="_XzDPINMhEd-NTeA-isXwqA" sourceAlias="knowingUsers" targetAlias="knownUsers" targetField="knownuserid" refClass="KnownPerson"/>
+    <entities xmi:type="modulestudio:Entity" xmi:id="_XzDPINMhEd-NTeA-isXwqA" name="person" nameMultiple="persons" incoming="_dl5-kNMhEd-NTeA-isXwqA _h9SOgNMhEd-NTeA-isXwqA _polGQNMhEd-NTeA-isXwqA" outgoing="_dl5-kNMhEd-NTeA-isXwqA _h9SOgNMhEd-NTeA-isXwqA _polGQNMhEd-NTeA-isXwqA" leading="true">
+      <fields xmi:type="modulestudio:StringField" xmi:id="_Zlh5YNMhEd-NTeA-isXwqA" name="name" defaultValue="" leading="true"/>
+      <fields xmi:type="modulestudio:TextField" xmi:id="_ba8i4NMhEd-NTeA-isXwqA" name="description" defaultValue="" mandatory="false"/>
+      <fields xmi:type="modulestudio:IntegerField" xmi:id="_zwDaoLO_EeCUrdX8oekD5w" name="groupLeader" defaultValue="0" mandatory="false"/>
+      <fields xmi:type="modulestudio:IntegerField" xmi:id="_7eKV0LO_EeCUrdX8oekD5w" name="friendid" defaultValue="0" mandatory="false"/>
+      <fields xmi:type="modulestudio:IntegerField" xmi:id="__72CELO_EeCUrdX8oekD5w" name="knownuserid" defaultValue="0" mandatory="false"/>
+    </entities>
+  </models>
+  <controllers xmi:type="modulestudio:Controllers" xmi:id="_PqvrQdMhEd-NTeA-isXwqA" name="Controller" modelContext="_PqvrQNMhEd-NTeA-isXwqA" processViews="_PqvrQtMhEd-NTeA-isXwqA">
+    <controllers xmi:type="modulestudio:AdminController" xmi:id="_UqlpYNMhEd-NTeA-isXwqA" name="Admin">
+      <actions xmi:type="modulestudio:MainAction" xmi:id="_VotegNMhEd-NTeA-isXwqA" name="Main"/>
+      <actions xmi:type="modulestudio:ViewAction" xmi:id="_V0sFANMhEd-NTeA-isXwqA" name="View"/>
+      <actions xmi:type="modulestudio:DisplayAction" xmi:id="_WMs8YNMhEd-NTeA-isXwqA" name="Display"/>
+      <actions xmi:type="modulestudio:EditAction" xmi:id="_WgyWANMhEd-NTeA-isXwqA" name="Edit"/>
+    </controllers>
+    <controllers xmi:type="modulestudio:AjaxController" xmi:id="_ZkY_ALO_EeCAgM7sSWFolQ" name="Ajax">
+      <actions xmi:type="modulestudio:MainAction" xmi:id="_Z2whYLO_EeCAgM7sSWFolQ" name="Main"/>
+    </controllers>
+  </controllers>
+  <views xmi:type="modulestudio:Views" xmi:id="_PqvrQtMhEd-NTeA-isXwqA" name="View" controller="_PqvrQdMhEd-NTeA-isXwqA"/>
+</modulestudio:Application>

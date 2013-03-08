@@ -141,71 +141,71 @@ application AutoExchange {
 				}
 			}
 			relations {
-				one2many {
+				one2many bidirectional {
 					source provider
 					sourceAlias provider
 					target product
 					targetAlias products
 				},
-				one2one {
+				one2one bidirectional {
 					source product
 					sourceAlias product
 					target bidding
 					targetAlias bidding
 				},
-				one2one {
+				one2one bidirectional {
 					source provider
 					sourceAlias provider
 					target contract
 					targetAlias contracts
 				},
-				one2one {
+				one2one bidirectional {
 					source customer
 					sourceAlias customer
 					target contract
 					targetAlias contract
 				},
-				one2many {
+				one2many bidirectional {
 					source interestedBuyer
 					sourceAlias buyer
 					target productView
 					targetAlias ^views
 				},
-				one2many {
+				one2many bidirectional {
 					source product
 					sourceAlias product
 					target productView
 					targetAlias ^views
 				},
-				one2many {
+				one2many bidirectional {
 					source bidder
 					sourceAlias bidder
 					target bidding
 					targetAlias biddings
 				},
-				one2one {
+				one2one bidirectional {
 					source acceptance
 					sourceAlias acceptance
 					target contract
 					targetAlias contract
 				},
-				one2one {
+				one2one bidirectional {
 					source acceptance
 					sourceAlias acceptance
 					target bidding
 					targetAlias bidding
 				},
-				one2one {
+				one2one bidirectional {
 					source acceptance
 					sourceAlias acceptance
 					target customer
 					targetAlias customer
 				},
-				inheritance {
+				inheritance bidirectional {
 					source customer
 					target bidder
 				},
-				inheritance {
+				inheritance bidirectional {
 					source bidder
 					target interestedBuyer
 				}

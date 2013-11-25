@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:modulestudio="http://modulestudio.de/modulestudio" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_hPtIQFW8EeON1YifF4i9Pw" type="Module" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_hZ17sFW8EeON1YifF4i9Pw" type="2001" fontName="monospaced" fontHeight="12" lineColor="4210752">
+    <children xmi:type="notation:DecorationNode" xmi:id="_hZ3J0FW8EeON1YifF4i9Pw" type="5001"/>
+    <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_hZ17sVW8EeON1YifF4i9Pw" hint="Model"/>
+    <element xmi:type="modulestudio:Models" href="SimpleDemo.mostapp#//@models.0"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hZ17slW8EeON1YifF4i9Pw" y="100"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_hZ3J0VW8EeON1YifF4i9Pw" type="2002" fontName="monospaced" fontHeight="12" lineColor="4210752">
+    <children xmi:type="notation:DecorationNode" xmi:id="_hZ3J1FW8EeON1YifF4i9Pw" type="5002"/>
+    <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_hZ3J0lW8EeON1YifF4i9Pw" hint="Controller"/>
+    <element xmi:type="modulestudio:Controllers" href="SimpleDemo.mostapp#//@controllers.0"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hZ3J01W8EeON1YifF4i9Pw" x="44"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_hZ3J1VW8EeON1YifF4i9Pw" type="2003" fontName="monospaced" fontHeight="12" lineColor="4210752">
+    <children xmi:type="notation:DecorationNode" xmi:id="_hZ3w4FW8EeON1YifF4i9Pw" type="5003"/>
+    <element xmi:type="modulestudio:Views" href="SimpleDemo.mostapp#//@views.0"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hZ3J1lW8EeON1YifF4i9Pw" x="124" y="100"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_Ya2yAFW9EeOf3ozlly2pGg" type="2004" fontName="monospaced" fontHeight="12" lineColor="4210752">
+    <children xmi:type="notation:DecorationNode" xmi:id="_Ya2yAlW9EeOf3ozlly2pGg" type="5004"/>
+    <element xmi:type="modulestudio:SettingsContainer" href="SimpleDemo.mostapp#//@generatorSettings.0"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Ya2yAVW9EeOf3ozlly2pGg" x="342" y="110"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_hPtIQVW8EeON1YifF4i9Pw"/>
+  <element xmi:type="modulestudio:Application" href="SimpleDemo.mostapp#/"/>
+</notation:Diagram>

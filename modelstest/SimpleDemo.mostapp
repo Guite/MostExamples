@@ -1,0 +1,80 @@
+application SimpleDemo {
+	vendor Guite
+	author "Axel Guckelsberger"
+	email "info@guite.de"
+	url "http://guite.de"
+	prefix simdem
+	generatorSettings {
+		settingsContainer Settings
+		targetCoreVersion ZK136
+		generateAccountApi false
+		generateSearchApi false
+		generateMailzApi false
+		generateListBlock false
+		generateModerationBlock false
+		generateListContentType false
+		generateDetailContentType false
+		generateNewsletterPlugin false
+		generateModerationPanel false
+		generatePendingContentSupport false
+		generateExternalControllerAndFinder false
+		generateScribitePlugins false
+		generateTagSupport false
+		generateRssTemplates false
+		generateAtomTemplates false
+		generateCsvTemplates false
+		generateXmlTemplates false
+		generateJsonTemplates false
+		generateKmlTemplates false
+		generateOnlyBaseClasses true
+		timestampAllGeneratedFiles true
+		generatePoweredByBacklinksIntoFooterTemplates false
+		generateTests false
+		skipFiles "README.md,CHANGELOG.md"
+	}
+	modelLayer {
+		modelContainer Model {
+			entities {
+				entity person leading {
+					nameMultiple persons
+					displayPattern "lastName, firstName"
+					fields {
+						string firstName {
+							defaultValue ""
+							length 100
+						},
+						string lastName {
+							defaultValue ""
+							length 100
+						}
+					}
+				}
+			}
+		}
+	}
+	controllerLayer {
+		controllerContainer Controller {
+			modelContext ( "SimpleDemo.Model" )
+			processViews "SimpleDemo.View"
+			controllers {
+				adminController Admin {
+					actions {
+						mainAction Main,
+						viewAction View,
+						displayAction Display
+					}
+				},
+				ajaxController Ajax {
+					actions {
+						mainAction Main
+					}
+				}
+			}
+		}
+	}
+	viewLayer {
+		viewContainer View {
+			controller "SimpleDemo.Controller"
+		}
+	}
+}

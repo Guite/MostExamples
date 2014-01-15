@@ -1,50 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:modulestudio="http://modulestudio.de/modulestudio" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation">
-  <notation:Diagram xmi:id="_zW3VUGJxEeK9ycylkoview" type="Module" measurementUnit="Pixel">
-    <children xmi:type="notation:Shape" xmi:id="_zaVgEGJxEeK9ycylkoview" type="2001" fontName="monospaced" fontHeight="12" lineColor="4210752">
-      <children xmi:type="notation:DecorationNode" xmi:id="_zaVgE2JxEeK9ycylkoview" type="5001"/>
-      <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_zaVgEWJxEeK9ycylkoview" diagramLink="_1c4moGJxEeK9ycylkoview" hint="Model"/>
-      <element xmi:type="modulestudio:Models" href="RecipeManager.mostapp#RecipeManager.Model"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zaVgEmJxEeK9ycylkoview" x="30" y="130"/>
+  <notation:Diagram xmi:id="_QROW8H4WEeORr_PRTacJPA" type="Module" measurementUnit="Pixel">
+    <children xmi:type="notation:Shape" xmi:id="_QShXcH4WEeORr_PRTacJPA" type="2001" fontName="monospaced" fontHeight="12" lineColor="4210752">
+      <children xmi:type="notation:DecorationNode" xmi:id="_QShXc34WEeORr_PRTacJPA" type="5001"/>
+      <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_QShXcX4WEeORr_PRTacJPA" diagramLink="_QuRfUH4WEeORr_PRTacJPA" hint="Model"/>
+      <element xmi:type="modulestudio:Models" href="RecipeManager.mostapp#//@models.0"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QShXcn4WEeORr_PRTacJPA" y="100"/>
     </children>
-    <children xmi:type="notation:Shape" xmi:id="_zaVgFGJxEeK9ycylkoview" type="2002" fontName="monospaced" fontHeight="12" lineColor="4210752">
-      <children xmi:type="notation:DecorationNode" xmi:id="_zaWHImJxEeK9ycylkoview" type="5002"/>
-      <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_zaWHIGJxEeK9ycylkoview" diagramLink="_0cReMGJxEeK9ycylkoview" hint="Controller"/>
-      <element xmi:type="modulestudio:Controllers" href="RecipeManager.mostapp#RecipeManager.Controller"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zaWHIWJxEeK9ycylkoview" x="74" y="30"/>
+    <children xmi:type="notation:Shape" xmi:id="_QShXdH4WEeORr_PRTacJPA" type="2002" fontName="monospaced" fontHeight="12" lineColor="4210752">
+      <children xmi:type="notation:DecorationNode" xmi:id="_QSh-gH4WEeORr_PRTacJPA" type="5002"/>
+      <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_QShXdX4WEeORr_PRTacJPA" hint="Controller"/>
+      <element xmi:type="modulestudio:Controllers" href="RecipeManager.mostapp#//@controllers.0"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QShXdn4WEeORr_PRTacJPA" x="44"/>
     </children>
-    <children xmi:type="notation:Shape" xmi:id="_zaWHI2JxEeK9ycylkoview" type="2003" fontName="monospaced" fontHeight="12" lineColor="4210752">
-      <children xmi:type="notation:DecorationNode" xmi:id="_zaWHJWJxEeK9ycylkoview" type="5003"/>
-      <element xmi:type="modulestudio:Views" href="RecipeManager.mostapp#RecipeManager.View"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zaWHJGJxEeK9ycylkoview" x="154" y="130"/>
+    <children xmi:type="notation:Shape" xmi:id="_QSh-gX4WEeORr_PRTacJPA" type="2003" fontName="monospaced" fontHeight="12" lineColor="4210752">
+      <children xmi:type="notation:DecorationNode" xmi:id="_QSh-g34WEeORr_PRTacJPA" type="5003"/>
+      <element xmi:type="modulestudio:Views" href="RecipeManager.mostapp#//@views.0"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QSh-gn4WEeORr_PRTacJPA" x="124" y="100"/>
     </children>
-    <styles xmi:type="notation:DiagramStyle" xmi:id="_zW3VUWJxEeK9ycylkoview"/>
-    <element xmi:type="modulestudio:Application" href="RecipeManager.mostapp#RecipeManager"/>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_QROW8X4WEeORr_PRTacJPA"/>
+    <element xmi:type="modulestudio:Application" href="RecipeManager.mostapp#/"/>
   </notation:Diagram>
-  <notation:Diagram xmi:id="_0cReMGJxEeK9ycylkoview" type="Controller" measurementUnit="Pixel">
-    <children xmi:type="notation:Shape" xmi:id="_0gi6MGJxEeK9ycylkoview" type="2201" fontColor="4210752" fontName="Lucida Grande" fontHeight="12" lineColor="0">
-      <children xmi:type="notation:DecorationNode" xmi:id="_0gjhQGJxEeK9ycylkoview" type="5210"/>
-      <children xmi:type="notation:BasicCompartment" xmi:id="_0gjhQWJxEeK9ycylkoview" type="7201"/>
-      <element xmi:type="modulestudio:AdminController" href="RecipeManager.mostapp#RecipeManager.Controller.Admin"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0gi6MWJxEeK9ycylkoview" x="24"/>
-    </children>
-    <children xmi:type="notation:Shape" xmi:id="_0gjhQmJxEeK9ycylkoview" type="2202" fontColor="4210752" fontName="Lucida Grande" fontHeight="12" lineColor="0">
-      <children xmi:type="notation:DecorationNode" xmi:id="_0gjhRGJxEeK9ycylkoview" type="5211"/>
-      <children xmi:type="notation:BasicCompartment" xmi:id="_0gkIUGJxEeK9ycylkoview" type="7202"/>
-      <element xmi:type="modulestudio:UserController" href="RecipeManager.mostapp#RecipeManager.Controller.User"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0gjhQ2JxEeK9ycylkoview" x="348"/>
-    </children>
-    <children xmi:type="notation:Shape" xmi:id="_0gkIUWJxEeK9ycylkoview" type="2203" fontColor="4210752" fontName="Lucida Grande" fontHeight="12" lineColor="0">
-      <children xmi:type="notation:DecorationNode" xmi:id="_0gkIU2JxEeK9ycylkoview" type="5212"/>
-      <children xmi:type="notation:BasicCompartment" xmi:id="_0gkIVGJxEeK9ycylkoview" type="7203"/>
-      <element xmi:type="modulestudio:AjaxController" href="RecipeManager.mostapp#RecipeManager.Controller.Ajax"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0gkIUmJxEeK9ycylkoview" x="853"/>
-    </children>
-    <styles xmi:type="notation:DiagramStyle" xmi:id="_0cReMWJxEeK9ycylkoview"/>
-    <element xmi:type="modulestudio:Controllers" href="RecipeManager.mostapp#RecipeManager.Controller"/>
-  </notation:Diagram>
-  <notation:Diagram xmi:id="_1c4moGJxEeK9ycylkoview" type="Model" measurementUnit="Pixel">
-    <styles xmi:type="notation:DiagramStyle" xmi:id="_1c4moWJxEeK9ycylkoview"/>
-    <element xmi:type="modulestudio:Models" href="RecipeManager.mostapp#RecipeManager.Model"/>
+  <notation:Diagram xmi:id="_QuRfUH4WEeORr_PRTacJPA" type="Model" measurementUnit="Pixel">
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_QuRfUX4WEeORr_PRTacJPA"/>
+    <element xmi:type="modulestudio:Models" href="RecipeManager.mostapp#//@models.0"/>
   </notation:Diagram>
 </xmi:XMI>

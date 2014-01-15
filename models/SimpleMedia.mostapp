@@ -12,8 +12,9 @@ application SimpleMedia {
 			entities {
 				entity medium leading categorisable attributable metaData {
 					nameMultiple media
+					displayPattern "#title#"
 					fields {
-						string title leading {
+						string title {
 							defaultValue ""
 							sluggablePosition 1
 						},

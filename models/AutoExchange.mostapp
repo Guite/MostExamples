@@ -10,13 +10,14 @@ application AutoExchange {
 			entities {
 				entity provider leading {
 					nameMultiple providers
+					displayPattern "#lastName#, #firstName#"
 					outgoing ( "provider.products",
 					"provider.contracts" ) fields {
 						string firstName {
 							defaultValue ""
 							length 100
 						},
-						string lastName leading {
+						string lastName {
 							defaultValue ""
 							length 100
 						},
@@ -51,9 +52,10 @@ application AutoExchange {
 				},
 				entity product {
 					nameMultiple products
+					displayPattern "#title#"
 					incoming ( "provider.products" ) outgoing ( "product.bidding",
 					"product.views" ) fields {
-						string title leading {
+						string title {
 							defaultValue ""
 							length 200
 						},
@@ -70,39 +72,43 @@ application AutoExchange {
 				},
 				entity bidding {
 					nameMultiple biddings
+					displayPattern "#price#"
 					incoming ( "product.bidding",
 					"bidder.biddings",
 					"acceptance.bidding" ) fields {
-						float price leading {
+						float price {
 							defaultValue ""
 						}
 					}
 				},
 				entity acceptance {
 					nameMultiple acceptance
+					displayPattern "#acceptDate#"
 					outgoing ( "acceptance.contract",
 					"acceptance.bidding",
 					"acceptance.customer" ) fields {
-						date acceptDate leading {
+						date acceptDate {
 							defaultValue ""
 						}
 					}
 				},
 				entity interestedBuyer {
 					nameMultiple interestedBuyers
+					displayPattern "#buyer#"
 					incoming ( "inheritance.1" ) outgoing ( "buyer.views" ) fields {
-						user buyer leading
+						user buyer
 					}
 				},
 				entity bidder {
 					nameMultiple bidders
+					displayPattern "#lastName#, #firstName#"
 					incoming ( "inheritance.0" ) outgoing ( "bidder.biddings",
 					"inheritance.1" ) fields {
 						string firstName {
 							defaultValue ""
 							mandatory false
 						},
-						string lastName leading {
+						string lastName {
 							defaultValue ""
 						},
 						boolean isRegular {
@@ -112,19 +118,21 @@ application AutoExchange {
 				},
 				entity customer {
 					nameMultiple customers
+					displayPattern "#customerNr#"
 					incoming ( "acceptance.customer" ) outgoing ( "customer.contract",
 					"inheritance.0" ) fields {
-						integer customerNr leading unique {
+						integer customerNr unique {
 							defaultValue "0"
 						}
 					}
 				},
 				entity contract {
 					nameMultiple contracts
+					displayPattern "#payMethod#"
 					incoming ( "provider.contracts",
 					"customer.contract",
 					"acceptance.contract" ) fields {
-						string payMethod leading {
+						string payMethod {
 							defaultValue "credit card"
 							length 20
 						}
@@ -132,9 +140,10 @@ application AutoExchange {
 				},
 				entity productView {
 					nameMultiple productView
+					displayPattern "#viewTime#"
 					incoming ( "buyer.views",
 					"product.views" ) fields {
-						datetime viewTime leading {
+						datetime viewTime {
 							defaultValue ""
 						}
 					}

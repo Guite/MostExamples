@@ -11,8 +11,9 @@ application ValidationTest {
 			entities {
 				entity drink leading {
 					nameMultiple drinks
+					displayPattern "#name#"
 					incoming ( "menu.drinks" ) fields {
-						string name leading {
+						string name {
 							defaultValue ""
 						},
 						integer amount {
@@ -29,8 +30,9 @@ application ValidationTest {
 				},
 				entity cake {
 					nameMultiple cakes
+					displayPattern "#name#"
 					incoming ( "menu.cake" ) outgoing ( "cakes.ingredients" ) fields {
-						string name leading {
+						string name {
 							defaultValue ""
 						},
 						boolean hasChocolate {
@@ -47,9 +49,10 @@ application ValidationTest {
 				},
 				entity menu {
 					nameMultiple menus
+					displayPattern "#title#"
 					outgoing ( "menu.cake",
 					"menu.drinks" ) fields {
-						string title leading {
+						string title {
 							defaultValue ""
 						},
 						date publishDate {
@@ -65,6 +68,7 @@ application ValidationTest {
 				},
 				entity test {
 					nameMultiple tests
+					displayPattern "#stringTest#"
 					incoming ( "productArticle.productTests" ) fields {
 						boolean boolTest {
 							defaultValue ^true
@@ -91,7 +95,7 @@ application ValidationTest {
 							defaultValue "0.000"
 							scale 3
 						},
-						string stringTest leading {
+						string stringTest {
 							defaultValue "This is a default value"
 						},
 						string stringTestColour nospace htmlcolour {
@@ -168,9 +172,10 @@ application ValidationTest {
 				},
 				entity myUser {
 					nameMultiple myUsers
+					displayPattern "#myUser#"
 					incoming ( "inheritance.0",
 					"knowingUser.knownUsers" ) outgoing ( "knowingUser.knownUsers" ) fields {
-						user myUser leading unique,
+						user myUser unique,
 						text description {
 							defaultValue ""
 							mandatory false
@@ -188,8 +193,9 @@ application ValidationTest {
 				},
 				entity mySpecialUser {
 					nameMultiple mySpecialUsers
+					displayPattern "#specialEmail#"
 					outgoing ( "inheritance.0" ) fields {
-						email specialEmail leading {
+						email specialEmail {
 							defaultValue ""
 						},
 						array specialSettings {
@@ -199,16 +205,18 @@ application ValidationTest {
 				},
 				entity ingredient {
 					nameMultiple ingredients
+					displayPattern "#name#"
 					incoming ( "cakes.ingredients" ) fields {
-						string name leading {
+						string name {
 							defaultValue ""
 						}
 					}
 				},
 				entity article {
 					nameMultiple articles
+					displayPattern "#title#"
 					outgoing ( "productArticle.productTests" ) fields {
-						string title leading {
+						string title {
 							defaultValue ""
 						},
 						integer checkthat {

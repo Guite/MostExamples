@@ -37,7 +37,7 @@ application SimpleDemo {
 			entities {
 				entity person leading {
 					nameMultiple persons
-					displayPattern "lastName, firstName"
+					displayPattern "#lastName#, #firstName#"
 					fields {
 						string firstName {
 							defaultValue ""

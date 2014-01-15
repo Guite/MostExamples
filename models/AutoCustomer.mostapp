@@ -10,9 +10,10 @@ application AutoCustomer {
 			entities {
 				entity customer leading {
 					nameMultiple customers
+					displayPattern "#company#"
 					outgoing ( "customer.contact",
 					"customer.orders" ) fields {
-						string company leading {
+						string company {
 							defaultValue ""
 						},
 						string city {
@@ -25,21 +26,23 @@ application AutoCustomer {
 				},
 				entity order {
 					nameMultiple orders
+					displayPattern "#orderDate#"
 					incoming ( "customer.orders" ) outgoing ( "order.positions" ) fields {
-						date orderDate leading {
+						date orderDate {
 							defaultValue ""
 						}
 					}
 				},
 				entity contact {
 					nameMultiple contacts
+					displayPattern "#lastName#, #firstName#"
 					slugUnique false
 					incoming ( "customer.contact" ) fields {
 						string firstName {
 							defaultValue ""
 							sluggablePosition 1
 						},
-						string lastName leading {
+						string lastName {
 							defaultValue ""
 							sluggablePosition 2
 						},
@@ -55,8 +58,9 @@ application AutoCustomer {
 				},
 				entity orderPosition {
 					nameMultiple orderPositions
+					displayPattern "#amount#"
 					incoming ( "order.positions" ) fields {
-						integer amount leading {
+						integer amount {
 							defaultValue "1"
 						}
 					}

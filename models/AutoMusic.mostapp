@@ -10,12 +10,13 @@ application AutoMusic {
 			entities {
 				entity artist leading {
 					nameMultiple artists
+					displayPattern "#lastName#, #firstName#"
 					outgoing ( "artist.releases" ) fields {
 						string firstName {
 							defaultValue ""
 							length 200
 						},
-						string lastName leading {
+						string lastName {
 							defaultValue ""
 							length 200
 						},
@@ -29,8 +30,9 @@ application AutoMusic {
 				},
 				entity release {
 					nameMultiple releases
+					displayPattern "#title#"
 					incoming ( "artist.releases" ) outgoing ( "release.songs" ) fields {
-						string title leading {
+						string title {
 							defaultValue ""
 							length 200
 						}
@@ -38,8 +40,9 @@ application AutoMusic {
 				},
 				entity song {
 					nameMultiple songs
+					displayPattern "#title#"
 					outgoing ( "song.releases" ) fields {
-						string title leading {
+						string title {
 							defaultValue ""
 							length 250
 						},
@@ -51,9 +54,10 @@ application AutoMusic {
 				},
 				entity releaseTrack {
 					nameMultiple releaseTracks
+					displayPattern "#songIndex#"
 					incoming ( "song.releases",
 					"release.songs" ) fields {
-						integer songIndex leading {
+						integer songIndex {
 							defaultValue ""
 						}
 					}

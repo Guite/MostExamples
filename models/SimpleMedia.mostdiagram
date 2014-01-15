@@ -1,32 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:modulestudio="http://modulestudio.de/modulestudio" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation">
-  <notation:Diagram xmi:id="_s-rEMGJxEeK9ycylkoview" type="Module" measurementUnit="Pixel">
-    <children xmi:type="notation:Shape" xmi:id="_tBhj4GJxEeK9ycylkoview" type="2001" fontName="monospaced" fontHeight="12" lineColor="4210752">
-      <children xmi:type="notation:DecorationNode" xmi:id="_tBiK8GJxEeK9ycylkoview" type="5001"/>
-      <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_tBhj4WJxEeK9ycylkoview" diagramLink="_whTdcGJxEeK9ycylkoview" hint="Model"/>
-      <element xmi:type="modulestudio:Models" href="SimpleMedia.mostapp#SimpleMedia.Model"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tBhj4mJxEeK9ycylkoview" x="30" y="130"/>
+  <notation:Diagram xmi:id="_LLbh0H4WEeORr_PRTacJPA" type="Module" measurementUnit="Pixel">
+    <children xmi:type="notation:Shape" xmi:id="_LMpp0H4WEeORr_PRTacJPA" type="2001" fontName="monospaced" fontHeight="12" lineColor="4210752">
+      <children xmi:type="notation:DecorationNode" xmi:id="_LMpp034WEeORr_PRTacJPA" type="5001"/>
+      <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_LMpp0X4WEeORr_PRTacJPA" diagramLink="_LugZsH4WEeORr_PRTacJPA" hint="Model"/>
+      <element xmi:type="modulestudio:Models" href="SimpleMedia.mostapp#//@models.0"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LMpp0n4WEeORr_PRTacJPA" y="100"/>
     </children>
-    <children xmi:type="notation:Shape" xmi:id="_tBiK8WJxEeK9ycylkoview" type="2002" fontName="monospaced" fontHeight="12" lineColor="4210752">
-      <children xmi:type="notation:DecorationNode" xmi:id="_tBiyAGJxEeK9ycylkoview" type="5002"/>
-      <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_tBiK8mJxEeK9ycylkoview" diagramLink="_vo9gMGJxEeK9ycylkoview" hint="Controller"/>
-      <element xmi:type="modulestudio:Controllers" href="SimpleMedia.mostapp#SimpleMedia.Controller"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tBiK82JxEeK9ycylkoview" x="74" y="30"/>
+    <children xmi:type="notation:Shape" xmi:id="_LMqQ4H4WEeORr_PRTacJPA" type="2002" fontName="monospaced" fontHeight="12" lineColor="4210752">
+      <children xmi:type="notation:DecorationNode" xmi:id="_LMqQ434WEeORr_PRTacJPA" type="5002"/>
+      <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_LMqQ4X4WEeORr_PRTacJPA" hint="Controller"/>
+      <element xmi:type="modulestudio:Controllers" href="SimpleMedia.mostapp#//@controllers.0"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LMqQ4n4WEeORr_PRTacJPA" x="44"/>
     </children>
-    <children xmi:type="notation:Shape" xmi:id="_tBiyAWJxEeK9ycylkoview" type="2003" fontName="monospaced" fontHeight="12" lineColor="4210752">
-      <children xmi:type="notation:DecorationNode" xmi:id="_tBiyA2JxEeK9ycylkoview" type="5003"/>
-      <element xmi:type="modulestudio:Views" href="SimpleMedia.mostapp#SimpleMedia.View"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tBiyAmJxEeK9ycylkoview" x="154" y="130"/>
+    <children xmi:type="notation:Shape" xmi:id="_LMqQ5H4WEeORr_PRTacJPA" type="2003" fontName="monospaced" fontHeight="12" lineColor="4210752">
+      <children xmi:type="notation:DecorationNode" xmi:id="_LMqQ5n4WEeORr_PRTacJPA" type="5003"/>
+      <element xmi:type="modulestudio:Views" href="SimpleMedia.mostapp#//@views.0"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LMqQ5X4WEeORr_PRTacJPA" x="124" y="100"/>
     </children>
-    <styles xmi:type="notation:DiagramStyle" xmi:id="_s-rEMWJxEeK9ycylkoview"/>
-    <element xmi:type="modulestudio:Application" href="SimpleMedia.mostapp#SimpleMedia"/>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_LLbh0X4WEeORr_PRTacJPA"/>
+    <element xmi:type="modulestudio:Application" href="SimpleMedia.mostapp#/"/>
   </notation:Diagram>
-  <notation:Diagram xmi:id="_vo9gMGJxEeK9ycylkoview" type="Controller" measurementUnit="Pixel">
-    <styles xmi:type="notation:DiagramStyle" xmi:id="_vo9gMWJxEeK9ycylkoview"/>
-    <element xmi:type="modulestudio:Controllers" href="SimpleMedia.mostapp#SimpleMedia.Controller"/>
-  </notation:Diagram>
-  <notation:Diagram xmi:id="_whTdcGJxEeK9ycylkoview" type="Model" measurementUnit="Pixel">
-    <styles xmi:type="notation:DiagramStyle" xmi:id="_whTdcWJxEeK9ycylkoview"/>
-    <element xmi:type="modulestudio:Models" href="SimpleMedia.mostapp#SimpleMedia.Model"/>
+  <notation:Diagram xmi:id="_LugZsH4WEeORr_PRTacJPA" type="Model" measurementUnit="Pixel">
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_LugZsX4WEeORr_PRTacJPA"/>
+    <element xmi:type="modulestudio:Models" href="SimpleMedia.mostapp#//@models.0"/>
   </notation:Diagram>
 </xmi:XMI>

@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:modulestudio="http://modulestudio.de/modulestudio" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation">
-  <notation:Diagram xmi:id="_XniSEGJyEeK9ycylkoview" type="Module" measurementUnit="Pixel">
-    <children xmi:type="notation:Shape" xmi:id="_Xq1dsGJyEeK9ycylkoview" type="2001" fontName="monospaced" fontHeight="12" lineColor="4210752">
-      <children xmi:type="notation:DecorationNode" xmi:id="_Xq2EwGJyEeK9ycylkoview" type="5001"/>
-      <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_Xq1dsWJyEeK9ycylkoview" diagramLink="_ZcVQgGJyEeK9ycylkoview" hint="Model"/>
-      <element xmi:type="modulestudio:Models" href="AutoExchange.mostapp#AutoExchange.Model"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Xq1dsmJyEeK9ycylkoview" x="30" y="130"/>
+  <notation:Diagram xmi:id="_bo880H4ZEeOO64684bUh7A" type="Module" measurementUnit="Pixel">
+    <children xmi:type="notation:Shape" xmi:id="_brFq0H4ZEeOO64684bUh7A" type="2001" fontName="monospaced" fontHeight="12" lineColor="4210752">
+      <children xmi:type="notation:DecorationNode" xmi:id="_brGR4H4ZEeOO64684bUh7A" type="5001"/>
+      <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_brFq0X4ZEeOO64684bUh7A" diagramLink="_cNo-QH4ZEeOO64684bUh7A" hint="Model"/>
+      <element xmi:type="modulestudio:Models" href="AutoExchange.mostapp#//@models.0"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_brFq0n4ZEeOO64684bUh7A" y="100"/>
     </children>
-    <children xmi:type="notation:Shape" xmi:id="_Xq2EwWJyEeK9ycylkoview" type="2002" fontName="monospaced" fontHeight="12" lineColor="4210752">
-      <children xmi:type="notation:DecorationNode" xmi:id="_Xq2ExGJyEeK9ycylkoview" type="5002"/>
-      <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_Xq2EwmJyEeK9ycylkoview" hint="Controller"/>
-      <element xmi:type="modulestudio:Controllers" href="AutoExchange.mostapp#AutoExchange.Controller"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Xq2Ew2JyEeK9ycylkoview" x="74" y="30"/>
+    <children xmi:type="notation:Shape" xmi:id="_brGR4X4ZEeOO64684bUh7A" type="2002" fontName="monospaced" fontHeight="12" lineColor="4210752">
+      <children xmi:type="notation:DecorationNode" xmi:id="_brGR5H4ZEeOO64684bUh7A" type="5002"/>
+      <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_brGR4n4ZEeOO64684bUh7A" hint="Controller"/>
+      <element xmi:type="modulestudio:Controllers" href="AutoExchange.mostapp#//@controllers.0"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_brGR434ZEeOO64684bUh7A" x="44"/>
     </children>
-    <children xmi:type="notation:Shape" xmi:id="_Xq2ExWJyEeK9ycylkoview" type="2003" fontName="monospaced" fontHeight="12" lineColor="4210752">
-      <children xmi:type="notation:DecorationNode" xmi:id="_Xq2r0GJyEeK9ycylkoview" type="5003"/>
-      <element xmi:type="modulestudio:Views" href="AutoExchange.mostapp#AutoExchange.View"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Xq2ExmJyEeK9ycylkoview" x="154" y="130"/>
+    <children xmi:type="notation:Shape" xmi:id="_brGR5X4ZEeOO64684bUh7A" type="2003" fontName="monospaced" fontHeight="12" lineColor="4210752">
+      <children xmi:type="notation:DecorationNode" xmi:id="_brGR534ZEeOO64684bUh7A" type="5003"/>
+      <element xmi:type="modulestudio:Views" href="AutoExchange.mostapp#//@views.0"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_brGR5n4ZEeOO64684bUh7A" x="124" y="100"/>
     </children>
-    <styles xmi:type="notation:DiagramStyle" xmi:id="_XniSEWJyEeK9ycylkoview"/>
-    <element xmi:type="modulestudio:Application" href="AutoExchange.mostapp#AutoExchange"/>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_bo880X4ZEeOO64684bUh7A"/>
+    <element xmi:type="modulestudio:Application" href="AutoExchange.mostapp#/"/>
   </notation:Diagram>
-  <notation:Diagram xmi:id="_ZcVQgGJyEeK9ycylkoview" type="Model" measurementUnit="Pixel">
-    <styles xmi:type="notation:DiagramStyle" xmi:id="_ZcVQgWJyEeK9ycylkoview"/>
-    <element xmi:type="modulestudio:Models" href="AutoExchange.mostapp#AutoExchange.Model"/>
+  <notation:Diagram xmi:id="_cNo-QH4ZEeOO64684bUh7A" type="Model" measurementUnit="Pixel">
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_cNo-QX4ZEeOO64684bUh7A"/>
+    <element xmi:type="modulestudio:Models" href="AutoExchange.mostapp#//@models.0"/>
   </notation:Diagram>
 </xmi:XMI>

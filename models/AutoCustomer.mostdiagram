@@ -1,28 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:modulestudio="http://modulestudio.de/modulestudio" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation">
-  <notation:Diagram xmi:id="_S18LUGJyEeK9ycylkoview" type="Module" measurementUnit="Pixel">
-    <children xmi:type="notation:Shape" xmi:id="_S46m0GJyEeK9ycylkoview" type="2001" fontName="monospaced" fontHeight="12" lineColor="4210752">
-      <children xmi:type="notation:DecorationNode" xmi:id="_S47N4GJyEeK9ycylkoview" type="5001"/>
-      <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_S46m0WJyEeK9ycylkoview" diagramLink="_U_obsGJyEeK9ycylkoview" hint="Model"/>
-      <element xmi:type="modulestudio:Models" href="AutoCustomer.mostapp#AutoCustomer.Model"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_S46m0mJyEeK9ycylkoview" x="30" y="130"/>
+  <notation:Diagram xmi:id="_9QvLwH4ZEeOO64684bUh7A" type="Module" measurementUnit="Pixel">
+    <children xmi:type="notation:Shape" xmi:id="_9SGdsH4ZEeOO64684bUh7A" type="2001" fontName="monospaced" fontHeight="12" lineColor="4210752">
+      <children xmi:type="notation:DecorationNode" xmi:id="_9SGds34ZEeOO64684bUh7A" type="5001"/>
+      <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_9SGdsX4ZEeOO64684bUh7A" diagramLink="_9vBqQH4ZEeOO64684bUh7A" hint="Model"/>
+      <element xmi:type="modulestudio:Models" href="AutoCustomer.mostapp#//@models.0"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9SGdsn4ZEeOO64684bUh7A" y="100"/>
     </children>
-    <children xmi:type="notation:Shape" xmi:id="_S47N4WJyEeK9ycylkoview" type="2002" fontName="monospaced" fontHeight="12" lineColor="4210752">
-      <children xmi:type="notation:DecorationNode" xmi:id="_S47N5GJyEeK9ycylkoview" type="5002"/>
-      <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_S47N4mJyEeK9ycylkoview" hint="Controller"/>
-      <element xmi:type="modulestudio:Controllers" href="AutoCustomer.mostapp#AutoCustomer.Controller"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_S47N42JyEeK9ycylkoview" x="74" y="30"/>
+    <children xmi:type="notation:Shape" xmi:id="_9SGdtH4ZEeOO64684bUh7A" type="2002" fontName="monospaced" fontHeight="12" lineColor="4210752">
+      <children xmi:type="notation:DecorationNode" xmi:id="_9SHEwH4ZEeOO64684bUh7A" type="5002"/>
+      <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_9SGdtX4ZEeOO64684bUh7A" diagramLink="_FQgesH4aEeOO64684bUh7A" hint="Controller"/>
+      <element xmi:type="modulestudio:Controllers" href="AutoCustomer.mostapp#//@controllers.0"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9SGdtn4ZEeOO64684bUh7A" x="44"/>
     </children>
-    <children xmi:type="notation:Shape" xmi:id="_S47N5WJyEeK9ycylkoview" type="2003" fontName="monospaced" fontHeight="12" lineColor="4210752">
-      <children xmi:type="notation:DecorationNode" xmi:id="_S4708GJyEeK9ycylkoview" type="5003"/>
-      <element xmi:type="modulestudio:Views" href="AutoCustomer.mostapp#AutoCustomer.View"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_S47N5mJyEeK9ycylkoview" x="154" y="130"/>
+    <children xmi:type="notation:Shape" xmi:id="_9SHEwX4ZEeOO64684bUh7A" type="2003" fontName="monospaced" fontHeight="12" lineColor="4210752">
+      <children xmi:type="notation:DecorationNode" xmi:id="_9SHEw34ZEeOO64684bUh7A" type="5003"/>
+      <element xmi:type="modulestudio:Views" href="AutoCustomer.mostapp#//@views.0"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9SHEwn4ZEeOO64684bUh7A" x="124" y="100"/>
     </children>
-    <styles xmi:type="notation:DiagramStyle" xmi:id="_S18LUWJyEeK9ycylkoview"/>
-    <element xmi:type="modulestudio:Application" href="AutoCustomer.mostapp#AutoCustomer"/>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_9QvLwX4ZEeOO64684bUh7A"/>
+    <element xmi:type="modulestudio:Application" href="AutoCustomer.mostapp#/"/>
   </notation:Diagram>
-  <notation:Diagram xmi:id="_U_obsGJyEeK9ycylkoview" type="Model" measurementUnit="Pixel">
-    <styles xmi:type="notation:DiagramStyle" xmi:id="_U_pCwGJyEeK9ycylkoview"/>
-    <element xmi:type="modulestudio:Models" href="AutoCustomer.mostapp#AutoCustomer.Model"/>
+  <notation:Diagram xmi:id="_9vBqQH4ZEeOO64684bUh7A" type="Model" measurementUnit="Pixel">
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_9vBqQX4ZEeOO64684bUh7A"/>
+    <element xmi:type="modulestudio:Models" href="AutoCustomer.mostapp#//@models.0"/>
+  </notation:Diagram>
+  <notation:Diagram xmi:id="_FQgesH4aEeOO64684bUh7A" type="Controller" measurementUnit="Pixel">
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_FQgesX4aEeOO64684bUh7A"/>
+    <element xmi:type="modulestudio:Controllers" href="AutoCustomer.mostapp#//@controllers.0"/>
   </notation:Diagram>
 </xmi:XMI>

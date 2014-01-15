@@ -12,9 +12,10 @@ application RecipeManager {
 			entities {
 				entity recipe leading {
 					nameMultiple recipes
+					displayPattern "#title#"
 					incoming ( "categories.recipes" ) outgoing ( "recipe.ingredients",
 					"recipes.producedIngredient" ) fields {
-						string title leading unique {
+						string title unique {
 							defaultValue ""
 							sluggablePosition 1
 						},
@@ -60,11 +61,12 @@ application RecipeManager {
 				},
 				entity ingredient {
 					nameMultiple ingredients
+					displayPattern "#name#"
 					tree NESTED
 					incoming ( "categories.ingredients",
 					"recipes.producedIngredient" ) outgoing ( "ingredient.recipes",
 					"ingredients.units" ) fields {
-						string name leading {
+						string name {
 							defaultValue ""
 							sluggablePosition 1
 						},
@@ -114,10 +116,11 @@ application RecipeManager {
 				},
 				entity category {
 					nameMultiple categories
+					displayPattern "#name#"
 					tree NESTED
 					outgoing ( "categories.ingredients",
 					"categories.recipes" ) fields {
-						string name leading {
+						string name {
 							defaultValue ""
 							sluggablePosition 1
 						},
@@ -128,9 +131,10 @@ application RecipeManager {
 				},
 				entity unit {
 					nameMultiple units
+					displayPattern "#name#"
 					incoming ( "ingredients.units",
 					"recipeIngredients.unit" ) fields {
-						string name leading unique {
+						string name unique {
 							defaultValue ""
 						},
 						string shortName unique {
@@ -146,9 +150,10 @@ application RecipeManager {
 				},
 				entity recipeIngredient {
 					nameMultiple recipeIngredients
+					displayPattern "#amount#"
 					incoming ( "recipe.ingredients",
 					"ingredient.recipes" ) outgoing ( "recipeIngredients.unit" ) fields {
-						string amount leading {
+						string amount {
 							defaultValue ""
 							length 20
 						},
@@ -209,7 +214,7 @@ application RecipeManager {
 					sourceAlias recipeIngredients
 					target unit
 					targetAlias unit
-					editType ACTIVE_EDIT_PASSIVE_NONE
+					editType ACTIVE_EDIT_PASSIVE_CHOOSE
 				}
 			}
 			variables {

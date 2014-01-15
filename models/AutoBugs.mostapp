@@ -11,8 +11,9 @@ application AutoBugs {
 			entities {
 				entity ^application leading {
 					nameMultiple applications
+					displayPattern "#name#"
 					outgoing ( "application.tickets" ) fields {
-						string name leading {
+						string name {
 							defaultValue ""
 						},
 						boolean active {
@@ -22,21 +23,31 @@ application AutoBugs {
 				},
 				entity bugReport {
 					nameMultiple bugReports
+					displayPattern "#title#"
 					incoming ( "application.tickets" ) fields {
-						string title leading {
+						string title {
 							defaultValue ""
 						},
 						text description {
 							defaultValue ""
 						},
-						integer priority {
-							documentation "The priority of this ticket."
-							defaultValue "0"
-							length 1
+						list priority {
+							items {
+								listItem Low ( low ),
+								default listItem Medium ( medium ),
+								listItem High ( high ),
+								listItem Critical ( critical )
+							}
 						},
-						integer status {
-							defaultValue "0"
-							length 1
+						list status {
+							items {
+								default listItem New ( new ),
+								listItem Waiting ( waiting ),
+								listItem "In work" ( inwork ),
+								listItem Feedback ( feedback ),
+								listItem Completed ( completed ),
+								listItem Aborted ( aborted )
+							}
 						}
 					}
 				}

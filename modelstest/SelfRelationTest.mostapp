@@ -10,12 +10,16 @@ application SelfRelationTest {
 			entities {
 				entity person leading {
 					nameMultiple persons
+					displayPattern "#lastName#, #firstName#"
 					incoming ( "member.groupLeader",
 					"friend.friends",
 					"knowingUsers.knownUsers" ) outgoing ( "member.groupLeader",
 					"friend.friends",
 					"knowingUsers.knownUsers" ) fields {
-						string name leading {
+						string firstName {
+							defaultValue ""
+						},
+						string lastName {
 							defaultValue ""
 						},
 						text description {

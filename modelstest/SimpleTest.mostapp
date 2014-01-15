@@ -12,9 +12,10 @@ application SimpleTest {
 				entity customer leading {
 					documentation "This text is an example for documentation. It tells you something about the customers section."
 					nameMultiple customers
+					displayPattern "#name#"
 					outgoing ( "customer.address",
 					"customer.orders" ) fields {
-						string name leading {
+						string name {
 							defaultValue ""
 						},
 						user customerUser,
@@ -34,12 +35,13 @@ application SimpleTest {
 				},
 				entity address {
 					nameMultiple addresses
+					displayPattern "#city#"
 					incoming ( "customer.address" ) fields {
 						string street {
 							defaultValue ""
 							mandatory false
 						},
-						string city leading {
+						string city {
 							defaultValue ""
 						},
 						email ^email {
@@ -54,8 +56,9 @@ application SimpleTest {
 				},
 				entity order {
 					nameMultiple orders
+					displayPattern "#orderNumberUnique#"
 					incoming ( "customer.orders" ) outgoing ( "orders.orderProducts" ) fields {
-						string orderNumberUnique leading unique {
+						string orderNumberUnique unique {
 							defaultValue ""
 						},
 						boolean isFinished {
@@ -67,11 +70,12 @@ application SimpleTest {
 				entity product {
 					documentation ""
 					nameMultiple products
+					displayPattern "#title#"
 					incoming ( "orders.orderProducts" ) fields {
 						string productNumberUnique unique {
 							defaultValue ""
 						},
-						string title leading {
+						string title {
 							defaultValue "This is a default text."
 						},
 						text description {

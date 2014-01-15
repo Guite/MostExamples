@@ -10,8 +10,9 @@ application AutoSocial {
 			entities {
 				entity socialNetwork leading {
 					nameMultiple socialNetworks
+					displayPattern "#name#"
 					fields {
-						string name leading {
+						string name {
 							defaultValue ""
 						},
 						url ^url {

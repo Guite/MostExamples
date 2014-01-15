@@ -10,8 +10,9 @@ application AutoMixtapes {
 			entities {
 				entity mixtape leading {
 					nameMultiple mixtapes
+					displayPattern "#releaseDate#: #name# (#views# Views)"
 					fields {
-						string name leading {
+						string name {
 							defaultValue ""
 						},
 						text description {

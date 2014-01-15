@@ -10,8 +10,9 @@ application AutoProject {
 			entities {
 				entity project leading {
 					nameMultiple projects
+					displayPattern "#title#"
 					outgoing ( "project.tasks" ) fields {
-						string title leading {
+						string title {
 							defaultValue ""
 							length 200
 						},
@@ -28,8 +29,9 @@ application AutoProject {
 				},
 				entity task {
 					nameMultiple tasks
+					displayPattern "#title#"
 					incoming ( "project.tasks" ) outgoing ( "task.taskType" ) fields {
-						string title leading {
+						string title {
 							defaultValue ""
 							length 200
 						},
@@ -41,8 +43,9 @@ application AutoProject {
 				},
 				entity taskType {
 					nameMultiple taskTypes
+					displayPattern "#title#"
 					incoming ( "task.taskType" ) fields {
-						string title leading {
+						string title {
 							defaultValue ""
 							length 200
 						}

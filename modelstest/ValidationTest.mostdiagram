@@ -1,32 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:modulestudio="http://modulestudio.de/modulestudio" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation">
-  <notation:Diagram xmi:id="_UpdCQGJwEeK9ycylkoview" type="Module" measurementUnit="Pixel">
-    <children xmi:type="notation:Shape" xmi:id="_Us70EGJwEeK9ycylkoview" type="2001" fontName="monospaced" fontHeight="12" lineColor="4210752">
-      <children xmi:type="notation:DecorationNode" xmi:id="_Us70E2JwEeK9ycylkoview" type="5001"/>
-      <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_Us70EWJwEeK9ycylkoview" diagramLink="_X-XIkGJwEeK9ycylkoview" hint="Model"/>
-      <element xmi:type="modulestudio:Models" href="ValidationTest.mostapp#ValidationTest.Model"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Us70EmJwEeK9ycylkoview" x="30" y="130"/>
+  <notation:Diagram xmi:id="_NTFL0H4LEeORr_PRTacJPA" type="Module" measurementUnit="Pixel">
+    <children xmi:type="notation:Shape" xmi:id="_NUkZkH4LEeORr_PRTacJPA" type="2001" fontName="monospaced" fontHeight="12" lineColor="4210752">
+      <children xmi:type="notation:DecorationNode" xmi:id="_NUkZk34LEeORr_PRTacJPA" type="5001"/>
+      <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_NUkZkX4LEeORr_PRTacJPA" diagramLink="_N7IqUH4LEeORr_PRTacJPA" hint="Model"/>
+      <element xmi:type="modulestudio:Models" href="ValidationTest.mostapp#//@models.0"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NUkZkn4LEeORr_PRTacJPA" y="100"/>
     </children>
-    <children xmi:type="notation:Shape" xmi:id="_Us8bIGJwEeK9ycylkoview" type="2002" fontName="monospaced" fontHeight="12" lineColor="4210752">
-      <children xmi:type="notation:DecorationNode" xmi:id="_Us8bI2JwEeK9ycylkoview" type="5002"/>
-      <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_Us8bIWJwEeK9ycylkoview" diagramLink="_WubKsGJwEeK9ycylkoview" hint="Controller"/>
-      <element xmi:type="modulestudio:Controllers" href="ValidationTest.mostapp#ValidationTest.Controller"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Us8bImJwEeK9ycylkoview" x="74" y="30"/>
+    <children xmi:type="notation:Shape" xmi:id="_NUkZlH4LEeORr_PRTacJPA" type="2002" fontName="monospaced" fontHeight="12" lineColor="4210752">
+      <children xmi:type="notation:DecorationNode" xmi:id="_NUkZl34LEeORr_PRTacJPA" type="5002"/>
+      <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_NUkZlX4LEeORr_PRTacJPA" hint="Controller"/>
+      <element xmi:type="modulestudio:Controllers" href="ValidationTest.mostapp#//@controllers.0"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NUkZln4LEeORr_PRTacJPA" x="44"/>
     </children>
-    <children xmi:type="notation:Shape" xmi:id="_Us8bJGJwEeK9ycylkoview" type="2003" fontName="monospaced" fontHeight="12" lineColor="4210752">
-      <children xmi:type="notation:DecorationNode" xmi:id="_Us9CMGJwEeK9ycylkoview" type="5003"/>
-      <element xmi:type="modulestudio:Views" href="ValidationTest.mostapp#ValidationTest.View"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Us8bJWJwEeK9ycylkoview" x="154" y="130"/>
+    <children xmi:type="notation:Shape" xmi:id="_NUkZmH4LEeORr_PRTacJPA" type="2003" fontName="monospaced" fontHeight="12" lineColor="4210752">
+      <children xmi:type="notation:DecorationNode" xmi:id="_NUlAoH4LEeORr_PRTacJPA" type="5003"/>
+      <element xmi:type="modulestudio:Views" href="ValidationTest.mostapp#//@views.0"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NUkZmX4LEeORr_PRTacJPA" x="124" y="100"/>
     </children>
-    <styles xmi:type="notation:DiagramStyle" xmi:id="_UpdCQWJwEeK9ycylkoview"/>
-    <element xmi:type="modulestudio:Application" href="ValidationTest.mostapp#ValidationTest"/>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_NTFL0X4LEeORr_PRTacJPA"/>
+    <element xmi:type="modulestudio:Application" href="ValidationTest.mostapp#/"/>
   </notation:Diagram>
-  <notation:Diagram xmi:id="_WubKsGJwEeK9ycylkoview" type="Controller" measurementUnit="Pixel">
-    <styles xmi:type="notation:DiagramStyle" xmi:id="_WubxwGJwEeK9ycylkoview"/>
-    <element xmi:type="modulestudio:Controllers" href="ValidationTest.mostapp#ValidationTest.Controller"/>
-  </notation:Diagram>
-  <notation:Diagram xmi:id="_X-XIkGJwEeK9ycylkoview" type="Model" measurementUnit="Pixel">
-    <styles xmi:type="notation:DiagramStyle" xmi:id="_X-XIkWJwEeK9ycylkoview"/>
-    <element xmi:type="modulestudio:Models" href="ValidationTest.mostapp#ValidationTest.Model"/>
+  <notation:Diagram xmi:id="_N7IqUH4LEeORr_PRTacJPA" type="Model" measurementUnit="Pixel">
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_N7IqUX4LEeORr_PRTacJPA"/>
+    <element xmi:type="modulestudio:Models" href="ValidationTest.mostapp#//@models.0"/>
   </notation:Diagram>
 </xmi:XMI>

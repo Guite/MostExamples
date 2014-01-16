@@ -3,6 +3,7 @@ application SimpleDemo {
 	author "Axel Guckelsberger"
 	email "info@guite.de"
 	url "http://guite.de"
+	version "0.0.2"
 	prefix simdem
 	generatorSettings {
 		settingsContainer Settings

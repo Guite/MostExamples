@@ -27,6 +27,7 @@ application SimpleDemo {
 		generateXmlTemplates false
 		generateJsonTemplates false
 		generateKmlTemplates false
+		generateIcsTemplates false
 		generateOnlyBaseClasses true
 		timestampAllGeneratedFiles true
 		generatePoweredByBacklinksIntoFooterTemplates false

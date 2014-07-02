@@ -5,7 +5,29 @@ application RecipeManager {
 	email "info@guite.de"
 	url "http://modulestudio.de"
 	prefix recman
-	modelPath ""
+	generatorSettings {
+		settingsContainer Settings
+		targetCoreVersion ZK135
+		generateAccountApi false
+		generateSearchApi false
+		generateMailzApi false
+		generateListBlock false
+		generateModerationBlock false
+		generateListContentType false
+		generateDetailContentType false
+		generateNewsletterPlugin false
+		generateModerationPanel false
+		generatePendingContentSupport false
+		generateExternalControllerAndFinder true
+		generateScribitePlugins true
+		generateTagSupport false
+		generateRssTemplates true
+		generateAtomTemplates false
+		generateCsvTemplates false
+		generateKmlTemplates false
+		generateIcsTemplates false
+		generateTests false
+	}
 	modelLayer {
 		modelContainer Model {
 			numExampleRows 0
@@ -13,8 +35,10 @@ application RecipeManager {
 				entity recipe leading {
 					nameMultiple recipes
 					displayPattern "#title#"
-					incoming ( "categories.recipes" ) outgoing ( "recipe.ingredients",
-					"recipes.producedIngredient" ) fields {
+					incoming ( "categories.recipes" )
+					outgoing ( "recipe.ingredients",
+					"recipes.producedIngredient" )
+					fields {
 						string title unique {
 							defaultValue ""
 							sluggablePosition 1
@@ -49,6 +73,15 @@ application RecipeManager {
 						},
 						upload ^image {
 							mandatory false
+						},
+						list saison multiple useChecks {
+							mandatory false
+							items {
+								listItem Spring ( spring ),
+								listItem Summer ( summer ),
+								listItem Autumn ( autumn ),
+								listItem Winter ( winter )
+							}
 						}
 					}
 					indexes {
@@ -64,8 +97,10 @@ application RecipeManager {
 					displayPattern "#name#"
 					tree NESTED
 					incoming ( "categories.ingredients",
-					"recipes.producedIngredient" ) outgoing ( "ingredient.recipes",
-					"ingredients.units" ) fields {
+					"recipes.producedIngredient" )
+					outgoing ( "ingredient.recipes",
+					"ingredients.units" )
+					fields {
 						string name {
 							defaultValue ""
 							sluggablePosition 1
@@ -92,25 +127,6 @@ application RecipeManager {
 						},
 						upload ^image {
 							mandatory false
-						},
-						list saison multiple useChecks {
-							mandatory false
-							items {
-								listItem January ( january ) {
-									image ""
-								},
-								listItem February ( february ),
-								listItem March ( march ),
-								listItem April ( april ),
-								listItem May ( may ),
-								listItem June ( june ),
-								listItem July ( july ),
-								listItem August ( august ),
-								listItem September ( september ),
-								listItem October ( october ),
-								listItem November ( november ),
-								listItem December ( december )
-							}
 						}
 					}
 				},
@@ -119,7 +135,8 @@ application RecipeManager {
 					displayPattern "#name#"
 					tree NESTED
 					outgoing ( "categories.ingredients",
-					"categories.recipes" ) fields {
+					"categories.recipes" )
+					fields {
 						string name {
 							defaultValue ""
 							sluggablePosition 1
@@ -133,7 +150,8 @@ application RecipeManager {
 					nameMultiple units
 					displayPattern "#name#"
 					incoming ( "ingredients.units",
-					"recipeIngredients.unit" ) fields {
+					"recipeIngredients.unit" )
+					fields {
 						string name unique {
 							defaultValue ""
 						},
@@ -152,7 +170,9 @@ application RecipeManager {
 					nameMultiple recipeIngredients
 					displayPattern "#amount#"
 					incoming ( "recipe.ingredients",
-					"ingredient.recipes" ) outgoing ( "recipeIngredients.unit" ) fields {
+					"ingredient.recipes" )
+					outgoing ( "recipeIngredients.unit" )
+					fields {
 						string amount {
 							defaultValue ""
 							length 20

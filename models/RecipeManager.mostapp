@@ -189,6 +189,7 @@ application RecipeManager {
 					sourceAlias categories
 					target recipe
 					targetAlias recipes
+					useAutoCompletion BOTH_SIDES
 					editType ACTIVE_NONE_PASSIVE_CHOOSE
 					refClass RecipeCategoryRef
 				},
@@ -197,6 +198,7 @@ application RecipeManager {
 					sourceAlias categories
 					target ingredient
 					targetAlias ingredients
+					useAutoCompletion BOTH_SIDES
 					editType ACTIVE_NONE_PASSIVE_CHOOSE
 					refClass IngredientCategoryRef
 				},
@@ -205,6 +207,7 @@ application RecipeManager {
 					sourceAlias recipe
 					target recipeIngredient
 					targetAlias ingredients
+					useAutoCompletion BOTH_SIDES
 					cascade REMOVE
 					orderBy sortValue
 				},
@@ -213,6 +216,7 @@ application RecipeManager {
 					sourceAlias ingredient
 					target recipeIngredient
 					targetAlias recipes
+					useAutoCompletion BOTH_SIDES
 					cascade REMOVE
 				},
 				many2many {
@@ -228,6 +232,7 @@ application RecipeManager {
 					sourceAlias recipes
 					target ingredient
 					targetAlias producedIngredient
+				useAutoCompletion BOTH_SIDES
 				},
 				many2one {
 					source recipeIngredient

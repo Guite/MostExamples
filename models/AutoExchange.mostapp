@@ -4,7 +4,6 @@ application AutoExchange {
 	email "info@guite.de"
 	url "https://guite.de"
 	prefix auex
-	modelPath ""
 	modelLayer {
 		modelContainer Model {
 			entities {

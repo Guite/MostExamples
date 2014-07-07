@@ -4,7 +4,6 @@ application AutoMixtapes {
 	email "info@guite.de"
 	url "https://guite.de"
 	prefix aumixt
-	modelPath ""
 	modelLayer {
 		modelContainer Model {
 			entities {

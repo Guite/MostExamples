@@ -4,7 +4,6 @@ application SelfRelationTest {
 	email "info@guite.de"
 	url "http://modulestudio.de"
 	prefix selfrel
-	modelPath ""
 	modelLayer {
 		modelContainer Model {
 			entities {

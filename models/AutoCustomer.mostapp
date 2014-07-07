@@ -4,7 +4,6 @@ application AutoCustomer {
 	email "info@guite.de"
 	url "http://guite.de"
 	prefix aucu
-	modelPath ""
 	modelLayer {
 		modelContainer Model {
 			entities {

@@ -5,7 +5,6 @@ application ValidationTest {
 	email "info@modulestudio.de"
 	url "http://modulestudio.de"
 	prefix valtest
-	modelPath ""
 	modelLayer {
 		modelContainer Model {
 			entities {

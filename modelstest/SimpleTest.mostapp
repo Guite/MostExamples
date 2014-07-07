@@ -5,7 +5,6 @@ application SimpleTest {
 	email "info@modulestudio.de"
 	url "http://modulestudio.de"
 	prefix simtest
-	modelPath ""
 	modelLayer {
 		modelContainer Model {
 			entities {

@@ -4,7 +4,6 @@ application AutoBugs {
 	email "info@modulestudio.de"
 	url "http://modulestudio.de"
 	prefix bugs
-	modelPath ""
 	modelLayer {
 		modelContainer Model {
 			documentation "A simple bug and ticket management module."

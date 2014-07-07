@@ -5,7 +5,6 @@ application SimpleMedia {
 	email "info@guite.de"
 	url "http://zikula.de"
 	prefix simmed
-	modelPath ""
 	modelLayer {
 		modelContainer Model {
 			numExampleRows 0

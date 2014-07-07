@@ -4,7 +4,6 @@ application AutoMusic {
 	email "info@modulestudio.de"
 	url "http://modulestudio.de"
 	prefix music
-	modelPath ""
 	modelLayer {
 		modelContainer Model {
 			entities {

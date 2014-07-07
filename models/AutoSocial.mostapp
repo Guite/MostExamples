@@ -4,7 +4,6 @@ application AutoSocial {
 	email "info@modulestudio.de"
 	url "http://modulestudio.de"
 	prefix ausoc
-	modelPath ""
 	modelLayer {
 		modelContainer Model {
 			entities {

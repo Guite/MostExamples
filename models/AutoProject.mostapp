@@ -1,96 +1,102 @@
-application AutoProject {
-	vendor Guite
-	author "Axel Guckelsberger"
-	email "info@modulestudio.de"
-	url "http://modulestudio.de"
-	prefix auoro
-	modelLayer {
-		modelContainer Model {
-			entities {
-				entity project leading {
-					nameMultiple projects
-					displayPattern "#title#"
-					outgoing ( "project.tasks" ) fields {
-						string title {
-							defaultValue ""
-							length 200
-						},
-						date ^startDate {
-							defaultValue ""
-						},
-						date ^endDate {
-							defaultValue ""
-						},
-						boolean isActive {
-							defaultValue "1"
-						}
-					}
-				},
-				entity task {
-					nameMultiple tasks
-					displayPattern "#title#"
-					incoming ( "project.tasks" ) outgoing ( "task.taskType" ) fields {
-						string title {
-							defaultValue ""
-							length 200
-						},
-						user owner,
-						boolean isFinished {
-							defaultValue "0"
-						}
-					}
-				},
-				entity taskType {
-					nameMultiple taskTypes
-					displayPattern "#title#"
-					incoming ( "task.taskType" ) fields {
-						string title {
-							defaultValue ""
-							length 200
-						}
-					}
-				}
-			}
-			relations {
-				one2many bidirectional {
-					source project
-					sourceAlias project
-					target task
-					targetAlias tasks
-				},
-				one2one bidirectional {
-					source task
-					sourceAlias task
-					target taskType
-					targetAlias taskType
-				}
-			}
-		}
-	}
-	controllerLayer {
-		controllerContainer Controller {
-			modelContext ( "AutoProject.Model" )
-			processViews "AutoProject.View"
-			controllers {
-				adminController Admin {
-					actions {
-						mainAction Main,
-						viewAction View,
-						displayAction Display,
-						editAction Edit
-					}
-				},
-				ajaxController Ajax {
-					actions {
-						mainAction Main
-					}
-				}
-			}
-		}
-	}
-	viewLayer {
-		viewContainer View {
-			controller "AutoProject.Controller"
-		}
-	}
+application "AutoProject" {
+    vendor "Guite"
+    author "Axel Guckelsberger"
+    email "info@modulestudio.de"
+    url "http://modulestudio.de"
+    prefix "auoro"
+    generatorSettings {
+        settingsContainer "Settings"
+        amountOfExampleRows 5
+    }
+    entities {
+        entity "project" leading {
+            nameMultiple "projects"
+            displayPattern "#title#"
+            fields {
+                string "title" {
+                    defaultValue ""
+                    length 200
+                },
+                date "startDate" {
+                    defaultValue ""
+                },
+                date "endDate" {
+                    defaultValue ""
+                },
+                boolean "isActive" {
+                    defaultValue "1"
+                }
+            }
+            actions {
+                mainAction "Main",
+                viewAction "View",
+                displayAction "Display",
+                editAction "Edit"
+            }
+        },
+        entity "task" {
+            nameMultiple "tasks"
+            displayPattern "#title#"
+            fields {
+                string "title" {
+                    defaultValue ""
+                    length 200
+                },
+                user "owner" {
+                    onAccountDeletionCreator ADMIN
+                },
+                boolean "isFinished" {
+                    defaultValue "0"
+                }
+            }
+            actions {
+                mainAction "Main",
+                viewAction "View",
+                displayAction "Display",
+                editAction "Edit"
+            }
+        },
+        entity "taskType" {
+            nameMultiple "taskTypes"
+            displayPattern "#title#"
+            fields {
+                string "title" {
+                    defaultValue ""
+                    length 200
+                }
+            }
+            actions {
+                mainAction "Main",
+                viewAction "View",
+                displayAction "Display",
+                editAction "Edit"
+            }
+        }
+    }
+    relations {
+        one2many bidirectional {
+            source "project"
+            sourceAlias "project"
+            target "task"
+            targetAlias "tasks"
+        },
+        one2one bidirectional {
+            source "task"
+            sourceAlias "task"
+            target "taskType"
+            targetAlias "taskType"
+        }
+    }
+    controllers {
+        adminController "Admin" {
+            actions {
+                mainAction "Main"
+            }
+        },
+        ajaxController "Ajax" {
+            actions {
+                mainAction "Main"
+            }
+        }
+    }
 }

@@ -1,99 +1,93 @@
-application AutoBugs {
-	vendor Guite
-	author "Axel Guckelsberger"
-	email "info@modulestudio.de"
-	url "http://modulestudio.de"
-	prefix bugs
-	modelLayer {
-		modelContainer Model {
-			documentation "A simple bug and ticket management module."
-			entities {
-				entity ^application leading {
-					nameMultiple applications
-					displayPattern "#name#"
-					outgoing ( "application.tickets" ) fields {
-						string name {
-							defaultValue ""
-						},
-						boolean active {
-							defaultValue ^true
-						}
-					}
-				},
-				entity bugReport {
-					nameMultiple bugReports
-					displayPattern "#title#"
-					incoming ( "application.tickets" ) fields {
-						string title {
-							defaultValue ""
-						},
-						text description {
-							defaultValue ""
-						},
-						list priority {
-							items {
-								listItem Low ( low ),
-								default listItem Medium ( medium ),
-								listItem High ( high ),
-								listItem Critical ( critical )
-							}
-						},
-						list status {
-							items {
-								default listItem New ( new ),
-								listItem Waiting ( waiting ),
-								listItem "In work" ( inwork ),
-								listItem Feedback ( feedback ),
-								listItem Completed ( completed ),
-								listItem Aborted ( aborted )
-							}
-						}
-					}
-				}
-			}
-			relations {
-				one2many bidirectional {
-					source ^application
-					sourceAlias ^application
-					target bugReport
-					targetAlias tickets
-					cascade REMOVE
-				}
-			}
-		}
-	}
-	controllerLayer {
-		controllerContainer Controller {
-			modelContext ( "AutoBugs.Model" )
-			processViews "AutoBugs.View"
-			controllers {
-				userController User {
-					actions {
-						mainAction Main,
-						viewAction View,
-						displayAction Display,
-						editAction Edit
-					}
-				},
-				adminController Admin {
-					actions {
-						mainAction Main,
-						viewAction View,
-						displayAction Display,
-						editAction Edit
-					}
-				},
-				ajaxController Ajax {
-					actions {
-						mainAction Main
-					}
-				}
-			}
-		}
-	}
-	viewLayer {
-		viewContainer View {
-			controller "AutoBugs.Controller"
-		}
-	}
+application "AutoBugs" {
+    vendor "Guite"
+    author "Axel Guckelsberger"
+    email "info@modulestudio.de"
+    url "http://modulestudio.de"
+    prefix "bugs"
+    generatorSettings {
+        settingsContainer "Settings"
+        amountOfExampleRows 5
+    }
+    entities {
+        entity "application" leading {
+            nameMultiple "applications"
+            displayPattern "#name#"
+            fields {
+                string "name" {
+                    defaultValue ""
+                },
+                boolean "active" {
+                    defaultValue "true"
+                }
+            }
+            actions {
+                mainAction "Main",
+                viewAction "View",
+                displayAction "Display",
+                editAction "Edit"
+            }
+        },
+        entity "bugReport" {
+            nameMultiple "bugReports"
+            displayPattern "#title#"
+            fields {
+                string "title" {
+                    defaultValue ""
+                },
+                text "description" {
+                    defaultValue ""
+                },
+                list "priority" {
+                    items {
+                        listItem "Low" ( "low" ),
+                        default listItem "Medium" ( "medium" ),
+                        listItem "High" ( "high" ),
+                        listItem "Critical" ( "critical" )
+                    }
+                },
+                list "status" {
+                    items {
+                        default listItem "New" ( "new" ),
+                        listItem "Waiting" ( "waiting" ),
+                        listItem "In work" ( "inwork" ),
+                        listItem "Feedback" ( "feedback" ),
+                        listItem "Completed" ( "completed" ),
+                        listItem "Aborted" ( "aborted" )
+                    }
+                }
+            }
+            actions {
+                mainAction "Main",
+                viewAction "View",
+                displayAction "Display",
+                editAction "Edit"
+            }
+        }
+    }
+    relations {
+        one2many bidirectional {
+            source "application"
+            sourceAlias "application"
+            target "bugReport"
+            targetAlias "tickets"
+            cascade REMOVE
+        }
+    }
+    controllers {
+        userController "User" {
+            actions {
+                mainAction "Main"
+            }
+        },
+        adminController "Admin" {
+            actions {
+                mainAction "Main"
+            }
+        },
+        ajaxController "Ajax" {
+            actions {
+                mainAction "Main"
+            }
+        }
+    }
 }

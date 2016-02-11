@@ -1,116 +1,125 @@
-application AutoCustomer {
-	vendor Guite
-	author "Axel Guckelsberger"
-	email "info@guite.de"
-	url "http://guite.de"
-	prefix aucu
-	modelLayer {
-		modelContainer Model {
-			entities {
-				entity customer leading {
-					nameMultiple customers
-					displayPattern "#company#"
-					outgoing ( "customer.contact",
-					"customer.orders" ) fields {
-						string company {
-							defaultValue ""
-						},
-						string city {
-							defaultValue ""
-						},
-						boolean active {
-							defaultValue ^true
-						}
-					}
-				},
-				entity order {
-					nameMultiple orders
-					displayPattern "#orderDate#"
-					incoming ( "customer.orders" ) outgoing ( "order.positions" ) fields {
-						date orderDate {
-							defaultValue ""
-						}
-					}
-				},
-				entity contact {
-					nameMultiple contacts
-					displayPattern "#lastName#, #firstName#"
-					slugUnique false
-					incoming ( "customer.contact" ) fields {
-						string firstName {
-							defaultValue ""
-							sluggablePosition 1
-						},
-						string lastName {
-							defaultValue ""
-							sluggablePosition 2
-						},
-						integer age {
-							defaultValue ""
-							length 2
-						},
-						string phone {
-							defaultValue ""
-							mandatory false
-						}
-					}
-				},
-				entity orderPosition {
-					nameMultiple orderPositions
-					displayPattern "#amount#"
-					incoming ( "order.positions" ) fields {
-						integer amount {
-							defaultValue "1"
-						}
-					}
-				}
-			}
-			relations {
-				one2one bidirectional {
-					source customer
-					sourceAlias customer
-					target contact
-					targetAlias contact
-				},
-				one2many bidirectional {
-					source customer
-					sourceAlias customer
-					target order
-					targetAlias orders
-				},
-				one2many bidirectional {
-					source order
-					sourceAlias order
-					target orderPosition
-					targetAlias positions
-				}
-			}
-		}
-	}
-	controllerLayer {
-		controllerContainer Controller {
-			modelContext ( "AutoCustomer.Model" )
-			processViews "AutoCustomer.View"
-			controllers {
-				adminController Admin {
-					actions {
-						mainAction Main,
-						viewAction View,
-						displayAction Display,
-						editAction Edit
-					}
-				},
-				ajaxController Ajax {
-					actions {
-						mainAction Main
-					}
-				}
-			}
-		}
-	}
-	viewLayer {
-		viewContainer View {
-			controller "AutoCustomer.Controller"
-		}
-	}
+application "AutoCustomer" {
+    vendor "Guite"
+    author "Axel Guckelsberger"
+    email "info@guite.de"
+    url "http://guite.de"
+    prefix "aucu"
+    generatorSettings {
+        settingsContainer "Settings"
+        amountOfExampleRows 5
+    }
+    entities {
+        entity "customer" leading {
+            nameMultiple "customers"
+            displayPattern "#company#"
+            fields {
+                string "company" {
+                    defaultValue ""
+                },
+                string "city" {
+                    defaultValue ""
+                },
+                boolean "active" {
+                    defaultValue "true"
+                }
+            }
+            actions {
+                mainAction "Main",
+                viewAction "View",
+                displayAction "Display",
+                editAction "Edit"
+            }
+        },
+        entity "order" {
+            nameMultiple "orders"
+            displayPattern "#orderDate#"
+            fields {
+                date "orderDate" {
+                    defaultValue ""
+                }
+            }
+            actions {
+                mainAction "Main",
+                viewAction "View",
+                displayAction "Display",
+                editAction "Edit"
+            }
+        },
+        entity "contact" {
+            nameMultiple "contacts"
+            displayPattern "#lastName#, #firstName#"
+            slugUnique false
+            fields {
+                string "firstName" {
+                    defaultValue ""
+                    sluggablePosition 1
+                },
+                string "lastName" {
+                    defaultValue ""
+                    sluggablePosition 2
+                },
+                integer "age" {
+                    defaultValue ""
+                    length 2
+                },
+                string "phone" {
+                    defaultValue ""
+                    mandatory false
+                }
+            }
+            actions {
+                mainAction "Main",
+                viewAction "View",
+                displayAction "Display",
+                editAction "Edit"
+            }
+        },
+        entity "orderPosition" {
+            nameMultiple "orderPositions"
+            displayPattern "#amount#"
+            fields {
+                integer "amount" {
+                    defaultValue "1"
+                }
+            }
+            actions {
+                mainAction "Main",
+                viewAction "View",
+                displayAction "Display",
+                editAction "Edit"
+            }
+        }
+    }
+    relations {
+        one2one bidirectional {
+            source "customer"
+            sourceAlias "customer"
+            target "contact"
+            targetAlias "contact"
+        },
+        one2many bidirectional {
+            source "customer"
+            sourceAlias "customer"
+            target "order"
+            targetAlias "orders"
+        },
+        one2many bidirectional {
+            source "order"
+            sourceAlias "order"
+            target "orderPosition"
+            targetAlias "positions"
+        }
+    }
+    controllers {
+        adminController "Admin" {
+            actions {
+                mainAction "Main"
+            }
+        },
+        ajaxController "Ajax" {
+            actions {
+                mainAction "Main"
+            }
+        }
+    }
 }

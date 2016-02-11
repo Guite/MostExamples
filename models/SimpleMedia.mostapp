@@ -1,94 +1,78 @@
-application SimpleMedia {
-	documentation "Simple file and media management."
-	vendor Guite
-	author "Axel Guckelsberger"
-	email "info@guite.de"
-	url "http://zikula.de"
-	prefix simmed
-	modelLayer {
-		modelContainer Model {
-			numExampleRows 0
-			entities {
-				entity medium leading categorisable attributable metaData {
-					nameMultiple media
-					displayPattern "#title#"
-					fields {
-						string title {
-							defaultValue ""
-							sluggablePosition 1
-						},
-						upload theFile {
-							allowedExtensions
-							"gif, jpeg, jpg, png, pdf, doc, xls, ppt, docx, xlsx, pptx, odt, ods, odp, arj, zip, rar, tar, tgz, gz, bz2, txt, rtf, swf, flv, mp3, mp4, avi, mpg, mpeg, mov"
-						},
-						text description {
-							defaultValue ""
-							mandatory false
-						}
-					}
-				}
-			}
-			variables {
-				varContainer ImageSettings {
-					vars {
-						intVar pageSize {
-							value "20"
-						},
-						textVar thumbDimensions {
-							value ""
-						},
-						intVar defaultThumbNumber {
-							value "1"
-						},
-						boolVar enableShrinking {
-							value ^false
-						},
-						textVar shrinkDimensions {
-							value ""
-						},
-						boolVar useThumbCropper {
-							value ^false
-						},
-						intVar cropSizeMode {
-							value "0"
-						}
-					}
-				}
-			}
-		}
-	}
-	controllerLayer {
-		controllerContainer Controller {
-			modelContext ( "SimpleMedia.Model" )
-			processViews "SimpleMedia.View"
-			controllers {
-				adminController Admin {
-					actions {
-						mainAction Main,
-						viewAction View,
-						displayAction Display,
-						editAction Edit,
-						customAction Import
-					}
-				},
-				userController User {
-					actions {
-						mainAction Main,
-						viewAction View,
-						displayAction Display
-					}
-				},
-				ajaxController Ajax {
-					actions {
-						mainAction Main
-					}
-				}
-			}
-		}
-	}
-	viewLayer {
-		viewContainer View {
-			controller "SimpleMedia.Controller"
-		}
-	}
+application "SimpleMedia" {
+    documentation "Simple file and media management."
+    vendor "Guite"
+    author "Axel Guckelsberger"
+    email "info@guite.de"
+    url "http://zikula.de"
+    prefix "simmed"
+    entities {
+        entity "medium" leading categorisable attributable metaData {
+            nameMultiple "media"
+            displayPattern "#title#"
+            fields {
+                string "title" {
+                    defaultValue ""
+                    sluggablePosition 1
+                },
+                upload "theFile" {
+                    allowedExtensions "gif, jpeg, jpg, png, pdf, doc, xls, ppt, docx, xlsx, pptx, odt, ods, odp, arj, zip, rar, tar, tgz, gz, bz2, txt, rtf, swf, flv, mp3, mp4, avi, mpg, mpeg, mov"
+                },
+                text "description" {
+                    defaultValue ""
+                    mandatory false
+                }
+            }
+            actions {
+                mainAction "Main",
+                viewAction "View",
+                displayAction "Display",
+                editAction "Edit"
+            }
+        }
+    }
+    variables {
+        varContainer "ImageSettings" {
+            vars {
+                intVar "pageSize" {
+                    value "20"
+                },
+                textVar "thumbDimensions" {
+                    value ""
+                },
+                intVar "defaultThumbNumber" {
+                    value "1"
+                },
+                boolVar "enableShrinking" {
+                    value "false"
+                },
+                textVar "shrinkDimensions" {
+                    value ""
+                },
+                boolVar "useThumbCropper" {
+                    value "false"
+                },
+                intVar "cropSizeMode" {
+                    value "0"
+                }
+            }
+        }
+    }
+    controllers {
+        adminController "Admin" {
+            actions {
+                mainAction "Main",
+                customAction "Import"
+            }
+        },
+        userController "User" {
+            actions {
+                mainAction "Main"
+            }
+        },
+        ajaxController "Ajax" {
+            actions {
+                mainAction "Main"
+            }
+        }
+    }
 }

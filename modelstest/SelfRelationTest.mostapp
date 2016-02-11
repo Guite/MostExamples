@@ -1,95 +1,83 @@
-application SelfRelationTest {
-	vendor Guite
-	author "Axel Guckelsberger"
-	email "info@guite.de"
-	url "http://modulestudio.de"
-	prefix selfrel
-	modelLayer {
-		modelContainer Model {
-			entities {
-				entity person leading {
-					nameMultiple persons
-					displayPattern "#lastName#, #firstName#"
-					incoming ( "member.groupLeader",
-					"friend.friends",
-					"knowingUsers.knownUsers" ) outgoing ( "member.groupLeader",
-					"friend.friends",
-					"knowingUsers.knownUsers" ) fields {
-						string firstName {
-							defaultValue ""
-						},
-						string lastName {
-							defaultValue ""
-						},
-						text description {
-							defaultValue ""
-							mandatory false
-						},
-						integer groupLeader {
-							defaultValue "0"
-							mandatory false
-						},
-						integer friendid {
-							defaultValue "0"
-							mandatory false
-						},
-						integer knownuserid {
-							defaultValue "0"
-							mandatory false
-						}
-					}
-				}
-			}
-			relations {
-				one2one {
-					source person
-					sourceAlias member
-					target person
-					targetAlias groupLeader
-					targetField groupLeader
-				},
-				one2many {
-					source person
-					sourceAlias friend
-					target person
-					targetAlias friends
-					targetField friendid
-				},
-				many2many {
-					source person
-					sourceAlias knowingUsers
-					target person
-					targetAlias knownUsers
-					targetField knownuserid
-					refClass KnownPerson
-				}
-			}
-		}
-	}
-	controllerLayer {
-		controllerContainer Controller {
-			modelContext ( "SelfRelationTest.Model" )
-			processViews "SelfRelationTest.View"
-			controllers {
-				adminController Admin {
-					actions {
-						mainAction Main,
-						viewAction View,
-						displayAction Display,
-						editAction Edit
-					}
-				},
-				ajaxController Ajax {
-					actions {
-						mainAction Main
-					}
-				}
-			}
-		}
-	}
-	viewLayer {
-		viewContainer View {
-			controller "SelfRelationTest.Controller"
-		}
-	}
+application "SelfRelationTest" {
+    vendor "Guite"
+    author "Axel Guckelsberger"
+    email "info@guite.de"
+    url "http://modulestudio.de"
+    prefix "selfrel"
+    generatorSettings {
+        settingsContainer "Settings"
+        amountOfExampleRows 5
+    }
+    entities {
+        entity "person" leading {
+            nameMultiple "persons"
+            displayPattern "#lastName#, #firstName#"
+            fields {
+                string "firstName" {
+                    defaultValue ""
+                },
+                string "lastName" {
+                    defaultValue ""
+                },
+                text "description" {
+                    defaultValue ""
+                    mandatory false
+                },
+                integer "groupLeaderId" {
+                    defaultValue "0"
+                    mandatory false
+                },
+                integer "friendid" {
+                    defaultValue "0"
+                    mandatory false
+                },
+                integer "knownuserid" {
+                    defaultValue "0"
+                    mandatory false
+                }
+            }
+            actions {
+                mainAction "Main",
+                viewAction "View",
+                displayAction "Display",
+                editAction "Edit"
+            }
+        }
+    }
+    relations {
+        one2one {
+            source "person"
+            sourceAlias "member"
+            target "person"
+            targetAlias "groupLeader"
+            targetField "groupLeaderId"
+        },
+        one2many {
+            source "person"
+            sourceAlias "friend"
+            target "person"
+            targetAlias "friends"
+            targetField "friendid"
+        },
+        many2many {
+            source "person"
+            sourceAlias "knowingUsers"
+            target "person"
+            targetAlias "knownUsers"
+            targetField "knownuserid"
+            refClass "KnownPerson"
+        }
+    }
+    controllers {
+        adminController "Admin" {
+            actions {
+                mainAction "Main"
+            }
+        },
+        ajaxController "Ajax" {
+            actions {
+                mainAction "Main"
+            }
+        }
+    }
 }

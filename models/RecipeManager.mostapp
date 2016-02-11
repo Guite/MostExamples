@@ -1,290 +1,283 @@
-application RecipeManager {
-	documentation "Comprehensive recipe and menu management."
-	vendor Guite
-	author "Axel Guckelsberger"
-	email "info@guite.de"
-	url "http://modulestudio.de"
-	prefix recman
-	generatorSettings {
-		settingsContainer Settings
-		targetCoreVersion ZK135
-		generateAccountApi false
-		generateSearchApi false
-		generateMailzApi false
-		generateListBlock false
-		generateModerationBlock false
-		generateListContentType false
-		generateDetailContentType false
-		generateNewsletterPlugin false
-		generateModerationPanel false
-		generatePendingContentSupport false
-		generateExternalControllerAndFinder true
-		generateScribitePlugins true
-		generateTagSupport false
-		generateRssTemplates true
-		generateAtomTemplates false
-		generateCsvTemplates false
-		generateKmlTemplates false
-		generateIcsTemplates false
-		generateTests false
-	}
-	modelLayer {
-		modelContainer Model {
-			numExampleRows 0
-			entities {
-				entity recipe leading {
-					nameMultiple recipes
-					displayPattern "#title#"
-					incoming ( "categories.recipes" )
-					outgoing ( "recipe.ingredients",
-					"recipes.producedIngredient" )
-					fields {
-						string title unique {
-							defaultValue ""
-							sluggablePosition 1
-						},
-						text description {
-							defaultValue ""
-							mandatory false
-						},
-						integer amountOfPortions {
-							defaultValue "4"
-							length 3
-							minValue 1
-							maxValue 50
-						},
-						list difficulty {
-							items {
-								listItem Easy ( easy ),
-								default listItem Medium ( medium ),
-								listItem Hard ( hard )
-							}
-						},
-						integer duration {
-							documentation "The duration in minutes."
-							defaultValue "0"
-						},
-						text instructions {
-							defaultValue ""
-						},
-						upload downloadFile {
-							mandatory false
-							allowedExtensions "gif, jpeg, jpg, png, pdf"
-						},
-						upload ^image {
-							mandatory false
-						},
-						list saison multiple useChecks {
-							mandatory false
-							items {
-								listItem Spring ( spring ),
-								listItem Summer ( summer ),
-								listItem Autumn ( autumn ),
-								listItem Winter ( winter )
-							}
-						}
-					}
-					indexes {
-						index difficultyIndex {
-							items {
-								indexItem difficulty
-							}
-						}
-					}
-				},
-				entity ingredient {
-					nameMultiple ingredients
-					displayPattern "#name#"
-					tree NESTED
-					incoming ( "categories.ingredients",
-					"recipes.producedIngredient" )
-					outgoing ( "ingredient.recipes",
-					"ingredients.units" )
-					fields {
-						string name {
-							defaultValue ""
-							sluggablePosition 1
-						},
-						string originalName {
-							defaultValue ""
-							mandatory false
-						},
-						text description nullable {
-							defaultValue ""
-							mandatory false
-						},
-						string aliasName1 {
-							defaultValue ""
-							mandatory false
-						},
-						string aliasName2 {
-							defaultValue ""
-							mandatory false
-						},
-						string aliasName3 {
-							defaultValue ""
-							mandatory false
-						},
-						upload ^image {
-							mandatory false
-						}
-					}
-				},
-				entity category {
-					nameMultiple categories
-					displayPattern "#name#"
-					tree NESTED
-					outgoing ( "categories.ingredients",
-					"categories.recipes" )
-					fields {
-						string name {
-							defaultValue ""
-							sluggablePosition 1
-						},
-						upload ^image {
-							mandatory false
-						}
-					}
-				},
-				entity unit {
-					nameMultiple units
-					displayPattern "#name#"
-					incoming ( "ingredients.units",
-					"recipeIngredients.unit" )
-					fields {
-						string name unique {
-							defaultValue ""
-						},
-						string shortName unique {
-							defaultValue ""
-							length 5
-						},
-						text description {
-							defaultValue ""
-							mandatory false
-							length 500
-						}
-					}
-				},
-				entity recipeIngredient {
-					nameMultiple recipeIngredients
-					displayPattern "#amount#"
-					incoming ( "recipe.ingredients",
-					"ingredient.recipes" )
-					outgoing ( "recipeIngredients.unit" )
-					fields {
-						string amount {
-							defaultValue ""
-							length 20
-						},
-						integer sortValue {
-							defaultValue "1"
-						}
-					}
-				}
-			}
-			relations {
-				many2many bidirectional {
-					source category
-					sourceAlias categories
-					target recipe
-					targetAlias recipes
-					useAutoCompletion BOTH_SIDES
-					editType ACTIVE_NONE_PASSIVE_CHOOSE
-					refClass RecipeCategoryRef
-				},
-				many2many bidirectional {
-					source category
-					sourceAlias categories
-					target ingredient
-					targetAlias ingredients
-					useAutoCompletion BOTH_SIDES
-					editType ACTIVE_NONE_PASSIVE_CHOOSE
-					refClass IngredientCategoryRef
-				},
-				one2many bidirectional {
-					source recipe
-					sourceAlias recipe
-					target recipeIngredient
-					targetAlias ingredients
-					useAutoCompletion BOTH_SIDES
-					cascade REMOVE
-					orderBy sortValue
-				},
-				one2many bidirectional {
-					source ingredient
-					sourceAlias ingredient
-					target recipeIngredient
-					targetAlias recipes
-					useAutoCompletion BOTH_SIDES
-					cascade REMOVE
-				},
-				many2many {
-					source ingredient
-					sourceAlias ingredients
-					target unit
-					targetAlias units
-					editType ACTIVE_EDIT_PASSIVE_NONE
-					refClass IngredientUnit
-				},
-				many2one {
-					source recipe
-					sourceAlias recipes
-					target ingredient
-					targetAlias producedIngredient
-				useAutoCompletion BOTH_SIDES
-				},
-				many2one {
-					source recipeIngredient
-					sourceAlias recipeIngredients
-					target unit
-					targetAlias unit
-					editType ACTIVE_EDIT_PASSIVE_CHOOSE
-				}
-			}
-			variables {
-				varContainer General {
-					documentation "All basic settings for the recipe manager."
-					vars {
-						intVar pageSize {
-							value "20"
-						}
-					}
-				}
-			}
-		}
-	}
-	controllerLayer {
-		controllerContainer Controller {
-			modelContext ( "RecipeManager.Model" )
-			processViews "RecipeManager.View"
-			controllers {
-				adminController Admin {
-					actions {
-						mainAction Main,
-						viewAction View,
-						editAction Edit
-					}
-				},
-				userController User {
-					actions {
-						mainAction Main,
-						viewAction View,
-						displayAction Display,
-						customAction Report
-					}
-				},
-				ajaxController Ajax {
-					actions {
-						mainAction Main
-					}
-				}
-			}
-		}
-	}
-	viewLayer {
-		viewContainer View {
-			controller "RecipeManager.Controller"
-		}
-	}
+application "RecipeManager" {
+    documentation "Comprehensive recipe and menu management."
+    vendor "Guite"
+    author "Axel Guckelsberger"
+    email "info@guite.de"
+    url "http://modulestudio.de"
+    prefix "recman"
+    generatorSettings {
+        settingsContainer "Settings"
+        generateAccountApi false
+        generateSearchApi false
+        generateMailzApi false
+        generateListBlock false
+        generateModerationBlock false
+        generateListContentType false
+        generateDetailContentType false
+        generateNewsletterPlugin false
+        generateModerationPanel false
+        generatePendingContentSupport false
+        generateTagSupport false
+        generateAtomTemplates false
+        generateCsvTemplates false
+        generateKmlTemplates false
+        generateIcsTemplates false
+        generateTests false
+        skipFiles ""
+        markFiles ""
+    }
+    entities {
+        entity "recipe" leading {
+            nameMultiple "recipes"
+            displayPattern "#title#"
+            fields {
+                string "title" unique {
+                    defaultValue ""
+                    sluggablePosition 1
+                },
+                text "description" {
+                    defaultValue ""
+                    mandatory false
+                },
+                integer "amountOfPortions" {
+                    defaultValue "4"
+                    length 3
+                    minValue 1
+                    maxValue 50
+                },
+                list "difficulty" {
+                    items {
+                        listItem "Easy" ( "easy" ),
+                        default listItem "Medium" ( "medium" ),
+                        listItem "Hard" ( "hard" )
+                    }
+                },
+                integer "duration" {
+                    documentation "The duration in minutes."
+                    defaultValue "0"
+                },
+                text "instructions" {
+                    defaultValue ""
+                },
+                upload "downloadFile" {
+                    mandatory false
+                    allowedExtensions "gif, jpeg, jpg, png, pdf"
+                },
+                upload "image" {
+                    mandatory false
+                },
+                list "saison" multiple expanded {
+                    mandatory false
+                    items {
+                        listItem "Spring" ( "spring" ),
+                        listItem "Summer" ( "summer" ),
+                        listItem "Autumn" ( "autumn" ),
+                        listItem "Winter" ( "winter" )
+                    }
+                }
+            }
+            indexes {
+                index "difficultyIndex" {
+                    items {
+                        indexItem "difficulty"
+                    }
+                }
+            }
+            actions {
+                mainAction "Main",
+                viewAction "View",
+                editAction "Edit",
+                displayAction "Display"
+            }
+        },
+        entity "ingredient" {
+            nameMultiple "ingredients"
+            displayPattern "#name#"
+            tree NESTED
+            fields {
+                string "name" {
+                    defaultValue ""
+                    sluggablePosition 1
+                },
+                string "originalName" {
+                    defaultValue ""
+                    mandatory false
+                },
+                text "description" nullable {
+                    defaultValue ""
+                    mandatory false
+                },
+                string "aliasName1" {
+                    defaultValue ""
+                    mandatory false
+                },
+                string "aliasName2" {
+                    defaultValue ""
+                    mandatory false
+                },
+                string "aliasName3" {
+                    defaultValue ""
+                    mandatory false
+                },
+                upload "image" {
+                    mandatory false
+                }
+            }
+            actions {
+                mainAction "Main",
+                viewAction "View",
+                editAction "Edit",
+                displayAction "Display"
+            }
+        },
+        entity "category" {
+            nameMultiple "categories"
+            displayPattern "#name#"
+            tree NESTED
+            fields {
+                string "name" {
+                    defaultValue ""
+                    sluggablePosition 1
+                },
+                upload "image" {
+                    mandatory false
+                }
+            }
+            actions {
+                mainAction "Main",
+                viewAction "View",
+                editAction "Edit",
+                displayAction "Display"
+            }
+        },
+        entity "unit" {
+            nameMultiple "units"
+            displayPattern "#name#"
+            fields {
+                string "name" unique {
+                    defaultValue ""
+                },
+                string "shortName" unique {
+                    defaultValue ""
+                    length 5
+                },
+                text "description" {
+                    defaultValue ""
+                    mandatory false
+                    length 500
+                }
+            }
+            actions {
+                mainAction "Main",
+                viewAction "View",
+                editAction "Edit",
+                displayAction "Display"
+            }
+        },
+        entity "recipeIngredient" {
+            nameMultiple "recipeIngredients"
+            displayPattern "#amount#"
+            fields {
+                string "amount" {
+                    defaultValue ""
+                    length 20
+                },
+                integer "sortValue" {
+                    defaultValue "1"
+                }
+            }
+            actions {
+                mainAction "Main",
+                viewAction "View",
+                editAction "Edit",
+                displayAction "Display"
+            }
+        }
+    }
+    relations {
+        many2many bidirectional {
+            source "category"
+            sourceAlias "categories"
+            target "recipe"
+            targetAlias "recipes"
+            useAutoCompletion BOTH_SIDES
+            editType ACTIVE_NONE_PASSIVE_CHOOSE
+            refClass "RecipeCategoryRef"
+        },
+        many2many bidirectional {
+            source "category"
+            sourceAlias "categories"
+            target "ingredient"
+            targetAlias "ingredients"
+            useAutoCompletion BOTH_SIDES
+            editType ACTIVE_NONE_PASSIVE_CHOOSE
+            refClass "IngredientCategoryRef"
+        },
+        one2many bidirectional {
+            source "recipe"
+            sourceAlias "recipe"
+            target "recipeIngredient"
+            targetAlias "ingredients"
+            useAutoCompletion BOTH_SIDES
+            cascade REMOVE
+            orderBy "name"
+        },
+        one2many bidirectional {
+            source "ingredient"
+            sourceAlias "ingredient"
+            target "recipeIngredient"
+            targetAlias "recipes"
+            useAutoCompletion BOTH_SIDES
+            cascade REMOVE
+        },
+        many2many {
+            source "ingredient"
+            sourceAlias "ingredients"
+            target "unit"
+            targetAlias "units"
+            editType ACTIVE_EDIT_PASSIVE_NONE
+            refClass "IngredientUnit"
+        },
+        many2one {
+            source "recipe"
+            sourceAlias "recipes"
+            target "ingredient"
+            targetAlias "producedIngredient"
+            useAutoCompletion BOTH_SIDES
+        },
+        many2one {
+            source "recipeIngredient"
+            sourceAlias "recipeIngredients"
+            target "unit"
+            targetAlias "unit"
+        }
+    }
+    variables {
+        varContainer "General" {
+            documentation "All basic settings for the recipe manager."
+            vars {
+                intVar "pageSize" {
+                    value "20"
+                }
+            }
+        }
+    }
+    controllers {
+        adminController "Admin" {
+            actions {
+                mainAction "Main"
+            }
+        },
+        userController "User" {
+            actions {
+                mainAction "Main",
+                customAction "Report"
+            }
+        },
+        ajaxController "Ajax" {
+            actions {
+                mainAction "Main"
+            }
+        }
+    }
 }

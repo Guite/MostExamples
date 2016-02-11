@@ -1,113 +1,122 @@
-application AutoMusic {
-	vendor Guite
-	author "Axel Guckelsberger"
-	email "info@modulestudio.de"
-	url "http://modulestudio.de"
-	prefix music
-	modelLayer {
-		modelContainer Model {
-			entities {
-				entity artist leading {
-					nameMultiple artists
-					displayPattern "#lastName#, #firstName#"
-					outgoing ( "artist.releases" ) fields {
-						string firstName {
-							defaultValue ""
-							length 200
-						},
-						string lastName {
-							defaultValue ""
-							length 200
-						},
-						boolean isActive {
-							defaultValue "1"
-						},
-						date birthday {
-							defaultValue ""
-						}
-					}
-				},
-				entity release {
-					nameMultiple releases
-					displayPattern "#title#"
-					incoming ( "artist.releases" ) outgoing ( "release.songs" ) fields {
-						string title {
-							defaultValue ""
-							length 200
-						}
-					}
-				},
-				entity song {
-					nameMultiple songs
-					displayPattern "#title#"
-					outgoing ( "song.releases" ) fields {
-						string title {
-							defaultValue ""
-							length 250
-						},
-						string ^length {
-							defaultValue "0:00"
-							length 10
-						}
-					}
-				},
-				entity releaseTrack {
-					nameMultiple releaseTracks
-					displayPattern "#songIndex#"
-					incoming ( "song.releases",
-					"release.songs" ) fields {
-						integer songIndex {
-							defaultValue ""
-						}
-					}
-				}
-			}
-			relations {
-				one2many bidirectional {
-					source artist
-					sourceAlias artist
-					target release
-					targetAlias releases
-				},
-				one2many bidirectional {
-					source song
-					sourceAlias song
-					target releaseTrack
-					targetAlias releases
-				},
-				one2many bidirectional {
-					source release
-					sourceAlias release
-					target releaseTrack
-					targetAlias songs
-				}
-			}
-		}
-	}
-	controllerLayer {
-		controllerContainer Controller {
-			modelContext ( "AutoMusic.Model" )
-			processViews "AutoMusic.View"
-			controllers {
-				adminController Admin {
-					actions {
-						mainAction Main,
-						viewAction View,
-						displayAction Display,
-						editAction Edit
-					}
-				},
-				ajaxController Ajax {
-					actions {
-						mainAction Main
-					}
-				}
-			}
-		}
-	}
-	viewLayer {
-		viewContainer View {
-			controller "AutoMusic.Controller"
-		}
-	}
+application "AutoMusic" {
+    vendor "Guite"
+    author "Axel Guckelsberger"
+    email "info@modulestudio.de"
+    url "http://modulestudio.de"
+    prefix "music"
+    generatorSettings {
+        settingsContainer "Settings"
+        amountOfExampleRows 5
+    }
+    entities {
+        entity "artist" leading {
+            nameMultiple "artists"
+            displayPattern "#lastName#, #firstName#"
+            fields {
+                string "firstName" {
+                    defaultValue ""
+                    length 200
+                },
+                string "lastName" {
+                    defaultValue ""
+                    length 200
+                },
+                boolean "isActive" {
+                    defaultValue "1"
+                },
+                date "birthday" {
+                    defaultValue ""
+                }
+            }
+            actions {
+                mainAction "Main",
+                viewAction "View",
+                displayAction "Display",
+                editAction "Edit"
+            }
+        },
+        entity "release" {
+            nameMultiple "releases"
+            displayPattern "#title#"
+            fields {
+                string "title" {
+                    defaultValue ""
+                    length 200
+                }
+            }
+            actions {
+                mainAction "Main",
+                viewAction "View",
+                displayAction "Display",
+                editAction "Edit"
+            }
+        },
+        entity "song" {
+            nameMultiple "songs"
+            displayPattern "#title#"
+            fields {
+                string "title" {
+                    defaultValue ""
+                    length 250
+                },
+                string "length" {
+                    defaultValue "0:00"
+                    length 10
+                }
+            }
+            actions {
+                mainAction "Main",
+                viewAction "View",
+                displayAction "Display",
+                editAction "Edit"
+            }
+        },
+        entity "releaseTrack" {
+            nameMultiple "releaseTracks"
+            displayPattern "#songIndex#"
+            fields {
+                integer "songIndex" {
+                    defaultValue ""
+                }
+            }
+            actions {
+                mainAction "Main",
+                viewAction "View",
+                displayAction "Display",
+                editAction "Edit"
+            }
+        }
+    }
+    relations {
+        one2many bidirectional {
+            source "artist"
+            sourceAlias "artist"
+            target "release"
+            targetAlias "releases"
+        },
+        one2many bidirectional {
+            source "song"
+            sourceAlias "song"
+            target "releaseTrack"
+            targetAlias "releases"
+        },
+        one2many bidirectional {
+            source "release"
+            sourceAlias "release"
+            target "releaseTrack"
+            targetAlias "songs"
+        }
+    }
+    controllers {
+        adminController "Admin" {
+            actions {
+                mainAction "Main"
+            }
+        },
+        ajaxController "Ajax" {
+            actions {
+                mainAction "Main"
+            }
+        }
+    }
 }

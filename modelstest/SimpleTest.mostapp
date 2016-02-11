@@ -1,148 +1,162 @@
-application SimpleTest {
-	documentation "This is a simple test module."
-	vendor Guite
-	author "Axel Guckelsberger"
-	email "info@modulestudio.de"
-	url "http://modulestudio.de"
-	prefix simtest
-	modelLayer {
-		modelContainer Model {
-			entities {
-				entity customer leading {
-					documentation "This text is an example for documentation. It tells you something about the customers section."
-					nameMultiple customers
-					displayPattern "#name#"
-					outgoing ( "customer.address",
-					"customer.orders" ) fields {
-						string name {
-							defaultValue ""
-						},
-						user customerUser,
-						upload photo {
-							documentation "You can optionally upload a photo."
-							mandatory false
-						},
-						date birthDay {
-							defaultValue ""
-							mandatory false
-						},
-						boolean isSpecialSubscriber {
-							defaultValue ^false
-							mandatory false
-						}
-					}
-				},
-				entity address {
-					nameMultiple addresses
-					displayPattern "#city#"
-					incoming ( "customer.address" ) fields {
-						string street {
-							defaultValue ""
-							mandatory false
-						},
-						string city {
-							defaultValue ""
-						},
-						email ^email {
-							defaultValue ""
-						},
-						url homepage {
-							documentation "You may input a website address here."
-							defaultValue ""
-							mandatory false
-						}
-					}
-				},
-				entity order {
-					nameMultiple orders
-					displayPattern "#orderNumberUnique#"
-					incoming ( "customer.orders" ) outgoing ( "orders.orderProducts" ) fields {
-						string orderNumberUnique unique {
-							defaultValue ""
-						},
-						boolean isFinished {
-							defaultValue ^false
-							mandatory false
-						}
-					}
-				},
-				entity product {
-					documentation ""
-					nameMultiple products
-					displayPattern "#title#"
-					incoming ( "orders.orderProducts" ) fields {
-						string productNumberUnique unique {
-							defaultValue ""
-						},
-						string title {
-							defaultValue "This is a default text."
-						},
-						text description {
-							defaultValue ""
-							mandatory false
-						},
-						upload ^image {
-							mandatory false
-						},
-						upload downloadFile {
-							mandatory false
-							allowedExtensions "zip, rar, pdf"
-						},
-						decimal priceNet {
-							defaultValue "9.80"
-							mandatory false
-						}
-					}
-				}
-			}
-			relations {
-				one2one {
-					source customer
-					sourceAlias customer
-					target address
-					targetAlias address
-				},
-				one2many {
-					source customer
-					sourceAlias customer
-					target order
-					targetAlias orders
-				},
-				many2many {
-					source order
-					sourceAlias orders
-					target product
-					targetAlias orderProducts
-					refClass OrderProduct
-				}
-			}
-		}
-	}
-	controllerLayer {
-		controllerContainer Controller {
-			modelContext ( "SimpleTest.Model" )
-			processViews "SimpleTest.View"
-			controllers {
-				adminController Admin {
-					actions {
-						mainAction Main,
-						viewAction View,
-						displayAction Display,
-						editAction Edit,
-						deleteAction Delete
-					}
-				},
-				ajaxController Ajax {
-					actions {
-						mainAction Main
-					}
-				}
-			}
-		}
-	}
-	viewLayer {
-		viewContainer View {
-			controller "SimpleTest.Controller"
-		}
-	}
+application "SimpleTest" {
+    documentation "This is a simple test module."
+    vendor "Guite"
+    author "Axel Guckelsberger"
+    email "info@modulestudio.de"
+    url "http://modulestudio.de"
+    prefix "simtest"
+    generatorSettings {
+        settingsContainer "Settings"
+        amountOfExampleRows 5
+    }
+    entities {
+        entity "customer" leading {
+            documentation "This text is an example for documentation. It tells you something about the customers section."
+            nameMultiple "customers"
+            displayPattern "#name#"
+            fields {
+                string "name" {
+                    defaultValue ""
+                },
+                user "customerUser" {
+                    onAccountDeletionCreator ADMIN
+                },
+                upload "photo" {
+                    documentation "You can optionally upload a photo."
+                    mandatory false
+                },
+                date "birthDay" {
+                    defaultValue ""
+                    mandatory false
+                },
+                boolean "isSpecialSubscriber" {
+                    defaultValue "false"
+                    mandatory false
+                }
+            }
+            actions {
+                mainAction "Main",
+                viewAction "View",
+                displayAction "Display",
+                editAction "Edit",
+                deleteAction "Delete"
+            }
+        },
+        entity "address" {
+            nameMultiple "addresses"
+            displayPattern "#city#"
+            fields {
+                string "street" {
+                    defaultValue ""
+                    mandatory false
+                },
+                string "city" {
+                    defaultValue ""
+                },
+                email "email" {
+                    defaultValue ""
+                },
+                url "homepage" {
+                    documentation "You may input a website address here."
+                    defaultValue ""
+                    mandatory false
+                }
+            }
+            actions {
+                mainAction "Main",
+                viewAction "View",
+                displayAction "Display",
+                editAction "Edit",
+                deleteAction "Delete"
+            }
+        },
+        entity "order" {
+            nameMultiple "orders"
+            displayPattern "#orderNumberUnique#"
+            fields {
+                string "orderNumberUnique" unique {
+                    defaultValue ""
+                },
+                boolean "isFinished" {
+                    defaultValue "false"
+                    mandatory false
+                }
+            }
+            actions {
+                mainAction "Main",
+                viewAction "View",
+                displayAction "Display",
+                editAction "Edit",
+                deleteAction "Delete"
+            }
+        },
+        entity "product" {
+            documentation ""
+            nameMultiple "products"
+            displayPattern "#title#"
+            fields {
+                string "productNumberUnique" unique {
+                    defaultValue ""
+                },
+                string "title" {
+                    defaultValue "This is a default text."
+                },
+                text "description" {
+                    defaultValue ""
+                    mandatory false
+                },
+                upload "image" {
+                    mandatory false
+                },
+                upload "downloadFile" {
+                    mandatory false
+                    allowedExtensions "zip, rar, pdf"
+                },
+                decimal "priceNet" {
+                    defaultValue "9.80"
+                    mandatory false
+                }
+            }
+            actions {
+                mainAction "Main",
+                viewAction "View",
+                displayAction "Display",
+                editAction "Edit",
+                deleteAction "Delete"
+            }
+        }
+    }
+    relations {
+        one2one {
+            source "customer"
+            sourceAlias "customer"
+            target "address"
+            targetAlias "address"
+        },
+        one2many {
+            source "customer"
+            sourceAlias "customer"
+            target "order"
+            targetAlias "orders"
+        },
+        many2many {
+            source "order"
+            sourceAlias "orders"
+            target "product"
+            targetAlias "orderProducts"
+            refClass "OrderProduct"
+        }
+    }
+    controllers {
+        adminController "Admin" {
+            actions {
+                mainAction "Main"
+            }
+        },
+        ajaxController "Ajax" {
+            actions {
+                mainAction "Main"
+            }
+        }
+    }
 }

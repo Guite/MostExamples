@@ -1,277 +1,300 @@
-application AutoExchange {
-	vendor Guite
-	author "Axel Guckelsberger"
-	email "info@guite.de"
-	url "https://guite.de"
-	prefix auex
-	modelLayer {
-		modelContainer Model {
-			entities {
-				entity provider leading {
-					nameMultiple providers
-					displayPattern "#lastName#, #firstName#"
-					outgoing ( "provider.products",
-					"provider.contracts" ) fields {
-						string firstName {
-							defaultValue ""
-							length 100
-						},
-						string lastName {
-							defaultValue ""
-							length 100
-						},
-						string street {
-							defaultValue ""
-							mandatory false
-							length 150
-						},
-						string houseNr {
-							defaultValue "1"
-							mandatory false
-							length 10
-						},
-						string zipCode {
-							defaultValue ""
-							length 10
-						},
-						string city {
-							defaultValue ""
-							length 150
-						}
-					}
-					indexes {
-						index myIndex {
-							items {
-								indexItem firstName,
-								indexItem lastName,
-								indexItem zipCode
-							}
-						}
-					}
-				},
-				entity product {
-					nameMultiple products
-					displayPattern "#title#"
-					incoming ( "provider.products" ) outgoing ( "product.bidding",
-					"product.views" ) fields {
-						string title {
-							defaultValue ""
-							length 200
-						},
-						text description {
-							defaultValue ""
-						},
-						date ^startDate {
-							defaultValue ""
-						},
-						date ^endDate {
-							defaultValue ""
-						}
-					}
-				},
-				entity bidding {
-					nameMultiple biddings
-					displayPattern "#price#"
-					incoming ( "product.bidding",
-					"bidder.biddings",
-					"acceptance.bidding" ) fields {
-						float price {
-							defaultValue ""
-						}
-					}
-				},
-				entity acceptance {
-					nameMultiple acceptance
-					displayPattern "#acceptDate#"
-					outgoing ( "acceptance.contract",
-					"acceptance.bidding",
-					"acceptance.customer" ) fields {
-						date acceptDate {
-							defaultValue ""
-						}
-					}
-				},
-				entity interestedBuyer {
-					nameMultiple interestedBuyers
-					displayPattern "#buyer#"
-					incoming ( "inheritance.1" ) outgoing ( "buyer.views" ) fields {
-						user buyer
-					}
-				},
-				entity bidder {
-					nameMultiple bidders
-					displayPattern "#lastName#, #firstName#"
-					incoming ( "inheritance.0" ) outgoing ( "bidder.biddings",
-					"inheritance.1" ) fields {
-						string firstName {
-							defaultValue ""
-							mandatory false
-						},
-						string lastName {
-							defaultValue ""
-						},
-						boolean isRegular {
-							defaultValue ^false
-						}
-					}
-				},
-				entity customer {
-					nameMultiple customers
-					displayPattern "#customerNr#"
-					incoming ( "acceptance.customer" ) outgoing ( "customer.contract",
-					"inheritance.0" ) fields {
-						integer customerNr unique {
-							defaultValue "0"
-						}
-					}
-				},
-				entity contract {
-					nameMultiple contracts
-					displayPattern "#payMethod#"
-					incoming ( "provider.contracts",
-					"customer.contract",
-					"acceptance.contract" ) fields {
-						string payMethod {
-							defaultValue "credit card"
-							length 20
-						}
-					}
-				},
-				entity productView {
-					nameMultiple productView
-					displayPattern "#viewTime#"
-					incoming ( "buyer.views",
-					"product.views" ) fields {
-						datetime viewTime {
-							defaultValue ""
-						}
-					}
-				}
-			}
-			relations {
-				one2many bidirectional {
-					source provider
-					sourceAlias provider
-					target product
-					targetAlias products
-				},
-				one2one bidirectional {
-					source product
-					sourceAlias product
-					target bidding
-					targetAlias bidding
-				},
-				one2one bidirectional {
-					source provider
-					sourceAlias provider
-					target contract
-					targetAlias contracts
-				},
-				one2one bidirectional {
-					source customer
-					sourceAlias customer
-					target contract
-					targetAlias contract
-				},
-				one2many bidirectional {
-					source interestedBuyer
-					sourceAlias buyer
-					target productView
-					targetAlias ^views
-				},
-				one2many bidirectional {
-					source product
-					sourceAlias product
-					target productView
-					targetAlias ^views
-				},
-				one2many bidirectional {
-					source bidder
-					sourceAlias bidder
-					target bidding
-					targetAlias biddings
-				},
-				one2one bidirectional {
-					source acceptance
-					sourceAlias acceptance
-					target contract
-					targetAlias contract
-				},
-				one2one bidirectional {
-					source acceptance
-					sourceAlias acceptance
-					target bidding
-					targetAlias bidding
-				},
-				one2one bidirectional {
-					source acceptance
-					sourceAlias acceptance
-					target customer
-					targetAlias customer
-				},
-				inheritance bidirectional {
-					source customer
-					target bidder
-				},
-				inheritance bidirectional {
-					source bidder
-					target interestedBuyer
-				}
-			}
-			variables {
-				varContainer Variables {
-					vars {
-						intVar pageSize {
-							value "15"
-						},
-						listVar defaultCat {
-							items {
-								listVarItem cat1,
-								listVarItem cat1
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-	controllerLayer {
-		controllerContainer Controller {
-			modelContext ( "AutoExchange.Model" )
-			processViews "AutoExchange.View"
-			controllers {
-				ajaxController Ajax {
-					actions {
-						customAction MyFunction
-					}
-				},
-				adminController Admin {
-					actions {
-						mainAction Main,
-						viewAction View,
-						displayAction Display,
-						editAction Edit
-					}
-				},
-				customController dsffdfsg {
-					actions {
-						customAction MyFunction
-					}
-				}
-			}
-			handlers {
-				customHandler productHandler {
-					events {
-						normalEvent MyNameEvent,
-						startEvent StartEvent
-					}
-				}
-			}
-		}
-	}
-	viewLayer {
-		viewContainer View {
-			controller "AutoExchange.Controller"
-		}
-	}
+application "AutoExchange" {
+    vendor "Guite"
+    author "Axel Guckelsberger"
+    email "info@guite.de"
+    url "https://guite.de"
+    prefix "auex"
+    generatorSettings {
+        settingsContainer "Settings"
+        amountOfExampleRows 5
+    }
+    entities {
+        entity "provider" leading {
+            nameMultiple "providers"
+            displayPattern "#lastName#, #firstName#"
+            fields {
+                string "firstName" {
+                    defaultValue ""
+                    length 100
+                },
+                string "lastName" {
+                    defaultValue ""
+                    length 100
+                },
+                string "street" {
+                    defaultValue ""
+                    mandatory false
+                    length 150
+                },
+                string "houseNr" {
+                    defaultValue "1"
+                    mandatory false
+                    length 10
+                },
+                string "zipCode" {
+                    defaultValue ""
+                    length 10
+                },
+                string "city" {
+                    defaultValue ""
+                    length 150
+                }
+            }
+            indexes {
+                index "myIndex" {
+                    items {
+                        indexItem "firstName",
+                        indexItem "lastName",
+                        indexItem "zipCode"
+                    }
+                }
+            }
+            actions {
+                mainAction "Main",
+                viewAction "View",
+                displayAction "Display",
+                editAction "Edit"
+            }
+        },
+        entity "product" {
+            nameMultiple "products"
+            displayPattern "#title#"
+            fields {
+                string "title" {
+                    defaultValue ""
+                    length 200
+                },
+                text "description" {
+                    defaultValue ""
+                },
+                date "startDate" {
+                    defaultValue ""
+                },
+                date "endDate" {
+                    defaultValue ""
+                }
+            }
+            actions {
+                mainAction "Main",
+                viewAction "View",
+                displayAction "Display",
+                editAction "Edit"
+            }
+        },
+        entity "bidding" {
+            nameMultiple "biddings"
+            displayPattern "#price#"
+            fields {
+                float "price" {
+                    defaultValue ""
+                }
+            }
+            actions {
+                mainAction "Main",
+                viewAction "View",
+                displayAction "Display",
+                editAction "Edit"
+            }
+        },
+        entity "acceptance" {
+            nameMultiple "acceptance"
+            displayPattern "#acceptDate#"
+            fields {
+                date "acceptDate" {
+                    defaultValue ""
+                }
+            }
+            actions {
+                mainAction "Main",
+                viewAction "View",
+                displayAction "Display",
+                editAction "Edit"
+            }
+        },
+        entity "interestedBuyer" {
+            nameMultiple "interestedBuyers"
+            displayPattern "#buyer#"
+            fields {
+                user "buyer" {
+                    onAccountDeletionCreator ADMIN
+                }
+            }
+            actions {
+                mainAction "Main",
+                viewAction "View",
+                displayAction "Display",
+                editAction "Edit"
+            }
+        },
+        entity "bidder" {
+            nameMultiple "bidders"
+            displayPattern "#lastName#, #firstName#"
+            fields {
+                string "firstName" {
+                    defaultValue ""
+                    mandatory false
+                },
+                string "lastName" {
+                    defaultValue ""
+                },
+                boolean "isRegular" {
+                    defaultValue "false"
+                }
+            }
+            actions {
+                mainAction "Main",
+                viewAction "View",
+                displayAction "Display",
+                editAction "Edit"
+            }
+        },
+        entity "customer" {
+            nameMultiple "customers"
+            displayPattern "#customerNr#"
+            fields {
+                integer "customerNr" unique {
+                    defaultValue "0"
+                }
+            }
+            actions {
+                mainAction "Main",
+                viewAction "View",
+                displayAction "Display",
+                editAction "Edit"
+            }
+        },
+        entity "contract" {
+            nameMultiple "contracts"
+            displayPattern "#payMethod#"
+            fields {
+                string "payMethod" {
+                    defaultValue "credit card"
+                    length 20
+                }
+            }
+            actions {
+                mainAction "Main",
+                viewAction "View",
+                displayAction "Display",
+                editAction "Edit"
+            }
+        },
+        entity "productView" {
+            nameMultiple "productView"
+            displayPattern "#viewTime#"
+            fields {
+                datetime "viewTime" {
+                    defaultValue ""
+                }
+            }
+            actions {
+                mainAction "Main",
+                viewAction "View",
+                displayAction "Display",
+                editAction "Edit"
+            }
+        }
+    }
+    relations {
+        one2many bidirectional {
+            source "provider"
+            sourceAlias "provider"
+            target "product"
+            targetAlias "products"
+        },
+        one2one bidirectional {
+            source "product"
+            sourceAlias "product"
+            target "bidding"
+            targetAlias "bidding"
+        },
+        one2one bidirectional {
+            source "provider"
+            sourceAlias "provider"
+            target "contract"
+            targetAlias "contracts"
+        },
+        one2one bidirectional {
+            source "customer"
+            sourceAlias "customer"
+            target "contract"
+            targetAlias "contract"
+        },
+        one2many bidirectional {
+            source "interestedBuyer"
+            sourceAlias "buyer"
+            target "productView"
+            targetAlias "views"
+        },
+        one2many bidirectional {
+            source "product"
+            sourceAlias "product"
+            target "productView"
+            targetAlias "views"
+        },
+        one2many bidirectional {
+            source "bidder"
+            sourceAlias "bidder"
+            target "bidding"
+            targetAlias "biddings"
+        },
+        one2one bidirectional {
+            source "acceptance"
+            sourceAlias "acceptance"
+            target "contract"
+            targetAlias "contract"
+        },
+        one2one bidirectional {
+            source "acceptance"
+            sourceAlias "acceptance"
+            target "bidding"
+            targetAlias "bidding"
+        },
+        one2one bidirectional {
+            source "acceptance"
+            sourceAlias "acceptance"
+            target "customer"
+            targetAlias "customer"
+        },
+        inheritance bidirectional {
+            source "customer"
+            target "bidder"
+        },
+        inheritance bidirectional {
+            source "bidder"
+            target "interestedBuyer"
+        }
+    }
+    variables {
+        varContainer "Variables" {
+            vars {
+                intVar "pageSize" {
+                    value "15"
+                },
+                listVar "defaultCat" {
+                    items {
+                        listVarItem "cat1",
+                        listVarItem "cat1"
+                    }
+                }
+            }
+        }
+    }
+    controllers {
+        ajaxController "Ajax" {
+            actions {
+                customAction "MyFunction"
+            }
+        },
+        adminController "Admin" {
+            actions {
+                mainAction "Main"
+            }
+        },
+        customController "dsffdfsg" {
+            actions {
+                customAction "MyFunction"
+            }
+        }
+    }
 }

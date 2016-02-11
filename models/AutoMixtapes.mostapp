@@ -1,60 +1,52 @@
-application AutoMixtapes {
-	vendor Guite
-	author "Axel Guckelsberger"
-	email "info@guite.de"
-	url "https://guite.de"
-	prefix aumixt
-	modelLayer {
-		modelContainer Model {
-			entities {
-				entity mixtape leading {
-					nameMultiple mixtapes
-					displayPattern "#releaseDate#: #name# (#views# Views)"
-					fields {
-						string name {
-							defaultValue ""
-						},
-						text description {
-							defaultValue ""
-							mandatory false
-						},
-						date releaseDate {
-							defaultValue ""
-						},
-						upload soundFile,
-						upload graphicFile,
-						integer ^views {
-							defaultValue "0"
-						}
-					}
-				}
-			}
-		}
-	}
-	controllerLayer {
-		controllerContainer Controller {
-			modelContext ( "AutoMixtapes.Model" )
-			processViews "AutoMixtapes.View"
-			controllers {
-				adminController Admin {
-					actions {
-						mainAction Main,
-						viewAction View,
-						displayAction Display,
-						editAction Edit
-					}
-				},
-				ajaxController Ajax {
-					actions {
-						mainAction Main
-					}
-				}
-			}
-		}
-	}
-	viewLayer {
-		viewContainer View {
-			controller "AutoMixtapes.Controller"
-		}
-	}
+application "AutoMixtapes" {
+    vendor "Guite"
+    author "Axel Guckelsberger"
+    email "info@guite.de"
+    url "https://guite.de"
+    prefix "aumixt"
+    generatorSettings {
+        settingsContainer "Settings"
+        amountOfExampleRows 5
+    }
+    entities {
+        entity "mixtape" leading {
+            nameMultiple "mixtapes"
+            displayPattern "#releaseDate#: #name# (#views# Views)"
+            fields {
+                string "name" {
+                    defaultValue ""
+                },
+                text "description" {
+                    defaultValue ""
+                    mandatory false
+                },
+                date "releaseDate" {
+                    defaultValue ""
+                },
+                upload "soundFile",
+                upload "graphicFile",
+                integer "views" {
+                    defaultValue "0"
+                }
+            }
+            actions {
+                mainAction "Main",
+                viewAction "View",
+                displayAction "Display",
+                editAction "Edit"
+            }
+        }
+    }
+    controllers {
+        adminController "Admin" {
+            actions {
+                mainAction "Main"
+            }
+        },
+        ajaxController "Ajax" {
+            actions {
+                mainAction "Main"
+            }
+        }
+    }
 }

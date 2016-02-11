@@ -1,348 +1,448 @@
-application ValidationTest {
-	documentation ""
-	vendor Guite
-	author "Axel Guckelsberger"
-	email "info@modulestudio.de"
-	url "http://modulestudio.de"
-	prefix valtest
-	modelLayer {
-		modelContainer Model {
-			entities {
-				entity drink leading {
-					nameMultiple drinks
-					displayPattern "#name#"
-					incoming ( "menu.drinks" ) fields {
-						string name {
-							defaultValue ""
-						},
-						integer amount {
-							defaultValue "0"
-						}
-					}
-					indexes {
-						index amountIndex {
-							items {
-								indexItem name
-							}
-						}
-					}
-				},
-				entity cake {
-					nameMultiple cakes
-					displayPattern "#name#"
-					incoming ( "menu.cake" ) outgoing ( "cakes.ingredients" ) fields {
-						string name {
-							defaultValue ""
-						},
-						boolean hasChocolate {
-							defaultValue ^true
-						},
-						datetime cakeDatetime {
-							defaultValue ""
-							mandatory false
-						},
-						text recipeText {
-							defaultValue "Enter your recipe instruction here"
-						}
-					}
-				},
-				entity menu {
-					nameMultiple menus
-					displayPattern "#title#"
-					outgoing ( "menu.cake",
-					"menu.drinks" ) fields {
-						string title {
-							defaultValue ""
-						},
-						date publishDate {
-							defaultValue ""
-						},
-						decimal price {
-							defaultValue "0.00"
-						},
-						float amount {
-							defaultValue "0.00"
-						}
-					}
-				},
-				entity test {
-					nameMultiple tests
-					displayPattern "#stringTest#"
-					incoming ( "productArticle.productTests" ) fields {
-						boolean boolTest {
-							defaultValue ^true
-						},
-						integer intTest {
-							defaultValue "0"
-						},
-						integer intTestUnique unique {
-							defaultValue "0"
-							mandatory false
-							length 4
-							minValue -5
-							maxValue 50
-						},
-						integer intTestWithRange {
-							defaultValue "5"
-							minValue 3
-							maxValue 10
-						},
-						float floatTest {
-							defaultValue "0.00"
-						},
-						decimal decimalTest {
-							defaultValue "0.000"
-							scale 3
-						},
-						string stringTest {
-							defaultValue "This is a default value"
-						},
-						string stringTestColour nospace htmlcolour {
-							defaultValue "#000000"
-							length 7
-						},
-						string stringTestCountry fixed nospace country {
-							defaultValue DE
-							length 5
-						},
-						text textTest {
-							defaultValue ""
-							mandatory false
-						},
-						email emailTest nospace {
-							defaultValue "test@example.com"
-						},
-						url urlTest {
-							defaultValue "http://www.example.com"
-						},
-						upload uploadTest {
-							mandatory false
-						},
-						user userTest,
-						array arrayTest {
-							defaultValue ""
-							mandatory false
-						},
-						object objectTest {
-							mandatory false
-						},
-						datetime datetimeTest {
-							defaultValue ""
-						},
-						datetime datetimeTestPast past {
-							defaultValue ""
-							mandatory false
-						},
-						datetime datetimeTestFuture future {
-							defaultValue ""
-							mandatory false
-						},
-						date dateTest {
-							defaultValue ""
-						},
-						time timeTest {
-							defaultValue ""
-						},
-						string myLanguage nospace language {
-							defaultValue de
-							mandatory false
-							length 5
-						},
-						string myPassword nospace password {
-							defaultValue ""
-							mandatory false
-							minLength 5
-							length 20
-						}
-					}
-					indexes {
-						index myIndex {
-							items {
-								indexItem intTest,
-								indexItem emailTest
-							}
-						},
-						index userIndex {
-							items {
-								indexItem userTest
-							}
-						}
-					}
-				},
-				entity myUser {
-					nameMultiple myUsers
-					displayPattern "#myUser#"
-					incoming ( "inheritance.0",
-					"knowingUser.knownUsers" ) outgoing ( "knowingUser.knownUsers" ) fields {
-						user myUser unique,
-						text description {
-							defaultValue ""
-							mandatory false
-						},
-						upload profileImage {
-							mandatory false
-						},
-						string columnType {
-							defaultValue ""
-						},
-						integer knownId {
-							defaultValue "0"
-						}
-					}
-				},
-				entity mySpecialUser {
-					nameMultiple mySpecialUsers
-					displayPattern "#specialEmail#"
-					outgoing ( "inheritance.0" ) fields {
-						email specialEmail {
-							defaultValue ""
-						},
-						array specialSettings {
-							defaultValue ""
-						}
-					}
-				},
-				entity ingredient {
-					nameMultiple ingredients
-					displayPattern "#name#"
-					incoming ( "cakes.ingredients" ) fields {
-						string name {
-							defaultValue ""
-						}
-					}
-				},
-				entity article {
-					nameMultiple articles
-					displayPattern "#title#"
-					outgoing ( "productArticle.productTests" ) fields {
-						string title {
-							defaultValue ""
-						},
-						integer checkthat {
-							defaultValue ""
-							length 16
-						},
-						text asdd {
-							defaultValue ""
-						}
-					}
-				}
-			}
-			relations {
-				one2one {
-					source menu
-					sourceAlias menu
-					target cake
-					targetAlias cake
-				},
-				one2many {
-					source menu
-					sourceAlias menu
-					target drink
-					targetAlias drinks
-				},
-				inheritance {
-					source mySpecialUser
-					target myUser
-				},
-				one2many {
-					source myUser
-					sourceAlias knowingUser
-					target myUser
-					targetAlias knownUsers
-					targetField knownId
-				},
-				many2many {
-					source cake
-					sourceAlias cakes
-					target ingredient
-					targetAlias ingredients
-					refClass cakeIngredients
-				},
-				one2many {
-					source article
-					sourceAlias productArticle
-					target test
-					targetAlias productTests
-				}
-			}
-			variables {
-				varContainer Variables {
-					vars {
-						textVar defaultIntroDescription {
-							value "This is an intro description"
-							maxLength 200
-						},
-						intVar pageSize {
-							value "20"
-						},
-						boolVar inMaintenanceMode {
-							value ^false
-						},
-						filePathVar introImageFilePath {
-							value "test.jpg"
-						},
-						listVar singleList {
-							value no
-							items {
-								listVarItem yes,
-								listVarItem default no
-							}
-						},
-						listVar multiList multiple {
-							value "one, three"
-							items {
-								listVarItem one,
-								listVarItem default two,
-								listVarItem default three
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-	controllerLayer {
-		controllerContainer Controller {
-			modelContext ( "ValidationTest.Model" )
-			processViews "ValidationTest.View"
-			controllers {
-				adminController Admin {
-					actions {
-						mainAction Main,
-						viewAction View,
-						displayAction Display,
-						editAction Edit,
-						deleteAction Delete
-					}
-				},
-				userController User {
-					actions {
-						mainAction Main,
-						viewAction View,
-						displayAction Display,
-						editAction Edit
-					}
-				},
-				ajaxController Ajax {
-					actions {
-						mainAction Main
-					}
-				}
-			}
-			handlers {
-				listHandler ListHandler {
-					events {
-						startEvent StartEvent,
-						normalEvent MyEvent
-					}
-				}
-			}
-		}
-	}
-	viewLayer {
-		viewContainer View {
-			controller "ValidationTest.Controller"
-		}
-	}
+application "ValidationTest" {
+    documentation ""
+    vendor "Guite"
+    author "Axel Guckelsberger"
+    email "info@modulestudio.de"
+    url "http://modulestudio.de"
+    prefix "valtest"
+    generatorSettings {
+        settingsContainer "Settings"
+        amountOfExampleRows 5
+    }
+    entities {
+        entity "drink" leading {
+            nameMultiple "drinks"
+            displayPattern "#name#"
+            fields {
+                string "name" {
+                    defaultValue ""
+                },
+                integer "amount" {
+                    defaultValue "0"
+                },
+                list "myList" {
+                    items {
+                        default listItem "Option 1" ( "option1" ),
+                        listItem "Option 2" ( "option2" ),
+                        listItem "Option 3" ( "option3" )
+                    }
+                }
+            }
+            indexes {
+                index "amountIndex" {
+                    items {
+                        indexItem "name"
+                    }
+                }
+            }
+            actions {
+                mainAction "Main",
+                viewAction "View",
+                displayAction "Display",
+                editAction "Edit",
+                deleteAction "Delete"
+            }
+        },
+        entity "cake" {
+            nameMultiple "cakes"
+            displayPattern "#name#"
+            fields {
+                string "name" {
+                    defaultValue ""
+                },
+                boolean "hasChocolate" {
+                    defaultValue "true"
+                },
+                datetime "cakeDatetime" {
+                    defaultValue ""
+                    mandatory false
+                },
+                text "recipeText" {
+                    defaultValue "Enter your recipe instruction here"
+                }
+            }
+            actions {
+                mainAction "Main",
+                viewAction "View",
+                displayAction "Display",
+                editAction "Edit",
+                deleteAction "Delete"
+            }
+        },
+        entity "menu" {
+            nameMultiple "menus"
+            displayPattern "#title#"
+            fields {
+                string "title" {
+                    defaultValue ""
+                },
+                date "publishDate" {
+                    defaultValue ""
+                },
+                decimal "price" currency {
+                    defaultValue "0.00"
+                },
+                float "amount" {
+                    defaultValue "0.00"
+                }
+            }
+            actions {
+                mainAction "Main",
+                viewAction "View",
+                displayAction "Display",
+                editAction "Edit",
+                deleteAction "Delete"
+            }
+        },
+        entity "test" {
+            nameMultiple "tests"
+            displayPattern "#stringTest#"
+            fields {
+                boolean "boolTest" {
+                    defaultValue "true"
+                },
+                integer "intTest" {
+                    defaultValue "0"
+                },
+                integer "intTestUnique" unique {
+                    defaultValue "0"
+                    mandatory false
+                    length 4
+                    minValue -5
+                    maxValue 50
+                },
+                integer "intTestWithRange" {
+                    defaultValue "5"
+                    minValue 3
+                    maxValue 10
+                },
+                float "floatTest" {
+                    defaultValue "0.00"
+                },
+                decimal "decimalTest" {
+                    defaultValue "0.000"
+                    scale 3
+                },
+                string "stringTest" {
+                    defaultValue "This is a default value"
+                },
+                string "stringTestColour" nospace htmlcolour {
+                    defaultValue "#000000"
+                    length 7
+                },
+                string "stringTestCountry" fixed nospace country {
+                    defaultValue "DE"
+                    length 5
+                },
+                text "textTest" {
+                    defaultValue ""
+                    mandatory false
+                },
+                email "emailTest" nospace {
+                    defaultValue "test@example.com"
+                },
+                url "urlTest" {
+                    defaultValue "http://www.example.com"
+                },
+                upload "uploadTest" {
+                    mandatory false
+                },
+                user "userTest" {
+                    onAccountDeletionCreator ADMIN
+                },
+                array "arrayTest" {
+                    defaultValue ""
+                    mandatory false
+                },
+                object "objectTest" {
+                    mandatory false
+                },
+                datetime "datetimeTest" {
+                    defaultValue ""
+                },
+                datetime "datetimeTestPast" past {
+                    defaultValue ""
+                    mandatory false
+                },
+                datetime "datetimeTestFuture" future {
+                    defaultValue ""
+                    mandatory false
+                },
+                date "dateTest" {
+                    defaultValue ""
+                },
+                time "timeTest" {
+                    defaultValue ""
+                },
+                string "myLanguage" nospace language {
+                    defaultValue "de"
+                    mandatory false
+                    length 7
+                },
+                string "myPassword" nospace password {
+                    defaultValue ""
+                    mandatory false
+                    minLength 5
+                    length 20
+                },
+                email "emailWithEnhancedChecks" checkMX checkHost {
+                    defaultValue ""
+                    mandatory false
+                },
+                url "urlWithEnhancedChecks" checkDNS {
+                    defaultValue ""
+                    mandatory false
+                },
+                string "myIban" iban {
+                    defaultValue ""
+                    mandatory false
+                },
+                string "myIsbn" {
+                    defaultValue ""
+                    mandatory false
+                    isbn ALL
+                },
+                string "myIssn" {
+                    defaultValue ""
+                    mandatory false
+                    issn STRICT
+                },
+                string "myCreditCard" creditCard {
+                    defaultValue ""
+                    mandatory false
+                },
+                string "myTimezone" timezone {
+                    defaultValue ""
+                    mandatory false
+                },
+                string "myCurrency" nospace currency {
+                    defaultValue ""
+                    mandatory false
+                },
+                string "myUuid" nospace uuid {
+                    defaultValue ""
+                    mandatory false
+                },
+                string "myIpAddress" nospace {
+                    defaultValue ""
+                    mandatory false
+                    length 40
+                    ipAddress ALL
+                },
+                array "myArrayWithBounds" {
+                    defaultValue ""
+                    mandatory false
+                    min 1
+                    max 5
+                }
+            }
+            indexes {
+                index "myIndex" {
+                    items {
+                        indexItem "intTest",
+                        indexItem "emailTest"
+                    }
+                },
+                index "userIndex" {
+                    items {
+                        indexItem "userTest"
+                    }
+                }
+            }
+            actions {
+                mainAction "Main",
+                viewAction "View",
+                displayAction "Display",
+                editAction "Edit",
+                deleteAction "Delete"
+            }
+        },
+        entity "myUser" {
+            nameMultiple "myUsers"
+            displayPattern "#myUser#"
+            fields {
+                user "myUser" unique {
+                    onAccountDeletionCreator ADMIN
+                },
+                text "description" {
+                    defaultValue ""
+                    mandatory false
+                },
+                upload "profileImage" {
+                    mandatory false
+                },
+                string "columnType" {
+                    defaultValue ""
+                },
+                integer "knownId" {
+                    defaultValue "0"
+                }
+            }
+            actions {
+                mainAction "Main",
+                viewAction "View",
+                displayAction "Display",
+                editAction "Edit",
+                deleteAction "Delete"
+            }
+        },
+        entity "mySpecialUser" {
+            nameMultiple "mySpecialUsers"
+            displayPattern "#specialEmail#"
+            fields {
+                email "specialEmail" {
+                    defaultValue ""
+                },
+                array "specialSettings" {
+                    defaultValue ""
+                }
+            }
+            actions {
+                mainAction "Main",
+                viewAction "View",
+                displayAction "Display",
+                editAction "Edit",
+                deleteAction "Delete"
+            }
+        },
+        entity "ingredient" {
+            nameMultiple "ingredients"
+            displayPattern "#name#"
+            fields {
+                string "name" {
+                    defaultValue ""
+                },
+                list "topics" multiple expanded {
+                    defaultValue ""
+                    items {
+                        default listItem "Topic 1" ( "topic1" ),
+                        listItem "Topic 2" ( "topic2" ),
+                        default listItem "Topic 3" ( "topic3" ),
+                        listItem "Topic 4" ( "topic4" )
+                    }
+                }
+            }
+            actions {
+                mainAction "Main",
+                viewAction "View",
+                displayAction "Display",
+                editAction "Edit",
+                deleteAction "Delete"
+            }
+        },
+        entity "article" {
+            nameMultiple "articles"
+            displayPattern "#title#"
+            fields {
+                string "title" {
+                    defaultValue ""
+                },
+                integer "checkthat" {
+                    defaultValue ""
+                    length 16
+                },
+                text "asdd" {
+                    defaultValue ""
+                }
+            }
+            actions {
+                mainAction "Main",
+                viewAction "View",
+                displayAction "Display",
+                editAction "Edit",
+                deleteAction "Delete"
+            }
+        }
+    }
+    relations {
+        one2one {
+            source "menu"
+            sourceAlias "menu"
+            target "cake"
+            targetAlias "cake"
+        },
+        one2many {
+            source "menu"
+            sourceAlias "menu"
+            target "drink"
+            targetAlias "drinks"
+        },
+        inheritance {
+            source "mySpecialUser"
+            target "myUser"
+        },
+        one2many {
+            source "myUser"
+            sourceAlias "knowingUser"
+            target "myUser"
+            targetAlias "knownUsers"
+            targetField "knownId"
+        },
+        many2many bidirectional {
+            source "cake"
+            sourceAlias "cakes"
+            target "ingredient"
+            targetAlias "ingredients"
+            refClass "cakeIngredients"
+            minTarget 2
+            maxTarget 30
+        },
+        one2many {
+            source "article"
+            sourceAlias "productArticle"
+            target "test"
+            targetAlias "productTests"
+        }
+    }
+    variables {
+        varContainer "Variables" {
+            vars {
+                textVar "defaultIntroDescription" {
+                    value "This is an intro description"
+                    maxLength 200
+                },
+                intVar "pageSize" {
+                    value "20"
+                },
+                boolVar "inMaintenanceMode" {
+                    value "false"
+                },
+                filePathVar "introImageFilePath" {
+                    value "test.jpg"
+                },
+                listVar "singleList" {
+                    value "no"
+                    items {
+                        listVarItem "yes",
+                        listVarItem default "no"
+                    }
+                },
+                listVar "multiList" multiple {
+                    value "one, three"
+                    items {
+                        listVarItem "one",
+                        listVarItem default "two",
+                        listVarItem default "three"
+                    }
+                }
+            }
+        }
+    }
+    controllers {
+        adminController "Admin" {
+            actions {
+                mainAction "Main"
+            }
+        },
+        userController "User" {
+            actions {
+                mainAction "Main"
+            }
+        },
+        ajaxController "Ajax" {
+            actions {
+                mainAction "Main"
+            }
+        }
+    }
 }

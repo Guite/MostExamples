@@ -280,21 +280,4 @@ application "AutoExchange" {
             }
         }
     }
-    controllers {
-        ajaxController "Ajax" {
-            actions {
-                customAction "MyFunction"
-            }
-        },
-        adminController "Admin" {
-            actions {
-                mainAction "Main"
-            }
-        },
-        customController "dsffdfsg" {
-            actions {
-                customAction "MyFunction"
-            }
-        }
-    }
 }

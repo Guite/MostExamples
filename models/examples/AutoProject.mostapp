@@ -87,16 +87,4 @@ application "AutoProject" {
             targetAlias "taskType"
         }
     }
-    controllers {
-        adminController "Admin" {
-            actions {
-                mainAction "Main"
-            }
-        },
-        ajaxController "Ajax" {
-            actions {
-                mainAction "Main"
-            }
-        }
-    }
 }

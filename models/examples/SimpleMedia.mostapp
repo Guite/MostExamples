@@ -26,52 +26,20 @@ application "SimpleMedia" {
                 mainAction "Main",
                 viewAction "View",
                 displayAction "Display",
-                editAction "Edit"
+                editAction "Edit",
+                customAction "Import"
             }
         }
     }
     variables {
         varContainer "ImageSettings" {
             vars {
-                intVar "pageSize" {
-                    value "20"
-                },
-                textVar "thumbDimensions" {
-                    value ""
-                },
-                intVar "defaultThumbNumber" {
-                    value "1"
-                },
-                boolVar "enableShrinking" {
-                    value "false"
-                },
-                textVar "shrinkDimensions" {
-                    value ""
-                },
                 boolVar "useThumbCropper" {
                     value "false"
                 },
                 intVar "cropSizeMode" {
                     value "0"
                 }
-            }
-        }
-    }
-    controllers {
-        adminController "Admin" {
-            actions {
-                mainAction "Main",
-                customAction "Import"
-            }
-        },
-        userController "User" {
-            actions {
-                mainAction "Main"
-            }
-        },
-        ajaxController "Ajax" {
-            actions {
-                mainAction "Main"
             }
         }
     }

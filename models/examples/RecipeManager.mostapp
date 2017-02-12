@@ -86,8 +86,9 @@ application "RecipeManager" {
             actions {
                 mainAction "Main",
                 viewAction "View",
+                displayAction "Display",
                 editAction "Edit",
-                displayAction "Display"
+                customAction "Report"
             }
         },
         entity "ingredient" {
@@ -126,8 +127,8 @@ application "RecipeManager" {
             actions {
                 mainAction "Main",
                 viewAction "View",
-                editAction "Edit",
-                displayAction "Display"
+                displayAction "Display",
+                editAction "Edit"
             }
         },
         entity "category" {
@@ -146,8 +147,8 @@ application "RecipeManager" {
             actions {
                 mainAction "Main",
                 viewAction "View",
-                editAction "Edit",
-                displayAction "Display"
+                displayAction "Display",
+                editAction "Edit"
             }
         },
         entity "unit" {
@@ -170,8 +171,8 @@ application "RecipeManager" {
             actions {
                 mainAction "Main",
                 viewAction "View",
-                editAction "Edit",
-                displayAction "Display"
+                displayAction "Display",
+                editAction "Edit"
             }
         },
         entity "recipeIngredient" {
@@ -189,8 +190,8 @@ application "RecipeManager" {
             actions {
                 mainAction "Main",
                 viewAction "View",
-                editAction "Edit",
-                displayAction "Display"
+                displayAction "Display",
+                editAction "Edit"
             }
         }
     }
@@ -259,24 +260,6 @@ application "RecipeManager" {
                 intVar "pageSize" {
                     value "20"
                 }
-            }
-        }
-    }
-    controllers {
-        adminController "Admin" {
-            actions {
-                mainAction "Main"
-            }
-        },
-        userController "User" {
-            actions {
-                mainAction "Main",
-                customAction "Report"
-            }
-        },
-        ajaxController "Ajax" {
-            actions {
-                mainAction "Main"
             }
         }
     }

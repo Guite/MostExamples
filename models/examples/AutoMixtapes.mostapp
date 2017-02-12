@@ -37,16 +37,4 @@ application "AutoMixtapes" {
             }
         }
     }
-    controllers {
-        adminController "Admin" {
-            actions {
-                mainAction "Main"
-            }
-        },
-        ajaxController "Ajax" {
-            actions {
-                mainAction "Main"
-            }
-        }
-    }
 }

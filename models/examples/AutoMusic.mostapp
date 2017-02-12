@@ -107,16 +107,4 @@ application "AutoMusic" {
             targetAlias "songs"
         }
     }
-    controllers {
-        adminController "Admin" {
-            actions {
-                mainAction "Main"
-            }
-        },
-        ajaxController "Ajax" {
-            actions {
-                mainAction "Main"
-            }
-        }
-    }
 }

@@ -428,21 +428,4 @@ application "ValidationTest" {
             }
         }
     }
-    controllers {
-        adminController "Admin" {
-            actions {
-                mainAction "Main"
-            }
-        },
-        userController "User" {
-            actions {
-                mainAction "Main"
-            }
-        },
-        ajaxController "Ajax" {
-            actions {
-                mainAction "Main"
-            }
-        }
-    }
 }

@@ -35,16 +35,4 @@ application "AutoSocial" {
             }
         }
     }
-    controllers {
-        adminController "Admin" {
-            actions {
-                mainAction "Main"
-            }
-        },
-        ajaxController "Ajax" {
-            actions {
-                mainAction "Main"
-            }
-        }
-    }
 }

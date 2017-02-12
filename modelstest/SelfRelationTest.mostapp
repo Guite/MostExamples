@@ -68,16 +68,4 @@ application "SelfRelationTest" {
             refClass "KnownPerson"
         }
     }
-    controllers {
-        adminController "Admin" {
-            actions {
-                mainAction "Main"
-            }
-        },
-        ajaxController "Ajax" {
-            actions {
-                mainAction "Main"
-            }
-        }
-    }
 }

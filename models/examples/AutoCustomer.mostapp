@@ -91,19 +91,19 @@ application "AutoCustomer" {
         }
     }
     relations {
-        one2one {
+        one2one bidirectional {
             source "customer"
             sourceAlias "customer"
             target "contact"
             targetAlias "contact"
         },
-        one2many {
+        one2many bidirectional {
             source "customer"
             sourceAlias "customer"
             target "order"
             targetAlias "orders"
         },
-        one2many {
+        one2many bidirectional {
             source "order"
             sourceAlias "order"
             target "orderPosition"

@@ -88,19 +88,19 @@ application "AutoMusic" {
         }
     }
     relations {
-        one2many {
+        one2many bidirectional {
             source "artist"
             sourceAlias "artist"
             target "release"
             targetAlias "releases"
         },
-        one2many {
+        one2many bidirectional {
             source "song"
             sourceAlias "song"
             target "releaseTrack"
             targetAlias "releases"
         },
-        one2many {
+        one2many bidirectional {
             source "release"
             sourceAlias "release"
             target "releaseTrack"

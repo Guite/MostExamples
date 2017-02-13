@@ -196,7 +196,7 @@ application "RecipeManager" {
         }
     }
     relations {
-        many2many {
+        many2many bidirectional {
             source "category"
             sourceAlias "categories"
             target "recipe"
@@ -205,7 +205,7 @@ application "RecipeManager" {
             editType ACTIVE_NONE_PASSIVE_CHOOSE
             refClass "RecipeCategoryRef"
         },
-        many2many {
+        many2many bidirectional {
             source "category"
             sourceAlias "categories"
             target "ingredient"
@@ -214,7 +214,7 @@ application "RecipeManager" {
             editType ACTIVE_NONE_PASSIVE_CHOOSE
             refClass "IngredientCategoryRef"
         },
-        one2many {
+        one2many bidirectional {
             source "recipe"
             sourceAlias "recipe"
             target "recipeIngredient"
@@ -223,7 +223,7 @@ application "RecipeManager" {
             cascade REMOVE
             orderBy "name"
         },
-        one2many {
+        one2many bidirectional {
             source "ingredient"
             sourceAlias "ingredient"
             target "recipeIngredient"

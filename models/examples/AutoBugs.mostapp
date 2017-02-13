@@ -65,7 +65,7 @@ application "AutoBugs" {
         }
     }
     relations {
-        one2many bidirectional {
+        one2many {
             source "application"
             sourceAlias "application"
             target "bugReport"

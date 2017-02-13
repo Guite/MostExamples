@@ -378,7 +378,7 @@ application "ValidationTest" {
             targetAlias "knownUsers"
             targetField "knownId"
         },
-        many2many bidirectional {
+        many2many {
             source "cake"
             sourceAlias "cakes"
             target "ingredient"

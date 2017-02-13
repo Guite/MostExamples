@@ -196,71 +196,71 @@ application "AutoExchange" {
         }
     }
     relations {
-        one2many bidirectional {
+        one2many {
             source "provider"
             sourceAlias "provider"
             target "product"
             targetAlias "products"
         },
-        one2one bidirectional {
+        one2one {
             source "product"
             sourceAlias "product"
             target "bidding"
             targetAlias "bidding"
         },
-        one2one bidirectional {
+        one2one {
             source "provider"
             sourceAlias "provider"
             target "contract"
             targetAlias "contracts"
         },
-        one2one bidirectional {
+        one2one {
             source "customer"
             sourceAlias "customer"
             target "contract"
             targetAlias "contract"
         },
-        one2many bidirectional {
+        one2many {
             source "interestedBuyer"
             sourceAlias "buyer"
             target "productView"
             targetAlias "views"
         },
-        one2many bidirectional {
+        one2many {
             source "product"
             sourceAlias "product"
             target "productView"
             targetAlias "views"
         },
-        one2many bidirectional {
+        one2many {
             source "bidder"
             sourceAlias "bidder"
             target "bidding"
             targetAlias "biddings"
         },
-        one2one bidirectional {
+        one2one {
             source "acceptance"
             sourceAlias "acceptance"
             target "contract"
             targetAlias "contract"
         },
-        one2one bidirectional {
+        one2one {
             source "acceptance"
             sourceAlias "acceptance"
             target "bidding"
             targetAlias "bidding"
         },
-        one2one bidirectional {
+        one2one {
             source "acceptance"
             sourceAlias "acceptance"
             target "customer"
             targetAlias "customer"
         },
-        inheritance bidirectional {
+        inheritance {
             source "customer"
             target "bidder"
         },
-        inheritance bidirectional {
+        inheritance {
             source "bidder"
             target "interestedBuyer"
         }

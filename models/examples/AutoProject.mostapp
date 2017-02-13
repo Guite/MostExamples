@@ -74,13 +74,13 @@ application "AutoProject" {
         }
     }
     relations {
-        one2many bidirectional {
+        one2many {
             source "project"
             sourceAlias "project"
             target "task"
             targetAlias "tasks"
         },
-        one2one bidirectional {
+        one2one {
             source "task"
             sourceAlias "task"
             target "taskType"

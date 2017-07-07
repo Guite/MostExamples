@@ -6,7 +6,6 @@ application "AutoMixtapes" {
     prefix "aumixt"
     generatorSettings {
         settingsContainer "Settings"
-        amountOfExampleRows 5
     }
     entities {
         entity "mixtape" leading {

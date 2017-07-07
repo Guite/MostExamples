@@ -6,7 +6,6 @@ application "AutoProject" {
     prefix "auoro"
     generatorSettings {
         settingsContainer "Settings"
-        amountOfExampleRows 5
     }
     entities {
         entity "project" leading {

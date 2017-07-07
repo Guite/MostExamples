@@ -6,7 +6,6 @@ application "AutoExchange" {
     prefix "auex"
     generatorSettings {
         settingsContainer "Settings"
-        amountOfExampleRows 5
     }
     entities {
         entity "provider" leading {

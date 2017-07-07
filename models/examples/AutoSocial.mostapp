@@ -6,7 +6,6 @@ application "AutoSocial" {
     prefix "ausoc"
     generatorSettings {
         settingsContainer "Settings"
-        amountOfExampleRows 5
     }
     entities {
         entity "socialNetwork" leading {

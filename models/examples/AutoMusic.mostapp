@@ -6,7 +6,6 @@ application "AutoMusic" {
     prefix "music"
     generatorSettings {
         settingsContainer "Settings"
-        amountOfExampleRows 5
     }
     entities {
         entity "artist" leading {

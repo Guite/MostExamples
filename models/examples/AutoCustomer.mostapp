@@ -6,7 +6,6 @@ application "AutoCustomer" {
     prefix "aucu"
     generatorSettings {
         settingsContainer "Settings"
-        amountOfExampleRows 5
     }
     entities {
         entity "customer" leading {

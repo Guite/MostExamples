@@ -140,12 +140,6 @@ application "AutoExchange" {
                     defaultValue "false"
                 }
             }
-            actions {
-                mainAction "Main",
-                viewAction "View",
-                displayAction "Display",
-                editAction "Edit"
-            }
         },
         entity "customer" {
             nameMultiple "customers"
@@ -154,12 +148,6 @@ application "AutoExchange" {
                 integer "customerNr" unique {
                     defaultValue "0"
                 }
-            }
-            actions {
-                mainAction "Main",
-                viewAction "View",
-                displayAction "Display",
-                editAction "Edit"
             }
         },
         entity "contract" {

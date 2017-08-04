@@ -6,7 +6,7 @@ application "SimpleMedia" {
     url "http://zikula.de"
     prefix "simmed"
     entities {
-        entity "medium" leading categorisable attributable metaData {
+        entity "medium" leading categorisable attributable {
             nameMultiple "media"
             displayPattern "#title#"
             fields {

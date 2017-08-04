@@ -221,7 +221,7 @@ application "RecipeManager" {
             targetAlias "ingredients"
             useAutoCompletion BOTH_SIDES
             cascade REMOVE
-            orderBy "name"
+            orderBy "amount"
         },
         one2many bidirectional {
             source "ingredient"

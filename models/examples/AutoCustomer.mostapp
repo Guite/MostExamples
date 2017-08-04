@@ -8,33 +8,21 @@ application "AutoCustomer" {
         settingsContainer "Settings"
     }
     entities {
-        entity "customer" leading {
+        entity "customer" leading geographical {
             nameMultiple "customers"
             displayPattern "#company#"
             fields {
                 string "company" {
                     defaultValue ""
                 },
+                string "zipcode" {
+                    length 10
+                },
                 string "city" {
                     defaultValue ""
                 },
                 boolean "active" {
                     defaultValue "true"
-                }
-            }
-            actions {
-                mainAction "Main",
-                viewAction "View",
-                displayAction "Display",
-                editAction "Edit"
-            }
-        },
-        entity "order" {
-            nameMultiple "orders"
-            displayPattern "#orderDate#"
-            fields {
-                date "orderDate" {
-                    defaultValue ""
                 }
             }
             actions {
@@ -52,18 +40,92 @@ application "AutoCustomer" {
                 string "firstName" {
                     defaultValue ""
                     sluggablePosition 1
+                    length 100
                 },
                 string "lastName" {
                     defaultValue ""
                     sluggablePosition 2
+                    length 100
                 },
-                integer "age" {
+                integer "age" range {
                     defaultValue ""
-                    length 2
+                    length 3
+                    minValue 18
+                    maxValue 110
+                },
+                string "primaryLanguage" {
+                    defaultValue "en"
+                    role LANGUAGE
+                },
+                string "hairColour" {
+                    mandatory false
+                    role COLOUR
                 },
                 string "phone" {
                     defaultValue ""
                     mandatory false
+                },
+                upload "photo" {
+                    mandatory false
+                    maxSize "800k"
+                    minWidth 200
+                    maxWidth 800
+                    allowLandscape false
+                },
+                string "bic" {
+                    mandatory false
+                    role BIC
+                },
+                string "iban" {
+                    mandatory false
+                    role IBAN
+                },
+                user "userReference" {
+                    blameable CREATE
+                    onAccountDeletionCreator ADMIN
+                },
+                string "accountPassword" {
+                    mandatory false
+                    role PASSWORD
+                },
+                string "timezone" {
+                    mandatory false
+                    role TIME_ZONE
+                }
+            }
+            indexes {
+                index "myIndex" {
+                    items {
+                        indexItem "firstName",
+                        indexItem "lastName"
+                    }
+                }
+            }
+            actions {
+                mainAction "Main",
+                viewAction "View",
+                displayAction "Display",
+                editAction "Edit"
+            }
+        },
+        entity "order" {
+            nameMultiple "orders"
+            displayPattern "#orderDate#"
+            fields {
+                integer "orderNumber" unique {
+                    defaultValue "1"
+                },
+                date "orderDate" {
+                    timestampable CREATE
+                },
+                date "completedDate" {
+                    visible false
+                    timestampable CHANGE
+                    timestampableChangeTriggerField "workflowState"
+                    timestampableChangeTriggerValue "completed"
+                },
+                decimal "totalPrice" currency {
+                    defaultValue "0.00"
                 }
             }
             actions {
@@ -101,6 +163,7 @@ application "AutoCustomer" {
             sourceAlias "customer"
             target "order"
             targetAlias "orders"
+            indexBy "orderNumber"
         },
         one2many bidirectional {
             source "order"

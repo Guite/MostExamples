@@ -10,8 +10,11 @@ application "AutoProject" {
     entities {
         entity "project" leading {
             nameMultiple "projects"
-            displayPattern "#title#"
+            displayPattern "#sortNumber# - #title#"
             fields {
+                integer "sortNumber" sortablePosition {
+                    defaultValue "1"
+                },
                 string "title" {
                     defaultValue ""
                     length 200
@@ -22,8 +25,8 @@ application "AutoProject" {
                 date "endDate" {
                     defaultValue ""
                 },
-                boolean "isActive" {
-                    defaultValue "1"
+                boolean "active" ajaxTogglability {
+                    defaultValue "true"
                 }
             }
             actions {
@@ -42,9 +45,10 @@ application "AutoProject" {
                     length 200
                 },
                 user "owner" {
+                    blameable CREATE
                     onAccountDeletionCreator ADMIN
                 },
-                boolean "isFinished" {
+                integer "completed" percentage {
                     defaultValue "0"
                 }
             }

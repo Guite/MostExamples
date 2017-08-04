@@ -7,12 +7,12 @@ application "News" {
     prefix "news"
     generatorSettings {
         settingsContainer "Settings"
-        targetCoreVersion ZK15
     }
     entities {
-        entity "article" leading categorisable categorisableMultiSelection attributable {
+        entity "article" leading loggable categorisable categorisableMultiSelection attributable {
             nameMultiple "articles"
             displayPattern "#title#"
+            lockType PAGELOCK_OPTIMISTIC
             slugUnique false
             workflow STANDARD
             hasArchive true
@@ -72,6 +72,9 @@ application "News" {
                 integer "weight" {
                     defaultValue "0"
                     mandatory false
+                },
+                integer "currentVersion" version {
+                    defaultValue "1"
                 }
             }
             actions {

@@ -11,6 +11,7 @@ application "AutoMusic" {
         entity "artist" leading {
             nameMultiple "artists"
             displayPattern "#lastName#, #firstName#"
+            uiHooksProvider ENABLED
             fields {
                 string "firstName" {
                     defaultValue ""

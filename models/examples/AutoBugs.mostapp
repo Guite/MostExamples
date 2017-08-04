@@ -15,7 +15,7 @@ application "AutoBugs" {
                 string "name" {
                     defaultValue ""
                 },
-                boolean "active" {
+                boolean "active" ajaxTogglability {
                     defaultValue "true"
                 }
             }
@@ -26,9 +26,11 @@ application "AutoBugs" {
                 editAction "Edit"
             }
         },
-        entity "bugReport" {
+        entity "bugReport" loggable {
             nameMultiple "bugReports"
             displayPattern "#title#"
+            lockType PAGELOCK_OPTIMISTIC
+            uiHooksProvider ENABLED
             fields {
                 string "title" {
                     defaultValue ""
@@ -53,6 +55,13 @@ application "AutoBugs" {
                         listItem "Completed" ( "completed" ),
                         listItem "Aborted" ( "aborted" )
                     }
+                },
+                integer "currentVersion" version {
+                    defaultValue "1"
+                },
+                string "ipAddress" {
+                    ipAddress ALL
+                    ipTraceable CREATE
                 }
             }
             actions {

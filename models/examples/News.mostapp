@@ -120,6 +120,8 @@ application "News" {
             editType ACTIVE_NONE_PASSIVE_CHOOSE
             cascade ALL
             orderBy "sortNumber"
+            minTarget 0
+            maxTarget 10
         }
     }
     variables {

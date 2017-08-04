@@ -157,6 +157,8 @@ application "AutoCustomer" {
             sourceAlias "customer"
             target "contact"
             targetAlias "contact"
+            useAutoCompletion BOTH_SIDES
+            editType ACTIVE_EDIT_PASSIVE_EDIT
         },
         one2many bidirectional {
             source "customer"

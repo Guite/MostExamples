@@ -50,6 +50,10 @@ application "AutoProject" {
                 },
                 integer "completed" percentage {
                     defaultValue "0"
+                },
+                array "furtherProperties" {
+                    mandatory false
+                    max 10
                 }
             }
             actions {
@@ -82,12 +86,15 @@ application "AutoProject" {
             sourceAlias "project"
             target "task"
             targetAlias "tasks"
+            minTarget 0
+            maxTarget 100
         },
         one2one bidirectional {
             source "task"
             sourceAlias "task"
             target "taskType"
             targetAlias "taskType"
+            expandedTarget true
         }
     }
 }

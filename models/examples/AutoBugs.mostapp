@@ -38,7 +38,7 @@ application "AutoBugs" {
                 text "description" {
                     defaultValue ""
                 },
-                list "priority" {
+                list "priority" expanded {
                     items {
                         listItem "Low" ( "low" ),
                         default listItem "Medium" ( "medium" ),

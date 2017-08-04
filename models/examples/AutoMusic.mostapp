@@ -42,6 +42,17 @@ application "AutoMusic" {
                 string "title" {
                     defaultValue ""
                     length 200
+                },
+                list "genre" multiple expanded {
+                    items {
+                        listItem "Classic" ("classic"),
+                        listItem "Country" ("country"),
+                        listItem "Gospel" ("gospel"),
+                        listItem "Jazz" ("jazz"),
+                        default listItem "Pop" ("pop"),
+                        listItem "Rap" ("rap"),
+                        default listItem "Rock" ("rock")
+                    }
                 }
             }
             actions {
@@ -105,6 +116,7 @@ application "AutoMusic" {
             sourceAlias "release"
             target "releaseTrack"
             targetAlias "songs"
+            maxTarget 30
         }
     }
 }

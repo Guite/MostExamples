@@ -45,11 +45,11 @@ application "RecipeManager" {
                     minValue 1
                     maxValue 50
                 },
-                list "difficulty" {
+                list "difficulty" expanded {
                     items {
-                        listItem "Easy" ( "easy" ),
-                        default listItem "Medium" ( "medium" ),
-                        listItem "Hard" ( "hard" )
+                        listItem "Easy" ("easy"),
+                        default listItem "Medium" ("medium"),
+                        listItem "Hard" ("hard")
                     }
                 },
                 integer "duration" {
@@ -68,11 +68,13 @@ application "RecipeManager" {
                 },
                 list "saison" multiple expanded {
                     mandatory false
+                    min 1
+                    max 2
                     items {
-                        listItem "Spring" ( "spring" ),
-                        listItem "Summer" ( "summer" ),
-                        listItem "Autumn" ( "autumn" ),
-                        listItem "Winter" ( "winter" )
+                        listItem "Spring" ("spring"),
+                        listItem "Summer" ("summer"),
+                        listItem "Autumn" ("autumn"),
+                        listItem "Winter" ("winter")
                     }
                 }
             }

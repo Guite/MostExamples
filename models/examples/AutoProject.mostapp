@@ -19,18 +19,20 @@ application "AutoProject" {
                     defaultValue ""
                     length 200
                 },
-                date "startDate" {
+                datetime "startDate" {
                     defaultValue ""
+                    components DATE
                 },
-                date "endDate" {
+                datetime "endDate" {
                     defaultValue ""
+                    components DATE
                 },
                 boolean "active" ajaxTogglability {
                     defaultValue "true"
                 }
             }
             actions {
-                mainAction "Main",
+                mainAction "Index",
                 viewAction "View",
                 displayAction "Display",
                 editAction "Edit"
@@ -57,7 +59,7 @@ application "AutoProject" {
                 }
             }
             actions {
-                mainAction "Main",
+                mainAction "Index",
                 viewAction "View",
                 displayAction "Display",
                 editAction "Edit"
@@ -73,7 +75,7 @@ application "AutoProject" {
                 }
             }
             actions {
-                mainAction "Main",
+                mainAction "Index",
                 viewAction "View",
                 displayAction "Display",
                 editAction "Edit"

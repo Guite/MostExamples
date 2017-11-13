@@ -24,12 +24,13 @@ application "AutoMusic" {
                 boolean "isActive" {
                     defaultValue "1"
                 },
-                date "birthday" {
+                datetime "birthday" {
                     defaultValue ""
+                    components DATE
                 }
             }
             actions {
-                mainAction "Main",
+                mainAction "Index",
                 viewAction "View",
                 displayAction "Display",
                 editAction "Edit"
@@ -56,7 +57,7 @@ application "AutoMusic" {
                 }
             }
             actions {
-                mainAction "Main",
+                mainAction "Index",
                 viewAction "View",
                 displayAction "Display",
                 editAction "Edit"
@@ -76,7 +77,7 @@ application "AutoMusic" {
                 }
             }
             actions {
-                mainAction "Main",
+                mainAction "Index",
                 viewAction "View",
                 displayAction "Display",
                 editAction "Edit"
@@ -91,7 +92,7 @@ application "AutoMusic" {
                 }
             }
             actions {
-                mainAction "Main",
+                mainAction "Index",
                 viewAction "View",
                 displayAction "Display",
                 editAction "Edit"

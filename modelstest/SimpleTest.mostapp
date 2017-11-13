@@ -25,9 +25,10 @@ application "SimpleTest" {
                     documentation "You can optionally upload a photo."
                     mandatory false
                 },
-                date "birthDay" {
+                datetime "birthDay" {
                     defaultValue ""
                     mandatory false
+                    components DATE
                 },
                 boolean "isSpecialSubscriber" {
                     defaultValue "false"
@@ -35,7 +36,7 @@ application "SimpleTest" {
                 }
             }
             actions {
-                mainAction "Main",
+                mainAction "Index",
                 viewAction "View",
                 displayAction "Display",
                 editAction "Edit",
@@ -63,7 +64,7 @@ application "SimpleTest" {
                 }
             }
             actions {
-                mainAction "Main",
+                mainAction "Index",
                 viewAction "View",
                 displayAction "Display",
                 editAction "Edit",
@@ -83,7 +84,7 @@ application "SimpleTest" {
                 }
             }
             actions {
-                mainAction "Main",
+                mainAction "Index",
                 viewAction "View",
                 displayAction "Display",
                 editAction "Edit",
@@ -112,13 +113,13 @@ application "SimpleTest" {
                     mandatory false
                     allowedExtensions "zip, rar, pdf"
                 },
-                decimal "priceNet" {
+                number "priceNet" {
                     defaultValue "9.80"
                     mandatory false
                 }
             }
             actions {
-                mainAction "Main",
+                mainAction "Index",
                 viewAction "View",
                 displayAction "Display",
                 editAction "Edit",

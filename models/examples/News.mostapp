@@ -7,6 +7,7 @@ application "News" {
     prefix "news"
     generatorSettings {
         settingsContainer "Settings"
+        generatePdfSupport true
     }
     entities {
         entity "article" leading loggable categorisable categorisableMultiSelection attributable {
@@ -127,126 +128,126 @@ application "News" {
     variables {
         varContainer "GeneralSettings" {
             documentation "Here you can change general News settings."
-            vars {
-                boolVar "enableAttribution" {
-                    value "false"
+            fields {
+                boolean "enableAttribution" {
+                    defaultValue "false"
+                    mandatory false
                 },
-                boolVar "enableMultiLanguage" {
-                    value "false"
+                boolean "enableMultiLanguage" {
+                    defaultValue "false"
+                    mandatory false
                 },
-                boolVar "enableEvents" {
-                    value "false"
+                boolean "enableEvents" {
+                    defaultValue "false"
+                    mandatory false
                 }
             }
         },
         varContainer "CategorySettings" {
             documentation "This section allows you to specify category-related options."
             sortOrder 2
-            vars {
-                boolVar "enableCategorisation" {
-                    value "true"
+            fields {
+                boolean "enableCategorisation" {
+                    defaultValue "true"
+                    mandatory false
                 },
-                boolVar "enableCategoryBasedPermissions" {
-                    value "true"
+                boolean "enableCategoryBasedPermissions" {
+                    defaultValue "true"
+                    mandatory false
                 }
             }
         },
         varContainer "DisplaySettings" {
             documentation "You can customise several display-oriented aspects of the articles."
             sortOrder 3
-            vars {
-                listVar "defaultArticleSorting" {
-                    value ""
+            fields {
+                list "defaultArticleSorting" {
                     items {
-                        listVarItem "Article ID",
-                        listVarItem default "Article date/time",
-                        listVarItem "Article weight"
+                        listItem "Article ID",
+                        default listItem "Article date and time",
+                        listItem "Article weight"
                     }
                 },
-                intVar "amountOfArticlesOnViewPage" {
+                integer "amountOfArticlesOnViewPage" {
                     documentation "Number of articles on news index page, when news is homepage"
-                    value "10"
+                    defaultValue "10"
                 },
-                boolVar "checkRefererOnPrint" {
-                    value "false"
+                boolean "checkRefererOnPrint" {
+                    defaultValue "false"
+                    mandatory false
                 },
-                boolVar "enableAjaxEditing" {
+                boolean "enableAjaxEditing" {
                     documentation "Note picture/file operations are not supported in \'quick edit mode\' due to ajax limitations."
-                    value "false"
+                    defaultValue "false"
+                    mandatory false
                 },
-                boolVar "enableMoreArticlesInCategory" {
+                boolean "enableMoreArticlesInCategory" {
                     documentation "Enable \'More articles in category\' when displaying an article"
-                    value "false"
+                    defaultValue "false"
+                    mandatory false
                 },
-                intVar "amountOfMoreArticlesInCategory" {
+                integer "amountOfMoreArticlesInCategory" {
                     documentation "When displaying an article, a number of additional article titles in the same category can be shown. To show the additional article titles for every article set the value above to a number larger than 0. When the value is set to 0, the number of additional article titles can be set per article by means of the article attribute \'morearticlesincat\'. You need to enable \'article attributes\' yourself. When the setting above or the article attribute is set to 0, no titles will be extracted from the database."
-                    value "0"
+                    defaultValue "0"
                 },
-                boolVar "displayPdfLink" {
+                boolean "displayPdfLink" {
                     documentation "Display a PDF link for the articles in the index page"
-                    value "false"
+                    defaultValue "false"
+                    mandatory false
                 },
-                intVar "pdfLinkDisplayAccessLevel" {
+                integer "pdfLinkDisplayAccessLevel" {
                     documentation "Permissions to create and display PDF file"
-                    value "0"
+                    defaultValue "0"
                 },
-                filePathVar "pdfLinkHeaderLogo" {
-                    documentation "PDF header logo image"
-                    value "images/logo.gif"
-                },
-                intVar "pdfLinkHeaderLogoWidth" {
-                    documentation "PDF header logo width in mm"
-                    value "15"
-                },
-                boolVar "pdfLinkEnableCache" {
+                boolean "pdfLinkEnableCache" {
                     documentation "Enable caching for pdf files"
-                    value "true"
+                    defaultValue "true"
+                    mandatory false
                 }
             }
         },
         varContainer "UploadSettings" {
             documentation "Here you can customise the picture upload behaviour."
             sortOrder 4
-            vars {
-                boolVar "enablePictureUpload" {
+            fields {
+                boolean "enablePictureUpload" {
                     documentation "Allow uploading article pictures"
-                    value "false"
+                    defaultValue "false"
+                    mandatory false
                 },
-                listVar "imageFloatOnViewPage" {
+                list "imageFloatOnViewPage" {
                     documentation "Image float on the view page"
-                    value "Left"
                     items {
-                        listVarItem default "Left",
-                        listVarItem "Right",
-                        listVarItem "None"
+                        default listItem "Left",
+                        listItem "Right",
+                        listItem "None"
                     }
                 },
-                listVar "imageFloatOnDisplayPage" {
+                list "imageFloatOnDisplayPage" {
                     documentation "Image float on the article display page"
-                    value "Left"
                     items {
-                        listVarItem default "Left",
-                        listVarItem "Right",
-                        listVarItem "None"
+                        default listItem "Left",
+                        listItem "Right",
+                        listItem "None"
                     }
                 },
-                intVar "allowedAmountOfPictures" {
+                integer "allowedAmountOfPictures" {
                     documentation "How many pictures are allowed"
-                    value "3"
+                    defaultValue "3"
                 },
-                intVar "maximumFileSize" {
+                integer "maximumFileSize" {
                     documentation "Maximum file size of the pictures (in bytes)"
-                    value "500000"
+                    defaultValue "500000"
                 }
             }
         },
         varContainer "PermalinkSettings" {
             documentation "This section allows you changing the behaviour of generated slugs."
             sortOrder 5
-            vars {
-                textVar "permalinkFormat" {
+            fields {
+                string "permalinkFormat" {
                     documentation "You can select a pre-defined permalink format, or define your custom format."
-                    value "%year%/%monthnum%/%day%/%articletitle%"
+                    defaultValue "%year%/%monthnum%/%day%/%articletitle%"
                 }
             }
         }

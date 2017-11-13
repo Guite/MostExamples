@@ -37,7 +37,7 @@ application "SelfRelationTest" {
                 }
             }
             actions {
-                mainAction "Main",
+                mainAction "Index",
                 viewAction "View",
                 displayAction "Display",
                 editAction "Edit"

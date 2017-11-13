@@ -36,7 +36,7 @@ application "ValidationTest" {
                 }
             }
             actions {
-                mainAction "Main",
+                mainAction "Index",
                 viewAction "View",
                 displayAction "Display",
                 editAction "Edit",
@@ -62,7 +62,7 @@ application "ValidationTest" {
                 }
             }
             actions {
-                mainAction "Main",
+                mainAction "Index",
                 viewAction "View",
                 displayAction "Display",
                 editAction "Edit",
@@ -76,18 +76,20 @@ application "ValidationTest" {
                 string "title" {
                     defaultValue ""
                 },
-                date "publishDate" {
+                datetime "publishDate" {
                     defaultValue ""
+                    components DATE
                 },
-                decimal "price" currency {
+                number "price" currency {
                     defaultValue "0.00"
                 },
-                float "amount" {
+                number "amount" {
                     defaultValue "0.00"
+                    numberType FLOAT
                 }
             }
             actions {
-                mainAction "Main",
+                mainAction "Index",
                 viewAction "View",
                 displayAction "Display",
                 editAction "Edit",
@@ -116,10 +118,11 @@ application "ValidationTest" {
                     minValue 3
                     maxValue 10
                 },
-                float "floatTest" {
+                number "floatTest" {
                     defaultValue "0.00"
+                    numberType FLOAT
                 },
-                decimal "decimalTest" {
+                number "decimalTest" {
                     defaultValue "0.000"
                     scale 3
                 },
@@ -168,11 +171,13 @@ application "ValidationTest" {
                     defaultValue ""
                     mandatory false
                 },
-                date "dateTest" {
+                datetime "dateTest" {
                     defaultValue ""
+                    components DATE
                 },
-                time "timeTest" {
+                datetime "timeTest" {
                     defaultValue ""
+                    components TIME
                 },
                 string "myLanguage" nospace language {
                     defaultValue "de"
@@ -250,7 +255,7 @@ application "ValidationTest" {
                 }
             }
             actions {
-                mainAction "Main",
+                mainAction "Index",
                 viewAction "View",
                 displayAction "Display",
                 editAction "Edit",
@@ -279,7 +284,7 @@ application "ValidationTest" {
                 }
             }
             actions {
-                mainAction "Main",
+                mainAction "Index",
                 viewAction "View",
                 displayAction "Display",
                 editAction "Edit",
@@ -296,13 +301,6 @@ application "ValidationTest" {
                 array "specialSettings" {
                     defaultValue ""
                 }
-            }
-            actions {
-                mainAction "Main",
-                viewAction "View",
-                displayAction "Display",
-                editAction "Edit",
-                deleteAction "Delete"
             }
         },
         entity "ingredient" {
@@ -323,7 +321,7 @@ application "ValidationTest" {
                 }
             }
             actions {
-                mainAction "Main",
+                mainAction "Index",
                 viewAction "View",
                 displayAction "Display",
                 editAction "Edit",
@@ -346,7 +344,7 @@ application "ValidationTest" {
                 }
             }
             actions {
-                mainAction "Main",
+                mainAction "Index",
                 viewAction "View",
                 displayAction "Display",
                 editAction "Edit",
@@ -369,7 +367,9 @@ application "ValidationTest" {
         },
         inheritance {
             source "mySpecialUser"
+            sourceAlias "mySpecialUser"
             target "myUser"
+            targetAlias "myUser"
         },
         one2many {
             source "myUser"
@@ -396,33 +396,26 @@ application "ValidationTest" {
     }
     variables {
         varContainer "Variables" {
-            vars {
-                textVar "defaultIntroDescription" {
-                    value "This is an intro description"
-                    maxLength 200
+            fields {
+                string "defaultIntroDescription" {
+                    defaultValue "This is an intro description"
+                    length 200
                 },
-                intVar "pageSize" {
-                    value "20"
+                boolean "inMaintenanceMode" {
+                    defaultValue "false"
+                    mandatory false
                 },
-                boolVar "inMaintenanceMode" {
-                    value "false"
-                },
-                filePathVar "introImageFilePath" {
-                    value "test.jpg"
-                },
-                listVar "singleList" {
-                    value "no"
+                list "singleList" {
                     items {
-                        listVarItem "yes",
-                        listVarItem default "no"
+                        listItem "yes",
+                        default listItem "no"
                     }
                 },
-                listVar "multiList" multiple {
-                    value "one, three"
+                list "multiList" multiple {
                     items {
-                        listVarItem "one",
-                        listVarItem default "two",
-                        listVarItem default "three"
+                        listItem "one",
+                        default listItem "two",
+                        default listItem "three"
                     }
                 }
             }

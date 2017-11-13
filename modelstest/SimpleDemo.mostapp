@@ -7,12 +7,13 @@ application "SimpleDemo" {
     prefix "simdem"
     generatorSettings {
         settingsContainer "Settings"
-        targetCoreVersion ZK14
+        targetCoreVersion ZK15
         amountOfExampleRows 5
         generateAccountApi false
         generateSearchApi false
         generateMailzApi false
         generateListBlock false
+        generateDetailBlock false
         generateModerationBlock false
         generateListContentType false
         generateDetailContentType false
@@ -36,6 +37,7 @@ application "SimpleDemo" {
         writeModelToDocs true
         skipFiles "README.md"
         markFiles "CHANGELOG.md"
+
     }
     entities {
         entity "person" leading {
@@ -52,7 +54,7 @@ application "SimpleDemo" {
                 }
             }
             actions {
-                mainAction "Main",
+                mainAction "Index",
                 viewAction "View",
                 displayAction "Display"
             }

@@ -26,7 +26,7 @@ application "AutoCustomer" {
                 }
             }
             actions {
-                mainAction "Main",
+                mainAction "Index",
                 viewAction "View",
                 displayAction "Display",
                 editAction "Edit"
@@ -102,7 +102,7 @@ application "AutoCustomer" {
                 }
             }
             actions {
-                mainAction "Main",
+                mainAction "Index",
                 viewAction "View",
                 displayAction "Display",
                 editAction "Edit"
@@ -115,21 +115,23 @@ application "AutoCustomer" {
                 integer "orderNumber" unique {
                     defaultValue "1"
                 },
-                date "orderDate" {
+                datetime "orderDate" {
+                    components DATE
                     timestampable CREATE
                 },
-                date "completedDate" {
+                datetime "completedDate" {
                     visible false
+                    components DATE
                     timestampable CHANGE
                     timestampableChangeTriggerField "workflowState"
                     timestampableChangeTriggerValue "completed"
                 },
-                decimal "totalPrice" currency {
+                number "totalPrice" currency {
                     defaultValue "0.00"
                 }
             }
             actions {
-                mainAction "Main",
+                mainAction "Index",
                 viewAction "View",
                 displayAction "Display",
                 editAction "Edit"
@@ -144,7 +146,7 @@ application "AutoCustomer" {
                 }
             }
             actions {
-                mainAction "Main",
+                mainAction "Index",
                 viewAction "View",
                 displayAction "Display",
                 editAction "Edit"
@@ -158,7 +160,8 @@ application "AutoCustomer" {
             target "contact"
             targetAlias "contact"
             useAutoCompletion BOTH_SIDES
-            editType ACTIVE_EDIT_PASSIVE_EDIT
+            sourceEditing INLINE
+            targetEditing INLINE
         },
         one2many bidirectional {
             source "customer"

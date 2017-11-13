@@ -204,7 +204,8 @@ application "RecipeManager" {
             target "recipe"
             targetAlias "recipes"
             useAutoCompletion BOTH_SIDES
-            editType ACTIVE_NONE_PASSIVE_CHOOSE
+            sourceEditing NONE
+            targetEditing CHOOSE
             refClass "RecipeCategoryRef"
         },
         many2many bidirectional {
@@ -213,7 +214,8 @@ application "RecipeManager" {
             target "ingredient"
             targetAlias "ingredients"
             useAutoCompletion BOTH_SIDES
-            editType ACTIVE_NONE_PASSIVE_CHOOSE
+            sourceEditing NONE
+            targetEditing CHOOSE
             refClass "IngredientCategoryRef"
         },
         one2many bidirectional {
@@ -238,7 +240,7 @@ application "RecipeManager" {
             sourceAlias "ingredients"
             target "unit"
             targetAlias "units"
-            editType ACTIVE_EDIT_PASSIVE_NONE
+            sourceEditing INLINE
             refClass "IngredientUnit"
         },
         many2one {
@@ -253,16 +255,6 @@ application "RecipeManager" {
             sourceAlias "recipeIngredients"
             target "unit"
             targetAlias "unit"
-        }
-    }
-    variables {
-        varContainer "General" {
-            documentation "All basic settings for the recipe manager."
-            vars {
-                intVar "pageSize" {
-                    value "20"
-                }
-            }
         }
     }
 }

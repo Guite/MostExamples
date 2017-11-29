@@ -118,7 +118,8 @@ application "News" {
             sourceAlias "article"
             target "picture"
             targetAlias "pictures"
-            editType ACTIVE_NONE_PASSIVE_CHOOSE
+            sourceEditing NONE
+            targetEditing CHOOSE
             cascade ALL
             orderBy "sortNumber"
             minTarget 0
@@ -177,17 +178,17 @@ application "News" {
                     mandatory false
                 },
                 boolean "enableAjaxEditing" {
-                    documentation "Note picture/file operations are not supported in \'quick edit mode\' due to ajax limitations."
+                    documentation "Note picture/file operations are not supported in 'quick edit mode' due to ajax limitations."
                     defaultValue "false"
                     mandatory false
                 },
                 boolean "enableMoreArticlesInCategory" {
-                    documentation "Enable \'More articles in category\' when displaying an article"
+                    documentation "Enable 'More articles in category' when displaying an article"
                     defaultValue "false"
                     mandatory false
                 },
                 integer "amountOfMoreArticlesInCategory" {
-                    documentation "When displaying an article, a number of additional article titles in the same category can be shown. To show the additional article titles for every article set the value above to a number larger than 0. When the value is set to 0, the number of additional article titles can be set per article by means of the article attribute \'morearticlesincat\'. You need to enable \'article attributes\' yourself. When the setting above or the article attribute is set to 0, no titles will be extracted from the database."
+                    documentation "When displaying an article, a number of additional article titles in the same category can be shown. To show the additional article titles for every article set the value above to a number larger than 0. When the value is set to 0, the number of additional article titles can be set per article by means of the article attribute 'morearticlesincat'. You need to enable 'article attributes' yourself. When the setting above or the article attribute is set to 0, no titles will be extracted from the database."
                     defaultValue "0"
                 },
                 boolean "displayPdfLink" {

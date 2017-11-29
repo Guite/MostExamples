@@ -129,13 +129,15 @@ application "ValidationTest" {
                 string "stringTest" {
                     defaultValue "This is a default value"
                 },
-                string "stringTestColour" nospace htmlcolour {
+                string "stringTestColour" nospace {
                     defaultValue "#000000"
                     length 7
+                    role COLOUR
                 },
-                string "stringTestCountry" fixed nospace country {
+                string "stringTestCountry" fixed nospace {
                     defaultValue "DE"
                     length 5
+                    role COUNTRY
                 },
                 text "textTest" {
                     defaultValue ""
@@ -179,16 +181,18 @@ application "ValidationTest" {
                     defaultValue ""
                     components TIME
                 },
-                string "myLanguage" nospace language {
+                string "myLanguage" nospace {
                     defaultValue "de"
                     mandatory false
                     length 7
+                    role LANGUAGE
                 },
-                string "myPassword" nospace password {
+                string "myPassword" nospace {
                     defaultValue ""
                     mandatory false
                     minLength 5
                     length 20
+                    role PASSWORD
                 },
                 email "emailWithEnhancedChecks" checkMX checkHost {
                     defaultValue ""
@@ -198,9 +202,10 @@ application "ValidationTest" {
                     defaultValue ""
                     mandatory false
                 },
-                string "myIban" iban {
+                string "myIban" {
                     defaultValue ""
                     mandatory false
+                    role IBAN
                 },
                 string "myIsbn" {
                     defaultValue ""
@@ -212,21 +217,25 @@ application "ValidationTest" {
                     mandatory false
                     issn STRICT
                 },
-                string "myCreditCard" creditCard {
+                string "myCreditCard" {
                     defaultValue ""
                     mandatory false
+                    role CREDIT_CARD
                 },
-                string "myTimezone" timezone {
+                string "myTimezone" {
                     defaultValue ""
                     mandatory false
+                    role TIME_ZONE
                 },
-                string "myCurrency" nospace currency {
+                string "myCurrency" nospace {
                     defaultValue ""
                     mandatory false
+                    role CURRENCY
                 },
-                string "myUuid" nospace uuid {
+                string "myUuid" nospace {
                     defaultValue ""
                     mandatory false
+                    role UUID
                 },
                 string "myIpAddress" nospace {
                     defaultValue ""

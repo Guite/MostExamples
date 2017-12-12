@@ -5,27 +5,21 @@ application "RecipeManager" {
     email "info@guite.de"
     url "http://modulestudio.de"
     prefix "recman"
-    generatorSettings {
-        settingsContainer "Settings"
-        generateAccountApi false
-        generateSearchApi false
-        generateMailzApi false
-        generateListBlock false
-        generateModerationBlock false
-        generateListContentType false
-        generateDetailContentType false
-        generateNewsletterPlugin false
-        generateModerationPanel false
-        generatePendingContentSupport false
-        generateTagSupport false
-        generateAtomTemplates false
-        generateCsvTemplates false
-        generateKmlTemplates false
-        generateIcsTemplates false
-        generateTests false
-        skipFiles ""
-        markFiles ""
-    }
+    generateAccountApi false
+    generateSearchApi false
+    generateListBlock false
+    generateModerationBlock false
+    generateListContentType false
+    generateDetailContentType false
+    generateModerationPanel false
+    generatePendingContentSupport false
+    generateAtomTemplates false
+    generateCsvTemplates false
+    generateKmlTemplates false
+    generateIcsTemplates false
+    generateTests false
+    skipFiles ""
+    markFiles ""
     entities {
         entity "recipe" leading {
             nameMultiple "recipes"

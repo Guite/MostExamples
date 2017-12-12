@@ -5,10 +5,7 @@ application "ValidationTest" {
     email "info@modulestudio.de"
     url "http://modulestudio.de"
     prefix "valtest"
-    generatorSettings {
-        settingsContainer "Settings"
-        amountOfExampleRows 5
-    }
+    amountOfExampleRows 5
     entities {
         entity "drink" leading {
             nameMultiple "drinks"

@@ -4,9 +4,6 @@ application "AutoBugs" {
     email "info@modulestudio.de"
     url "http://modulestudio.de"
     prefix "bugs"
-    generatorSettings {
-        settingsContainer "Settings"
-    }
     entities {
         entity "application" leading {
             nameMultiple "applications"

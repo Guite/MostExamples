@@ -5,10 +5,7 @@ application "News" {
     url "http://zikula.org"
     version "5.0.0"
     prefix "news"
-    generatorSettings {
-        settingsContainer "Settings"
-        generatePdfSupport true
-    }
+    generatePdfSupport true
     entities {
         entity "article" leading loggable categorisable categorisableMultiSelection attributable {
             nameMultiple "articles"

@@ -4,10 +4,7 @@ application "SelfRelationTest" {
     email "info@guite.de"
     url "http://modulestudio.de"
     prefix "selfrel"
-    generatorSettings {
-        settingsContainer "Settings"
-        amountOfExampleRows 5
-    }
+    amountOfExampleRows 5
     entities {
         entity "person" leading {
             nameMultiple "persons"

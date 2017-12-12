@@ -4,9 +4,6 @@ application "AutoProject" {
     email "info@modulestudio.de"
     url "http://modulestudio.de"
     prefix "auoro"
-    generatorSettings {
-        settingsContainer "Settings"
-    }
     entities {
         entity "project" leading {
             nameMultiple "projects"

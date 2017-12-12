@@ -1,44 +1,35 @@
-application "SimpleDemo" {
+application "SimpleDemo" targets ZK15 {
     vendor "Guite"
     author "Axel Guckelsberger"
     email "info@guite.de"
     url "http://guite.de"
     version "0.0.2"
     prefix "simdem"
-    generatorSettings {
-        settingsContainer "Settings"
-        targetCoreVersion ZK15
-        amountOfExampleRows 5
-        generateAccountApi false
-        generateSearchApi false
-        generateMailzApi false
-        generateListBlock false
-        generateDetailBlock false
-        generateModerationBlock false
-        generateListContentType false
-        generateDetailContentType false
-        generateNewsletterPlugin false
-        generateModerationPanel false
-        generatePendingContentSupport false
-        generateExternalControllerAndFinder false
-        generateScribitePlugins false
-        generateTagSupport false
-        generateRssTemplates false
-        generateAtomTemplates false
-        generateCsvTemplates false
-        generateXmlTemplates false
-        generateJsonTemplates false
-        generateKmlTemplates false
-        generateIcsTemplates false
-        generateOnlyBaseClasses true
-        timestampAllGeneratedFiles true
-        generatePoweredByBacklinksIntoFooterTemplates false
-        generateTests false
-        writeModelToDocs true
-        skipFiles "README.md"
-        markFiles "CHANGELOG.md"
-
-    }
+    amountOfExampleRows 5
+    generateAccountApi false
+    generateSearchApi false
+    generateListBlock false
+    generateDetailBlock false
+    generateModerationBlock false
+    generateListContentType false
+    generateDetailContentType false
+    generateModerationPanel false
+    generatePendingContentSupport false
+    generateExternalControllerAndFinder false
+    generateScribitePlugins false
+    generateRssTemplates false
+    generateAtomTemplates false
+    generateCsvTemplates false
+    generateXmlTemplates false
+    generateJsonTemplates false
+    generateKmlTemplates false
+    generateIcsTemplates false
+    generateOnlyBaseClasses true
+    timestampAllGeneratedFiles true
+    generatePoweredByBacklinksIntoFooterTemplates false
+    generateTests false
+    skipFiles "README.md"
+    markFiles "CHANGELOG.md"
     entities {
         entity "person" leading {
             nameMultiple "persons"

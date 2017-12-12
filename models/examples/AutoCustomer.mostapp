@@ -4,9 +4,6 @@ application "AutoCustomer" {
     email "info@guite.de"
     url "http://guite.de"
     prefix "aucu"
-    generatorSettings {
-        settingsContainer "Settings"
-    }
     entities {
         entity "customer" leading geographical {
             nameMultiple "customers"

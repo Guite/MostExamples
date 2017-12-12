@@ -50,7 +50,7 @@ application "News" {
                     defaultValue "true"
                     mandatory false
                 },
-                string "articleLanguage" nospace {
+                string "articleLanguage" {
                     defaultValue ""
                     length 7
                     role LANGUAGE

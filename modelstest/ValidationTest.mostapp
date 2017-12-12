@@ -126,12 +126,12 @@ application "ValidationTest" {
                 string "stringTest" {
                     defaultValue "This is a default value"
                 },
-                string "stringTestColour" nospace {
+                string "stringTestColour" {
                     defaultValue "#000000"
                     length 7
                     role COLOUR
                 },
-                string "stringTestCountry" fixed nospace {
+                string "stringTestCountry" fixed {
                     defaultValue "DE"
                     length 5
                     role COUNTRY
@@ -140,7 +140,7 @@ application "ValidationTest" {
                     defaultValue ""
                     mandatory false
                 },
-                email "emailTest" nospace {
+                email "emailTest" {
                     defaultValue "test@example.com"
                 },
                 url "urlTest" {
@@ -178,13 +178,13 @@ application "ValidationTest" {
                     defaultValue ""
                     components TIME
                 },
-                string "myLanguage" nospace {
+                string "myLanguage" {
                     defaultValue "de"
                     mandatory false
                     length 7
                     role LANGUAGE
                 },
-                string "myPassword" nospace {
+                string "myPassword" {
                     defaultValue ""
                     mandatory false
                     minLength 5
@@ -224,17 +224,17 @@ application "ValidationTest" {
                     mandatory false
                     role TIME_ZONE
                 },
-                string "myCurrency" nospace {
+                string "myCurrency" {
                     defaultValue ""
                     mandatory false
                     role CURRENCY
                 },
-                string "myUuid" nospace {
+                string "myUuid" {
                     defaultValue ""
                     mandatory false
                     role UUID
                 },
-                string "myIpAddress" nospace {
+                string "myIpAddress" {
                     defaultValue ""
                     mandatory false
                     length 40

@@ -24,11 +24,11 @@ application "SelfRelationTest" {
                     defaultValue "0"
                     mandatory false
                 },
-                integer "friendid" {
+                integer "friendId" {
                     defaultValue "0"
                     mandatory false
                 },
-                integer "knownuserid" {
+                integer "knownUserId" {
                     defaultValue "0"
                     mandatory false
                 }
@@ -42,26 +42,29 @@ application "SelfRelationTest" {
         }
     }
     relations {
-        one2one {
+        one2one bidirectional {
             source "person"
             sourceAlias "member"
             target "person"
             targetAlias "groupLeader"
             targetField "groupLeaderId"
+            expandedTarget true
+            sourceEditing CHOOSE
+            targetEditing NONE
         },
-        one2many {
+        one2many bidirectional {
             source "person"
             sourceAlias "friend"
             target "person"
             targetAlias "friends"
-            targetField "friendid"
+            targetField "friendId"
         },
-        many2many {
+        many2many bidirectional {
             source "person"
             sourceAlias "knowingUsers"
             target "person"
             targetAlias "knownUsers"
-            targetField "knownuserid"
+            targetField "knownUserId"
             refClass "KnownPerson"
         }
     }

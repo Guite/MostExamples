@@ -2,7 +2,7 @@ application "AutoProject" {
     vendor "Guite"
     author "Axel Guckelsberger"
     email "info@modulestudio.de"
-    url "http://modulestudio.de"
+    url "https://modulestudio.de"
     prefix "auoro"
     entities {
         entity "project" leading {

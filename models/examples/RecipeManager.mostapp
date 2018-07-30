@@ -3,7 +3,7 @@ application "RecipeManager" {
     vendor "Guite"
     author "Axel Guckelsberger"
     email "info@guite.de"
-    url "http://modulestudio.de"
+    url "https://modulestudio.de"
     prefix "recman"
     generateAccountApi false
     generateSearchApi false

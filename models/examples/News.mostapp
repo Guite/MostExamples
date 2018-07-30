@@ -1,8 +1,8 @@
 application "News" {
     vendor "Zikula"
     author "Zikula Development Team"
-    email "info@zikula.org"
-    url "http://zikula.org"
+    email "info@ziku.la"
+    url "https://ziku.la"
     version "5.0.0"
     prefix "news"
     generatePdfSupport true

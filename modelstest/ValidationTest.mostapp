@@ -149,7 +149,7 @@ application "ValidationTest" {
                     mandatory false
                 },
                 user "userTest" {
-                    onAccountDeletionCreator ADMIN
+                    onAccountDeletion ADMIN
                 },
                 array "arrayTest" {
                     defaultValue ""
@@ -272,7 +272,7 @@ application "ValidationTest" {
             displayPattern "#myUser#"
             fields {
                 user "myUser" unique {
-                    onAccountDeletionCreator ADMIN
+                    onAccountDeletion ADMIN
                 },
                 text "description" {
                     defaultValue ""

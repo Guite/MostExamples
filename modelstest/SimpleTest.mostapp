@@ -16,7 +16,7 @@ application "SimpleTest" {
                     defaultValue ""
                 },
                 user "customerUser" {
-                    onAccountDeletionCreator ADMIN
+                    onAccountDeletion ADMIN
                 },
                 upload "photo" {
                     documentation "You can optionally upload a photo."

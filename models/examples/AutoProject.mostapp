@@ -45,7 +45,7 @@ application "AutoProject" {
                 },
                 user "owner" {
                     blameable CREATE
-                    onAccountDeletionCreator ADMIN
+                    onAccountDeletion ADMIN
                 },
                 integer "completed" percentage {
                     defaultValue "0"

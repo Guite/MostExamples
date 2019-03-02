@@ -79,7 +79,7 @@ application "AutoCustomer" {
                 },
                 user "userReference" {
                     blameable CREATE
-                    onAccountDeletionCreator ADMIN
+                    onAccountDeletion ADMIN
                 },
                 string "accountPassword" {
                     mandatory false

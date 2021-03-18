@@ -12,6 +12,7 @@ application "ValidationTest" {
             fields {
                 string "name" {
                     defaultValue ""
+                    length 190
                 },
                 integer "amount" {
                     defaultValue "0"
@@ -141,6 +142,7 @@ application "ValidationTest" {
                 },
                 email "emailTest" {
                     defaultValue "test@example.com"
+                    length 100
                 },
                 url "urlTest" {
                     defaultValue "http://www.example.com"

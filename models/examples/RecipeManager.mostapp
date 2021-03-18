@@ -40,6 +40,7 @@ application "RecipeManager" {
                     maxValue 50
                 },
                 list "difficulty" expanded {
+                    length 50
                     items {
                         listItem "Easy" ("easy"),
                         default listItem "Medium" ("medium"),

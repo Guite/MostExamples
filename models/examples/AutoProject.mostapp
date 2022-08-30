@@ -29,9 +29,8 @@ application "AutoProject" {
                 }
             }
             actions {
-                mainAction "Index",
-                viewAction "View",
-                displayAction "Display",
+                indexAction "Index",
+                detailAction "Detail",
                 editAction "Edit"
             }
         },
@@ -56,9 +55,8 @@ application "AutoProject" {
                 }
             }
             actions {
-                mainAction "Index",
-                viewAction "View",
-                displayAction "Display",
+                indexAction "Index",
+                detailAction "Detail",
                 editAction "Edit"
             }
         },
@@ -72,9 +70,8 @@ application "AutoProject" {
                 }
             }
             actions {
-                mainAction "Index",
-                viewAction "View",
-                displayAction "Display",
+                indexAction "Index",
+                detailAction "Detail",
                 editAction "Edit"
             }
         }

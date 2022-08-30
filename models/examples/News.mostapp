@@ -7,10 +7,10 @@ application "News" {
     prefix "news"
     generatePdfSupport true
     entities {
-        entity "article" leading loggable categorisable categorisableMultiSelection attributable {
+        entity "article" leading loggable categorisable categorisableMultiSelection {
             nameMultiple "articles"
             displayPattern "#title#"
-            lockType PAGELOCK_OPTIMISTIC
+            lockType OPTIMISTIC
             slugUnique false
             workflow STANDARD
             hasArchive true
@@ -76,9 +76,8 @@ application "News" {
                 }
             }
             actions {
-                mainAction "Index",
-                viewAction "View",
-                displayAction "Display",
+                indexAction "Index",
+                detailAction "Detail",
                 editAction "Edit",
                 deleteAction "Delete"
             }
@@ -104,7 +103,7 @@ application "News" {
                 }
             }
             actions {
-                viewAction "View",
+                indexAction "Index",
                 editAction "Edit"
             }
         }

@@ -4,7 +4,6 @@ application "ValidationTest" {
     email "info@modulestudio.de"
     url "https://modulestudio.de"
     prefix "valtest"
-    amountOfExampleRows 5
     entities {
         entity "drink" leading {
             nameMultiple "drinks"
@@ -33,9 +32,8 @@ application "ValidationTest" {
                 }
             }
             actions {
-                mainAction "Index",
-                viewAction "View",
-                displayAction "Display",
+                indexAction "Index",
+                detailAction "Detail",
                 editAction "Edit",
                 deleteAction "Delete"
             }
@@ -59,9 +57,8 @@ application "ValidationTest" {
                 }
             }
             actions {
-                mainAction "Index",
-                viewAction "View",
-                displayAction "Display",
+                indexAction "Index",
+                detailAction "Detail",
                 editAction "Edit",
                 deleteAction "Delete"
             }
@@ -86,9 +83,8 @@ application "ValidationTest" {
                 }
             }
             actions {
-                mainAction "Index",
-                viewAction "View",
-                displayAction "Display",
+                indexAction "Index",
+                detailAction "Detail",
                 editAction "Edit",
                 deleteAction "Delete"
             }
@@ -192,14 +188,6 @@ application "ValidationTest" {
                     length 20
                     role PASSWORD
                 },
-                email "emailWithEnhancedChecks" checkMX checkHost {
-                    defaultValue ""
-                    mandatory false
-                },
-                url "urlWithEnhancedChecks" checkDNS {
-                    defaultValue ""
-                    mandatory false
-                },
                 string "myIban" {
                     defaultValue ""
                     mandatory false
@@ -262,9 +250,8 @@ application "ValidationTest" {
                 }
             }
             actions {
-                mainAction "Index",
-                viewAction "View",
-                displayAction "Display",
+                indexAction "Index",
+                detailAction "Detail",
                 editAction "Edit",
                 deleteAction "Delete"
             }
@@ -291,9 +278,8 @@ application "ValidationTest" {
                 }
             }
             actions {
-                mainAction "Index",
-                viewAction "View",
-                displayAction "Display",
+                indexAction "Index",
+                detailAction "Detail",
                 editAction "Edit",
                 deleteAction "Delete"
             }
@@ -328,9 +314,8 @@ application "ValidationTest" {
                 }
             }
             actions {
-                mainAction "Index",
-                viewAction "View",
-                displayAction "Display",
+                indexAction "Index",
+                detailAction "Detail",
                 editAction "Edit",
                 deleteAction "Delete"
             }
@@ -351,9 +336,8 @@ application "ValidationTest" {
                 }
             }
             actions {
-                mainAction "Index",
-                viewAction "View",
-                displayAction "Display",
+                indexAction "Index",
+                detailAction "Detail",
                 editAction "Edit",
                 deleteAction "Delete"
             }

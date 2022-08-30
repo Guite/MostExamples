@@ -17,17 +17,15 @@ application "AutoBugs" {
                 }
             }
             actions {
-                mainAction "Index",
-                viewAction "View",
-                displayAction "Display",
+                indexAction "Index",
+                detailAction "Detail",
                 editAction "Edit"
             }
         },
         entity "bugReport" loggable {
             nameMultiple "bugReports"
             displayPattern "#title#"
-            lockType PAGELOCK_OPTIMISTIC
-            uiHooksProvider ENABLED
+            lockType OPTIMISTIC
             fields {
                 string "title" {
                     defaultValue ""
@@ -62,9 +60,8 @@ application "AutoBugs" {
                 }
             }
             actions {
-                mainAction "Index",
-                viewAction "View",
-                displayAction "Display",
+                indexAction "Index",
+                detailAction "Detail",
                 editAction "Edit"
             }
         }

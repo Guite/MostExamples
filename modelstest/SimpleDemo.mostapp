@@ -1,22 +1,13 @@
-application "SimpleDemo" targets ZK15 {
+application "SimpleDemo" {
     vendor "Guite"
     author "Axel Guckelsberger"
     email "info@guite.de"
     url "http://guite.de"
     version "0.0.2"
     prefix "simdem"
-    amountOfExampleRows 5
     generateAccountApi false
-    generateSearchApi false
-    generateListBlock false
-    generateDetailBlock false
-    generateModerationBlock false
-    generateListContentType false
-    generateDetailContentType false
     generateModerationPanel false
-    generatePendingContentSupport false
     generateExternalControllerAndFinder false
-    generateScribitePlugins false
     generateRssTemplates false
     generateAtomTemplates false
     generateCsvTemplates false
@@ -45,9 +36,8 @@ application "SimpleDemo" targets ZK15 {
                 }
             }
             actions {
-                mainAction "Index",
-                viewAction "View",
-                displayAction "Display"
+                indexAction "Index",
+                detailAction "Detail"
             }
         }
     }

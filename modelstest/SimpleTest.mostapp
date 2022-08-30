@@ -5,7 +5,6 @@ application "SimpleTest" {
     email "info@modulestudio.de"
     url "https://modulestudio.de"
     prefix "simtest"
-    amountOfExampleRows 5
     entities {
         entity "customer" leading {
             documentation "This text is an example for documentation. It tells you something about the customers section."
@@ -33,9 +32,8 @@ application "SimpleTest" {
                 }
             }
             actions {
-                mainAction "Index",
-                viewAction "View",
-                displayAction "Display",
+                indexAction "Index",
+                detailAction "Detail",
                 editAction "Edit",
                 deleteAction "Delete"
             }
@@ -61,9 +59,8 @@ application "SimpleTest" {
                 }
             }
             actions {
-                mainAction "Index",
-                viewAction "View",
-                displayAction "Display",
+                indexAction "Index",
+                detailAction "Detail",
                 editAction "Edit",
                 deleteAction "Delete"
             }
@@ -81,9 +78,8 @@ application "SimpleTest" {
                 }
             }
             actions {
-                mainAction "Index",
-                viewAction "View",
-                displayAction "Display",
+                indexAction "Index",
+                detailAction "Detail",
                 editAction "Edit",
                 deleteAction "Delete"
             }
@@ -116,9 +112,8 @@ application "SimpleTest" {
                 }
             }
             actions {
-                mainAction "Index",
-                viewAction "View",
-                displayAction "Display",
+                indexAction "Index",
+                detailAction "Detail",
                 editAction "Edit",
                 deleteAction "Delete"
             }

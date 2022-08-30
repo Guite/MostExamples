@@ -6,13 +6,7 @@ application "RecipeManager" {
     url "https://modulestudio.de"
     prefix "recman"
     generateAccountApi false
-    generateSearchApi false
-    generateListBlock false
-    generateModerationBlock false
-    generateListContentType false
-    generateDetailContentType false
     generateModerationPanel false
-    generatePendingContentSupport false
     generateAtomTemplates false
     generateCsvTemplates false
     generateKmlTemplates false
@@ -81,9 +75,8 @@ application "RecipeManager" {
                 }
             }
             actions {
-                mainAction "Main",
-                viewAction "View",
-                displayAction "Display",
+                indexAction "Index",
+                detailAction "Detail",
                 editAction "Edit",
                 customAction "Report"
             }
@@ -122,9 +115,8 @@ application "RecipeManager" {
                 }
             }
             actions {
-                mainAction "Main",
-                viewAction "View",
-                displayAction "Display",
+                indexAction "Index",
+                detailAction "Detail",
                 editAction "Edit"
             }
         },
@@ -142,9 +134,8 @@ application "RecipeManager" {
                 }
             }
             actions {
-                mainAction "Main",
-                viewAction "View",
-                displayAction "Display",
+                indexAction "Index",
+                detailAction "Detail",
                 editAction "Edit"
             }
         },
@@ -166,9 +157,8 @@ application "RecipeManager" {
                 }
             }
             actions {
-                mainAction "Main",
-                viewAction "View",
-                displayAction "Display",
+                indexAction "Index",
+                detailAction "Detail",
                 editAction "Edit"
             }
         },
@@ -185,9 +175,8 @@ application "RecipeManager" {
                 }
             }
             actions {
-                mainAction "Main",
-                viewAction "View",
-                displayAction "Display",
+                indexAction "Index",
+                detailAction "Detail",
                 editAction "Edit"
             }
         }

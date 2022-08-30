@@ -4,7 +4,6 @@ application "SelfRelationTest" {
     email "info@guite.de"
     url "https://modulestudio.de"
     prefix "selfrel"
-    amountOfExampleRows 5
     entities {
         entity "person" leading {
             nameMultiple "persons"
@@ -34,9 +33,8 @@ application "SelfRelationTest" {
                 }
             }
             actions {
-                mainAction "Index",
-                viewAction "View",
-                displayAction "Display",
+                indexAction "Index",
+                detailAction "Detail",
                 editAction "Edit"
             }
         }

@@ -6,7 +6,6 @@ application "RecipeManager" {
     url "https://modulestudio.de"
     prefix "recman"
     generateAccountApi false
-    generateModerationPanel false
     generateAtomTemplates false
     generateCsvTemplates false
     generateKmlTemplates false

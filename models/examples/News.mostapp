@@ -86,7 +86,6 @@ application "News" {
             nameMultiple "pictures"
             displayPattern "#title#"
             standardFields false
-            skipHookSubscribers true
             fields {
                 string "title" translatable {
                     defaultValue ""

@@ -42,7 +42,7 @@ application "AutoProject" {
                     defaultValue ""
                     length 200
                 },
-                user "owner" {
+                user "creator" {
                     blameable CREATE
                     onAccountDeletion ADMIN
                 },

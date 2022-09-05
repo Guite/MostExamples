@@ -153,9 +153,6 @@ application "ValidationTest" {
                     defaultValue ""
                     mandatory false
                 },
-                object "objectTest" {
-                    mandatory false
-                },
                 datetime "datetimeTest" {
                     defaultValue ""
                 },

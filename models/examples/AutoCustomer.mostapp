@@ -36,12 +36,12 @@ application "AutoCustomer" {
                 string "firstName" {
                     defaultValue ""
                     sluggablePosition 1
-                    length 100
+                    length 90
                 },
                 string "lastName" {
                     defaultValue ""
                     sluggablePosition 2
-                    length 100
+                    length 90
                 },
                 integer "age" range {
                     defaultValue ""

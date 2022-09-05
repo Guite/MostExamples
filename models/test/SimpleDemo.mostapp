@@ -6,8 +6,6 @@ application "SimpleDemo" {
     version "0.0.2"
     prefix "simdem"
     generateAccountApi false
-    generateModerationPanel false
-    generateExternalControllerAndFinder false
     generateRssTemplates false
     generateAtomTemplates false
     generateCsvTemplates false

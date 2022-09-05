@@ -102,39 +102,47 @@ application "ValidationTest" {
                 integer "intTestUnique" unique {
                     defaultValue "0"
                     mandatory false
+                    displayType NONE
                     length 4
                     minValue -5
                     maxValue 50
                 },
                 integer "intTestWithRange" {
                     defaultValue "5"
+                    displayType SORTING
                     minValue 3
                     maxValue 10
                 },
                 number "floatTest" {
                     defaultValue "0.00"
+                    displayType INDEX
                     numberType FLOAT
                 },
                 number "decimalTest" {
                     defaultValue "0.000"
+                    displayType INDEX_SORTING
                     scale 3
                 },
                 string "stringTest" {
                     defaultValue "This is a default value"
+                    displayType DETAIL
                 },
                 string "stringTestColour" {
                     defaultValue "#000000"
+                    displayType DETAIL_SORTING
                     length 7
                     role COLOUR
                 },
                 string "stringTestCountry" fixed {
                     defaultValue "DE"
+                    displayType INDEX_DETAIL
                     length 5
                     role COUNTRY
                 },
                 text "textTest" {
                     defaultValue ""
                     mandatory false
+                    displayType ALL
                 },
                 email "emailTest" {
                     defaultValue "test@example.com"
@@ -296,6 +304,8 @@ application "ValidationTest" {
         entity "ingredient" {
             nameMultiple "ingredients"
             displayPattern "#name#"
+            tree NESTED
+            workflow STANDARD
             fields {
                 string "name" {
                     defaultValue ""

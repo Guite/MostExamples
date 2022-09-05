@@ -6,6 +6,7 @@ application "ValidationTest" {
     prefix "valtest"
     entities {
         entity "drink" leading {
+            documentation "Do you prefer coffee or juice?"
             nameMultiple "drinks"
             displayPattern "#name#"
             fields {

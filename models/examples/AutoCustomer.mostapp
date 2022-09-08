@@ -115,7 +115,8 @@ application "AutoCustomer" {
                     timestampable CREATE
                 },
                 datetime "completedDate" {
-                    visible false
+                    visibleOnNew false
+                    visibleOnEdit false
                     components DATE
                     timestampable CHANGE
                     timestampableChangeTriggerField "workflowState"

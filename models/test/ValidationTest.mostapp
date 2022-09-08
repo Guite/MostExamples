@@ -103,47 +103,61 @@ application "ValidationTest" {
                 integer "intTestUnique" unique {
                     defaultValue "0"
                     mandatory false
-                    displayType NONE
+                    visibleOnIndex false
+                    visibleOnDetail false
+                    visibleOnNew false
+                    visibleOnEdit false
+                    visibleOnSort false
                     length 4
                     minValue -5
                     maxValue 50
                 },
                 integer "intTestWithRange" {
                     defaultValue "5"
-                    displayType SORTING
+                    visibleOnIndex false
+                    visibleOnDetail false
+                    visibleOnNew false
+                    visibleOnEdit false
                     minValue 3
                     maxValue 10
                 },
                 number "floatTest" {
                     defaultValue "0.00"
-                    displayType INDEX
+                    visibleOnDetail false
+                    visibleOnNew false
+                    visibleOnEdit false
+                    visibleOnSort false
                     numberType FLOAT
                 },
                 number "decimalTest" {
                     defaultValue "0.000"
-                    displayType INDEX_SORTING
+                    visibleOnNew false
+                    visibleOnEdit false
                     scale 3
                 },
                 string "stringTest" {
                     defaultValue "This is a default value"
-                    displayType DETAIL
+                    visibleOnIndex false
+                    visibleOnNew false
                 },
                 string "stringTestColour" {
                     defaultValue "#000000"
-                    displayType DETAIL_SORTING
+                    visibleOnIndex false
+                    visibleOnEdit false
                     length 7
                     role COLOUR
                 },
                 string "stringTestCountry" fixed {
                     defaultValue "DE"
-                    displayType INDEX_DETAIL
+                    visibleOnDetail false
+                    visibleOnEdit false
+                    visibleOnSort false
                     length 5
                     role COUNTRY
                 },
                 text "textTest" {
                     defaultValue ""
                     mandatory false
-                    displayType ALL
                 },
                 email "emailTest" {
                     defaultValue "test@example.com"
